@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pay_Now_3__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF((International_Grand_Total_3__c &gt; 0),&quot;https://pay.printninja.com/&quot;+TEXT(ROUND(International_Grand_Total_3__c, 2))+&quot;/&quot;+Opportunity__r.Job_Number1__c,&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pay Now</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

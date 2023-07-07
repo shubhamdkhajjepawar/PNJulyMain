@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Purchase_Markup_3__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF((Product_Purchase_Cost_3__c &gt; 0),(Product_Price_3__c - Product_Purchase_Cost_3__c) / Product_Purchase_Cost_3__c,null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Markup of total order (may vary slightly from component markups due to rounding)</inlineHelpText>
+    <label>Product Purchase Markup (Old)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

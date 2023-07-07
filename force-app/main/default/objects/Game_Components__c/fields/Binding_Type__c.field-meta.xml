@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Binding_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Binding Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Saddle Stitch</fullName>
+                <default>false</default>
+                <label>Saddle Stitch</label>
+            </value>
+            <value>
+                <fullName>Perfect Bound (Softcover)</fullName>
+                <default>false</default>
+                <label>Perfect Bound (Softcover)</label>
+            </value>
+            <value>
+                <fullName>Case Bound (Hardcover</fullName>
+                <default>false</default>
+                <label>Case Bound (Hardcover</label>
+            </value>
+            <value>
+                <fullName>Wire Bound</fullName>
+                <default>false</default>
+                <label>Wire Bound</label>
+            </value>
+            <value>
+                <fullName>Spiral Bound</fullName>
+                <default>false</default>
+                <label>Spiral Bound</label>
+            </value>
+            <value>
+                <fullName>Board Book</fullName>
+                <default>false</default>
+                <label>Board Book</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

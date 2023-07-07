@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Quantity_Marked_For_ROW__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Use_to_Calculate_ROW_1__c, &quot;yes&quot;), Order_Quantity_1__c, 
+IF(ISPICKVAL(Use_to_Calculate_ROW_2__c, &quot;yes&quot;), Order_Quantity_2__c, 
+IF(ISPICKVAL(Use_to_Calculate_ROW_3__c, &quot;yes&quot;), Order_Quantity_3__c, 
+IF(ISPICKVAL(Use_to_Calculate_ROW_4__c, &quot;yes&quot;), Order_Quantity_4__c,null 
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Order Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

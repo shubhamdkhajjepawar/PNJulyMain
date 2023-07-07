@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;b&gt;Dev Team 1&lt;/b&gt;&lt;br&gt;Current: Board game quote form development&lt;br&gt;Next: Card game pricing calculator&lt;br&gt;&lt;b&gt;Dev Team 2&lt;/b&gt;&lt;br&gt;Current: Shipping calculator 2.0 phase 1 (split shipping (ocean only), separate shipping page on calculator)&lt;br&gt;Next: Shipping calculator 2.0 phase 2 (LTL/Freight options, expedited shipping options for split shipping)&lt;br&gt;&lt;b&gt;Dev Team 3&lt;/b&gt;&lt;br&gt;Current: Sample pack request form optimization&lt;br&gt;Next: Calculator specialty options</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

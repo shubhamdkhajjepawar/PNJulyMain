@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Is_new_or_changed</name>
+        <label>Is new or changed?</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>new_or_changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNewOrChanged</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Total_Quantity</targetReference>
+            </connector>
+            <label>new or changed</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>isNewOrChanged</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW() || ISCHANGED({!$Record.Loyalty_Program__c}) || ISCHANGED({!$Record.Loyalty_Percentage__c})</expression>
+    </formulas>
+    <formulas>
+        <name>today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <name>TotalQuantity1</name>
+        <dataType>Number</dataType>
+        <expression>if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;2%&apos;),{!$Record.Display_Quantity_1__c}*1.04, 
+ if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;4%&apos;), {!$Record.Display_Quantity_1__c}*1.06,
+if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;5%&apos;) ,{!$Record.Display_Quantity_1__c}*1.07,
+if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;7%&apos;),{!$Record.Display_Quantity_1__c}*1.09, {!$Record.Total_Quantity_1__c})
+)       
+ )
+ )</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>TotalQuantity2</name>
+        <dataType>Number</dataType>
+        <expression>if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;2%&apos;),{!$Record.Display_Quantity_2__c}*1.04, 
+ if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;4%&apos;), {!$Record.Display_Quantity_2__c}*1.06,
+if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;5%&apos;) ,{!$Record.Display_Quantity_2__c}*1.07,
+if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;7%&apos;),{!$Record.Display_Quantity_2__c}*1.09, {!$Record.Total_Quantity_2__c})
+)       
+ )
+ )</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>TotalQuantity3</name>
+        <dataType>Number</dataType>
+        <expression>if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;2%&apos;),{!$Record.Display_Quantity_3__c}*1.04, 
+ if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;4%&apos;), {!$Record.Display_Quantity_3__c}*1.06,
+if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;5%&apos;) ,{!$Record.Display_Quantity_3__c}*1.07,
+if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;7%&apos;),{!$Record.Display_Quantity_3__c}*1.09, {!$Record.Total_Quantity_3__c})
+)       
+ )
+ )</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>TotalQuantity4</name>
+        <dataType>Number</dataType>
+        <expression>if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;2%&apos;),{!$Record.Display_Quantity_4__c}*1.04, 
+ if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;4%&apos;), {!$Record.Display_Quantity_4__c}*1.06,
+if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;5%&apos;) ,{!$Record.Display_Quantity_4__c}*1.07,
+if(ISPICKVAL({!$Record.Loyalty_Percentage__c},&apos;7%&apos;),{!$Record.Display_Quantity_4__c}*1.09, {!$Record.Total_Quantity_4__c})
+)       
+ )
+ )</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Quote- Loyalty Program Recalculation of Total Quantity {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Quote- Loyalty Program Recalculation of Total Quantity</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Total_Quantity</name>
+        <label>Update Total Quantity</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <inputAssignments>
+            <field>Total_Quantity_1__c</field>
+            <value>
+                <elementReference>TotalQuantity1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Quantity_2__c</field>
+            <value>
+                <elementReference>TotalQuantity2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Quantity_3__c</field>
+            <value>
+                <elementReference>TotalQuantity3</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Total_Quantity_4__c</field>
+            <value>
+                <elementReference>TotalQuantity4</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_new_or_changed</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Loyalty_Program__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Loyalty_Percentage__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Quote</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>iQuoteColl</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Quote</objectType>
+    </variables>
+</Flow>

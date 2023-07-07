@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>-Some requests from the card game quote form are missing the game quote object&lt;br&gt;-For freight quotes from the calculator, remove the 0% shipping markups so the fields are blank</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

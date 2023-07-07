@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Quote</baseObject>
+    <category>opportunities</category>
+    <deployed>true</deployed>
+    <description>The sheet to use when importing addresses to Stamps.com</description>
+    <join>
+        <outerJoin>false</outerJoin>
+        <relationship>Activities</relationship>
+    </join>
+    <label>Stamps.com Import Quotes</label>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Order ID (required)</displayNameOverride>
+            <field>QuoteNumber</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Order Date</displayNameOverride>
+            <field>CreatedDate</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Order Value</displayNameOverride>
+            <field>Domestic_Purchase_Price_A__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Requested Service</displayNameOverride>
+            <field>Domestic_Purchase_Price_B__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Name</displayNameOverride>
+            <field>Contact</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Company</displayNameOverride>
+            <field>Contact.Account</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Address 1</displayNameOverride>
+            <field>ShippingStreet</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Address 2</displayNameOverride>
+            <field>Domestic_Purchase_Price_C__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Address 3</displayNameOverride>
+            <field>Domestic_Purchase_Price_D__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - State/Province</displayNameOverride>
+            <field>ShippingState</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To  - City</displayNameOverride>
+            <field>ShippingCity</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Postal Code</displayNameOverride>
+            <field>ShippingPostalCode</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Country</displayNameOverride>
+            <field>ShippingCountry</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Phone</displayNameOverride>
+            <field>Phone</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Ship To - Email</displayNameOverride>
+            <field>Email</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Total Weight in Oz</displayNameOverride>
+            <field>Domestic_Purchase_Price_E__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Dimensions - Length</displayNameOverride>
+            <field>Domestic_Purchase_Price_F__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Dimensions - Width</displayNameOverride>
+            <field>Dom_Freight_Markup11__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Dimensions - Height</displayNameOverride>
+            <field>Dom_Freight_Markup12__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Notes - From Customer</displayNameOverride>
+            <field>PRN_additionalinfo__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Notes - Internal</displayNameOverride>
+            <field>Dom_Purch_Price_11__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Gift Wrap?</displayNameOverride>
+            <field>Dom_Purch_Price_12__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <displayNameOverride>Gift Message</displayNameOverride>
+            <field>Dom_Vendor_s_Freight_Charge_13__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity.Sample_Packet_Request_From_Calculator__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity.Owner</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PRN_bindingtype__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PRN_width__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PRN_height__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PRN_insidepaperweight__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PRN_insidepapercoating__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PRN_coverpaperweight__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>PRN_coverpaperfinishtype__c</field>
+            <table>Quote</table>
+        </columns>
+        <masterLabel>Fields</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Account</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsClosed</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ActivityDate</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Days_since_creation__c</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ActivityTimeOnly</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Who</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Status</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Subject</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>IsTask</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ActivityDateTime</field>
+            <table>Quote.Activities</table>
+        </columns>
+        <masterLabel>Activities</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Prepress_French_Fold_Flap_Width__c</field>
+            <table>Quote</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Flat__c</field>
+            <table>Quote</table>
+        </columns>
+        <masterLabel>Quotes</masterLabel>
+    </sections>
+</ReportType>

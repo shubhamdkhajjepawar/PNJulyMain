@@ -1,0 +1,748 @@
+<apex:page standardController="Game_Components__c" recordSetVar="gamecomponents" tabStyle="Game_Components__c" extensions="tenPageSizeExt">
+    <apex:form >
+    <apex:pageBlock title="Game Component Summary" mode="maindetail">
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Back" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+    </apex:pageBlock>
+    <apex:pageBlock title="Card Decks" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Card Deck',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Count__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Deck_Packaging__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Size__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Material__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Width__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Printing_Color__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Length__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Finish_Type__c}" />      
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Stock__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Finish_Style__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Number_of_Card_Backs__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Specialty_Options__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Specialty_Options_Card__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Card Deck',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Card Deck',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Game Boards" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Board',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Specialty_Options_Board__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Width__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Length__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Panel_Style__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Material__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Game_Board_Backing__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Wrapped_Edges__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Board',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Board',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Punch-Out Sheets" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Punch-Out Sheet',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Specialty_Options_Token__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Width__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Length__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Token_Shape__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Material__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Punch-Out Sheet',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Punch-Out Sheet',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Tiles" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Tile',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Specialty_Options_Tile__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Width__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Length__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Material__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Tile',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Tile',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Screens" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Screen',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Specialty_Options_Screen__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Width__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Length__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Number_of_Folds__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Material__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Wrapped_Edges__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Screen',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Screen',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Playmats" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Playmat',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Variants__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Width__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Length__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Playmat',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Playmat',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Game Pieces" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Piece',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Type_of_Piece__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_7__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_7__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_8__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_8__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_9__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_9__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_10__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_10__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_11__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_5__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_11__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_5__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_12__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_6__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_12__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_6__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Piece',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Piece',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Dice" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Dice',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Size__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Number_of_Sides__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Material_Dice__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Dice_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Pip_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Corners__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Face_Type__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Dice',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Dice',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Bags" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Bag',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Size_Bag__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Type_of_Bag__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Bag_Color__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Bag',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Bag',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Notepads" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Notepad',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Specialty_Options_Pad__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Binding_Side__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Size_Pad__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Number_of_Pages_Pad__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Paper_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Printing_Color_Pad__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Notepad',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Notepad',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Instructions" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Instructions',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Type_of_Instructions__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Specialty_Options_Instructions__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Length__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Page_Count__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Paper_Weight__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Paper_Coating__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Instructions',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Instructions',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock title="Box" mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="gameComponent">
+        <apex:pageBlockSection title="Component Specifications" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Box',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Name}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Type_of_Box__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Type_of_Organizer__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Number_of_Sections__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Specialty_Options_Box__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Height__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Material__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <br /><apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Box',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Purchase_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Purchase_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Cost_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Cost_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Markup_1__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Markup_2__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices" rendered="{!IF(gameComponent.Game_Component_Type__c == 'Box',True,False)}">
+        <apex:inlineEditSupport >
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Purchase_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Purchase_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Cost_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Cost_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Markup_3__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Markup_4__c}" />
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />    
+        <apex:outputField rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+        
+    <apex:pageBlock mode="maindetail">
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Back" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+    </apex:page>

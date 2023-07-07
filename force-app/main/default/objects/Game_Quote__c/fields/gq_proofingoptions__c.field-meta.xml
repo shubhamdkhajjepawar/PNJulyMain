@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_proofingoptions__c</fullName>
+    <description>Indicates which method of proofing the customer has chosen.</description>
+    <externalId>false</externalId>
+    <label>Proofing Options</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Electronic PDF</fullName>
+                <default>false</default>
+                <label>Electronic PDF</label>
+            </value>
+            <value>
+                <fullName>Hard Copy Proof</fullName>
+                <default>false</default>
+                <label>Hard Copy Proof</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

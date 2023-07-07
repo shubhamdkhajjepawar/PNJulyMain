@@ -1,0 +1,42 @@
+<apex:page standardController="Lead" id="pg">
+  <script language="javascript">
+            var unreadbyowner = "{!Lead.IsUnreadByOwner}"; // Get the Standard field value
+            var userid = "{!$User.Id}";
+             
+                var lead = new sforce.SObject("Lead");
+                lead.id="{!Lead.ID}";
+                var leadowner = "{!lead.OwnerId}";
+                 leadFlag = "{!lead.IsUnreadByOwner__c}";
+                            
+                var userRecord = sforce.connection.query("select FirstName, LastName from User where ID ='" + userid + "'");
+                records = userRecord.getArray("records");
+               
+                if(userid==leadowner && leadFlag=='false')
+                {
+               
+               lead.IsUnreadbyOwner__c = true; // updating the custom field with the standard value - both the fields will be in Synch.
+                result1 = sforce.connection.update([lead]);
+               
+                var task1 = new sforce.SObject("Task");
+                
+                task1.WhoId = "{!Lead.ID}";
+                task1.Status = "Completed";
+                task1.Priority = "Low";
+                task1.Subject = "Email Trigger";
+                task1.OwnerID = "{!Lead.OwnerId}";
+                /*** Replace customFirstName and CustomLastName with the task field owner api names in the below 2 lines  ****/
+                task1.Customer_First_Name__c = "{!Lead.FirstName}";
+                task1.Customer_Last_Name__c =  "{!Lead.LastName}";
+                task1.Account_Manager__c = "{!Lead.Owner.Name}"; 
+                task1.Inquiry_Type__c = "{!Lead.LeadSource}";
+                task1.Email__c = "{!Lead.Email}";
+                
+                result = sforce.connection.create([task1]);
+   // alert(result);
+                }  
+  </script>
+    
+<apex:includeScript value="/soap/ajax/15.0/connection.js"/>
+<apex:includeScript value="/soap/ajax/15.0/apex.js"/>
+
+</apex:page>

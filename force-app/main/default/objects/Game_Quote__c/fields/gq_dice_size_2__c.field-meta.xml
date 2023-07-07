@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_dice_size_2__c</fullName>
+    <description>Size of dice in inches</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Size of dice in inches</inlineHelpText>
+    <label>Size</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>.4&quot;</fullName>
+                <default>false</default>
+                <label>.4&quot;</label>
+            </value>
+            <value>
+                <fullName>.47&quot;</fullName>
+                <default>false</default>
+                <label>.47&quot;</label>
+            </value>
+            <value>
+                <fullName>.55&quot;</fullName>
+                <default>false</default>
+                <label>.55&quot;</label>
+            </value>
+            <value>
+                <fullName>.63&quot;</fullName>
+                <default>false</default>
+                <label>.63&quot;</label>
+            </value>
+            <value>
+                <fullName>.80&quot;</fullName>
+                <default>false</default>
+                <label>.80&quot;</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

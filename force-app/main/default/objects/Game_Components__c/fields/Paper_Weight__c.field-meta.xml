@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Paper_Weight__c</fullName>
+    <externalId>false</externalId>
+    <label>Paper Weight</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>55lb</fullName>
+                <default>false</default>
+                <label>55lb</label>
+            </value>
+            <value>
+                <fullName>70lb</fullName>
+                <default>false</default>
+                <label>70lb</label>
+            </value>
+            <value>
+                <fullName>85lb</fullName>
+                <default>false</default>
+                <label>85lb</label>
+            </value>
+            <value>
+                <fullName>105lb</fullName>
+                <default>false</default>
+                <label>105lb</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

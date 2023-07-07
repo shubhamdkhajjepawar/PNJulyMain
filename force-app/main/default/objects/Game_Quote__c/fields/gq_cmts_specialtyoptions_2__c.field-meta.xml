@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_cmts_specialtyoptions_2__c</fullName>
+    <description>Specialty options of cardboard mat, tile or screen</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Interlocking pieces and custom shapes require 2d graphic file</inlineHelpText>
+    <label>Specialty Options</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Spot UV</fullName>
+                <default>false</default>
+                <label>Spot UV</label>
+            </value>
+            <value>
+                <fullName>Foil Stamp</fullName>
+                <default>false</default>
+                <label>Foil Stamp</label>
+            </value>
+            <value>
+                <fullName>Metallic Gold or Silver Ink</fullName>
+                <default>false</default>
+                <label>Metallic Gold or Silver Ink</label>
+            </value>
+            <value>
+                <fullName>Foil Stock</fullName>
+                <default>false</default>
+                <label>Foil Stock</label>
+            </value>
+            <value>
+                <fullName>Interlocking Pieces</fullName>
+                <default>false</default>
+                <label>Interlocking Pieces</label>
+            </value>
+            <value>
+                <fullName>Custom Shape</fullName>
+                <default>false</default>
+                <label>Custom Shape</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Quantity_2__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Opportunity__r.Eligible_For_Free_5_Overrun_Promotion__c=false,MIN(Order_Quantity_2__c + (Order_Quantity_2__c * 0.02),Order_Quantity_2__c + 75),MIN(Order_Quantity_2__c + (Order_Quantity_2__c * 0.07),Order_Quantity_2__c + (Order_Quantity_2__c * 0.05) + 75))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total quantity including overrun</inlineHelpText>
+    <label>Total Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

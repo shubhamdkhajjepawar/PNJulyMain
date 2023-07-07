@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Box_Additional_Info</fullName>
+        <field>Additional_Info__c</field>
+        <formula>&quot;Team China, please enter quoted box dimensions in size fields.&quot;</formula>
+        <name>Box Additional Info</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Box_Printing_Color_Default</fullName>
+        <field>Packaging_Printing_Color__c</field>
+        <literalValue>Full Color CMYK</literalValue>
+        <name>Box Printing Color Default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Card_Box_Additional_Info</fullName>
+        <field>Additional_Info__c</field>
+        <formula>&quot;Team China, please enter quoted box dimensions in size fields.&quot;</formula>
+        <name>Card Box Additional Info</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Add_On_Mark_Up_1</fullName>
+        <field>Add_On_Markup_1__c</field>
+        <formula>IF(AND(Add_On_Cost_1__c &gt; 0,Add_On_Cost_1__c &lt; 1000), 1, 
+IF(AND(Add_On_Cost_1__c &gt;= 1000,Add_On_Cost_1__c &lt; 2500), 0.80, 
+IF(AND(Add_On_Cost_1__c &gt;= 2500,Add_On_Cost_1__c &lt; 3000), 0.70, 
+IF(AND(Add_On_Cost_1__c &gt;= 3000,Add_On_Cost_1__c &lt; 12500), 0.60, 
+IF(Add_On_Cost_1__c &gt;= 12500, 0.50,0 
+)))))</formula>
+        <name>Game Add-On Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Add_On_Mark_Up_2</fullName>
+        <field>Add_On_Markup_2__c</field>
+        <formula>IF(AND(Add_On_Cost_2__c &gt; 0,Add_On_Cost_2__c &lt; 1000), 1, 
+IF(AND(Add_On_Cost_2__c &gt;= 1000,Add_On_Cost_2__c &lt; 2500), 0.80, 
+IF(AND(Add_On_Cost_2__c &gt;= 2500,Add_On_Cost_2__c &lt; 3000), 0.70, 
+IF(AND(Add_On_Cost_2__c &gt;= 3000,Add_On_Cost_2__c &lt; 12500), 0.60, 
+IF(Add_On_Cost_2__c &gt;= 12500, 0.50,0 
+)))))</formula>
+        <name>Game Add-On Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Add_On_Mark_Up_3</fullName>
+        <field>Add_On_Markup_3__c</field>
+        <formula>IF(AND(Add_On_Cost_3__c &gt; 0,Add_On_Cost_3__c &lt; 1000), 1, 
+IF(AND(Add_On_Cost_3__c &gt;= 1000,Add_On_Cost_3__c &lt; 2500), 0.80, 
+IF(AND(Add_On_Cost_3__c &gt;= 2500,Add_On_Cost_3__c &lt; 3000), 0.70, 
+IF(AND(Add_On_Cost_3__c &gt;= 3000,Add_On_Cost_3__c &lt; 12500), 0.60, 
+IF(Add_On_Cost_3__c &gt;= 12500, 0.50,0 
+)))))</formula>
+        <name>Game Add-On Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Add_On_Mark_Up_4</fullName>
+        <field>Add_On_Markup_4__c</field>
+        <formula>IF(AND(Add_On_Cost_4__c &gt; 0,Add_On_Cost_4__c &lt; 1000), 1, 
+IF(AND(Add_On_Cost_4__c &gt;= 1000,Add_On_Cost_4__c &lt; 2500), 0.80, 
+IF(AND(Add_On_Cost_4__c &gt;= 2500,Add_On_Cost_4__c &lt; 3000), 0.70, 
+IF(AND(Add_On_Cost_4__c &gt;= 3000,Add_On_Cost_4__c &lt; 12500), 0.60, 
+IF(Add_On_Cost_4__c &gt;= 12500, 0.50,0 
+)))))</formula>
+        <name>Game Add-On Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Printing_Color_Default</fullName>
+        <field>Printing_Color__c</field>
+        <literalValue>Full Color CMYK</literalValue>
+        <name>Game Printing Color Default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Instructions_Paper_Coating</fullName>
+        <field>Paper_Coating__c</field>
+        <literalValue>Gloss</literalValue>
+        <name>Instructions Paper Coating</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Instructions_Paper_Weight</fullName>
+        <field>Paper_Weight__c</field>
+        <literalValue>70lb</literalValue>
+        <name>Instructions Paper Weight</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Game Mark-Up Add-On 1</fullName>
+        <actions>
+            <name>Game_Add_On_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Game_Components__c.Add_On_Cost_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Add_On_Markup_1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Add-On 2</fullName>
+        <actions>
+            <name>Game_Add_On_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Game_Components__c.Add_On_Cost_2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Add_On_Markup_2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Add-On 3</fullName>
+        <actions>
+            <name>Game_Add_On_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Game_Components__c.Add_On_Cost_3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Add_On_Markup_3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Add-On 4</fullName>
+        <actions>
+            <name>Game_Add_On_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Game_Components__c.Add_On_Cost_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Add_On_Markup_4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Card Box Additional Info</fullName>
+        <actions>
+            <name>Card_Box_Additional_Info</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Game_Components__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Card Deck</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Additional_Info__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Deck_Packaging__c</field>
+            <operation>equals</operation>
+            <value>Tuck Box,Two-Piece Box,Magnetic Box,Tin Box</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Game Box Additional Info</fullName>
+        <actions>
+            <name>Box_Additional_Info</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Game_Components__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Box</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Additional_Info__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Game Instructions Default</fullName>
+        <actions>
+            <name>Instructions_Paper_Coating</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Instructions_Paper_Weight</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Game_Components__c.Paper_Weight__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Type_of_Instructions__c</field>
+            <operation>notEqual</operation>
+            <value>On Card or Box</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Game Printing Color Default</fullName>
+        <actions>
+            <name>Box_Printing_Color_Default</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Game_Printing_Color_Default</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Game_Components__c.Printing_Color__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Metallic ink and Linen Texture%2E Check for small type%2E</fullName>
+        <active>false</active>
+        <booleanFilter>1 AND 2 AND 3 AND 4 AND 5</booleanFilter>
+        <criteriaItems>
+            <field>Game_Components__c.Metallic_Ink_Color__c</field>
+            <operation>equals</operation>
+            <value>Gold,Silver,Gold and Silver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Packaging_Metallic_Ink_Color__c</field>
+            <operation>equals</operation>
+            <value>Gold,Silver,Gold and Silver</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Packaging_Specialty_Options__c</field>
+            <operation>includes</operation>
+            <value>Linen Texture</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Game_Components__c.Specialty_Options_Card__c</field>
+            <operation>includes</operation>
+            <value>Linen Texture</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Proofing__c</field>
+            <operation>equals</operation>
+            <value>Electronic,Hard Copy</value>
+        </criteriaItems>
+        <description>Metallic ink and Linen are used together. Check the usage on the text. Metallic ink on small text and linen texture creates light distortions that hurt text.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

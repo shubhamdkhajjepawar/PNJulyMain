@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Additional_Info_Wi</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_additionalinfo_1__c</field>
+        <name>Organizing Box Insert Additional Info Wi</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Color_Wipe</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_color_1__c</field>
+        <name>Organizing Box Insert Color Wipe</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Cost_Wipe_Q1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_componentpurchasecost_q1_1__c</field>
+        <name>Organizing Box Insert Cost Wipe (Q1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Cost_Wipe_Q2</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_componentpurchasecost_q2_1__c</field>
+        <name>Organizing Box Insert Cost Wipe (Q2)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Height_Wipe</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_height_1__c</field>
+        <name>Organizing Box Insert Height Wipe</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Layout_Wipe</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_layout_1__c</field>
+        <name>Organizing Box Insert Layout Wipe</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Length_Wipe</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_length_1__c</field>
+        <name>Organizing Box Insert Length Wipe</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Material_Wipe</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_material_1__c</field>
+        <name>Organizing Box Insert Material Wipe</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Printing_Options_W</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_printingoptions_1__c</field>
+        <name>Organizing Box Insert Printing Options W</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Organizing_Box_Insert_Width_Wipe</fullName>
+        <description>Updates field to null</description>
+        <field>gq_obi_width_1__c</field>
+        <name>Organizing Box Insert Width Wipe</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Card_Length_custom_Wipe_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_lengthcustom_1__c</field>
+        <name>Card Length (custom) Wipe (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Card_Material_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_material_1__c</field>
+        <name>Card Material (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Card_Trim_Size_Wipe_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_trimsize_1__c</field>
+        <name>Card Trim Size Wipe (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Card_Width_custom_Wipe_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_widthcustom_1__c</field>
+        <name>Card Width (custom) Wipe (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Finish_Style_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_finishstyle_1__c</field>
+        <name>Finish Style (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Finish_Type_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_finishtype_1__c</field>
+        <name>Finish Type (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Number_of_Cards_in_Deck_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_numberindeck_1__c</field>
+        <name>Number of Cards in Deck 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Packaging_Material_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_packaging_1__c</field>
+        <name>Packaging Material (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Packaging_Printing_Options_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_packaging_printingoptions_1__c</field>
+        <name>Packaging Printing Options (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>gq_Printing_Options_1</fullName>
+        <description>Updates field to null</description>
+        <field>gq_cards_printingoptions_1__c</field>
+        <name>Printing Options (i1)</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <tasks>
+        <fullName>Custom_Game_Quote_Request_Existing</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Custom Game Quote Request</subject>
+    </tasks>
+</Workflow>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Size__c</fullName>
+    <externalId>false</externalId>
+    <label>Size</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0.35&quot; (9mm)</fullName>
+                <default>false</default>
+                <label>0.35&quot; (9mm)</label>
+            </value>
+            <value>
+                <fullName>0.47&quot; (12mm)</fullName>
+                <default>false</default>
+                <label>0.47&quot; (12mm)</label>
+            </value>
+            <value>
+                <fullName>0.55&quot; (14mm)</fullName>
+                <default>false</default>
+                <label>0.55&quot; (14mm)</label>
+            </value>
+            <value>
+                <fullName>0.63&quot; (16mm)</fullName>
+                <default>false</default>
+                <label>0.63&quot; (16mm)</label>
+            </value>
+            <value>
+                <fullName>0.71&quot; (18mm)</fullName>
+                <default>false</default>
+                <label>0.71&quot; (18mm)</label>
+            </value>
+            <value>
+                <fullName>0.78&quot; (20mm)</fullName>
+                <default>false</default>
+                <label>0.78&quot; (20mm)</label>
+            </value>
+            <value>
+                <fullName>0.86&quot; (22mm)</fullName>
+                <default>false</default>
+                <label>0.86&quot; (22mm)</label>
+            </value>
+            <value>
+                <fullName>0.98&quot; (25mm)</fullName>
+                <default>false</default>
+                <label>0.98&quot; (25mm)</label>
+            </value>
+            <value>
+                <fullName>1.18&quot; (30mm)</fullName>
+                <default>false</default>
+                <label>1.18&quot; (30mm)</label>
+            </value>
+            <value>
+                <fullName>1.57&quot; (40mm)</fullName>
+                <default>false</default>
+                <label>1.57&quot; (40mm)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

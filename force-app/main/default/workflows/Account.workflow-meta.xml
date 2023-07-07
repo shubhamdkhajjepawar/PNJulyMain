@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Assign_Acct_to_Ashley</fullName>
+        <field>OwnerId</field>
+        <lookupValue>jzwirek@printninja.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Assign Account to Alec</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Account_Owner_Round_Robin_1</fullName>
+        <field>OwnerId</field>
+        <lookupValue>jzwirek@printninja.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Update Account Owner Round Robin 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Account_Owner_Round_Robin_3</fullName>
+        <field>OwnerId</field>
+        <lookupValue>jzwirek@printninja.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Update Account Owner Round Robin 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Country Push Account Level</fullName>
+        <actions>
+            <name>Verify_Shipping_Country_Postal_Code_For_This_Quote</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Account level version of the country push for site freight quotes</description>
+        <formula>AND(ISPICKVAL(AccountSource, &quot;PRN Site Freight Quote&quot;), ISBLANK(ShippingPostalCode))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Custom Board Game Quote Form</fullName>
+        <actions>
+            <name>Custom_Board_Game_Quote_Request</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.AccountSource</field>
+            <operation>contains</operation>
+            <value>Board</value>
+        </criteriaItems>
+        <description>Creates a task for Justin J to review quote.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Blind Account Round Robin 1</fullName>
+        <actions>
+            <name>Update_Account_Owner_Round_Robin_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.AccountSource</field>
+            <operation>equals</operation>
+            <value>PRN Site Blind Quote,PRN Blind Order,PRN Site Freight Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Round_Robin_ID__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+        <description>PRN Blind Account Round Robin 1</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Blind Account Round Robin 3</fullName>
+        <actions>
+            <name>Update_Account_Owner_Round_Robin_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.AccountSource</field>
+            <operation>equals</operation>
+            <value>PRN Site Blind Quote,PRN Blind Order,PRN Site Freight Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Round_Robin_ID__c</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </criteriaItems>
+        <description>PRN Blind Account Round Robin 3</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Custom_Board_Game_Quote_Request</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Custom Board Game Quote Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>Verify_Shipping_Country_Postal_Code_For_This_Quote</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Verify Shipping Country / Postal Code For This Quote</subject>
+    </tasks>
+</Workflow>

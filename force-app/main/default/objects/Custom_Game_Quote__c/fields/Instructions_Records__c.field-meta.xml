@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Instructions_Records__c</fullName>
+    <externalId>false</externalId>
+    <label>Instructions Records</label>
+    <summaryFilterItems>
+        <field>Game_Components__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Instructions</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Game_Components__c.Custom_Game_Quote__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

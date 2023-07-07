@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_obi_material_1__c</fullName>
+    <description>Material of organizing box insert</description>
+    <externalId>false</externalId>
+    <label>Material</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>20pt. Coated 1-Side Gloss Cardstock</fullName>
+                <default>false</default>
+                <label>20pt. Coated 1-Side Gloss Cardstock</label>
+            </value>
+            <value>
+                <fullName>20pt. Uncoated Cardstock</fullName>
+                <default>false</default>
+                <label>20pt. Uncoated Cardstock</label>
+            </value>
+            <value>
+                <fullName>Vacuum Formed Plastic</fullName>
+                <default>false</default>
+                <label>Vacuum Formed Plastic</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

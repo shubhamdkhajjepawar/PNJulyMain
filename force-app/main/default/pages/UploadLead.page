@@ -1,0 +1,36 @@
+<apex:page sidebar="true" tabStyle="Lead"  controller="uploadLeadcontroller" >
+   <apex:form >
+      <apex:sectionHeader title="Upload data from CSV file"/>
+      <apex:pagemessages />
+      <apex:pageBlock >
+             <center>
+            <apex:outputLabel value="{!duplicateLeadcount} duplicate leads were found on the basis of email address." rendered="{!(duplicateLeadcount>0)}" style="color:red;"/>
+            <br/>
+              <apex:inputFile value="{!contentFile}" filename="{!nameFile}" /> 
+              <apex:commandButton action="{!CreateLead}" value="Upload File" id="theButton" style="width:70px;"/>
+              <br/> <br/> <font color="red"> <b>Note: Please use the standard csv file to upload Lead. </b> </font>
+             </center>
+             <apex:pageblocktable value="{!uploadedLead}" var="lead" rendered="{!NOT(ISNULL(uploadedLead))}">
+             <apex:column headerValue="Id">
+              <apex:outputField value="{!lead.Id}"/>
+          </apex:column>
+          <apex:column headerValue="Company">
+              <apex:outputField value="{!lead.Company}"/>
+          </apex:column>
+          <apex:column headerValue="Lead Source">
+              <apex:outputField value="{!lead.LeadSource}"/>
+          </apex:column>
+          <apex:column headerValue="First Name">
+              <apex:outputField value="{!lead.FirstName}"/>
+          </apex:column>
+          <apex:column headerValue="Last Name">
+              <apex:outputField value="{!lead.LastName}"/>
+          </apex:column>
+          <apex:column headerValue="Email">
+              <apex:outputField value="{!lead.Email}"/>
+          </apex:column>
+         
+      </apex:pageblocktable>
+             </apex:pageBlock>
+             </apex:form>
+</apex:page>

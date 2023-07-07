@@ -1,0 +1,27 @@
+<apex:page controller="CloneCustomGames" action="{!initialiseObjectsForCloning}">
+  
+  <apex:sectionHeader title="New Game Quote: {!objectName}"/>
+
+  <apex:form id="theform" >
+  
+    Please select the game components you would like to clone.<br/><br/>
+  
+    <apex:repeat value="{!objectChildren}" var="child">
+      <apex:PageBlock title="{!child.pluralLabel}"> 
+        <apex:pageBlockTable value="{!child.objectRows}" 
+                             var="objectRow">
+          <apex:column headerValue="Clone" width="10%">
+            <apex:inputCheckbox value="{!objectRow.selected}"/>
+          </apex:column>
+          <apex:column headerValue="Name" value="{!objectRow.name}" 
+                                          width="90%"/>
+        </apex:pageBlockTable>
+      </apex:PageBlock>
+    </apex:repeat>
+    
+    <apex:PageBlock >
+      <apex:commandButton action="{!doClone}" value="Clone"/>
+    </apex:PageBlock>
+  </apex:form>  
+
+</apex:page>

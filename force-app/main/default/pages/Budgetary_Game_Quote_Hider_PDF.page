@@ -1,0 +1,1752 @@
+<apex:page standardController="Game_Quote__c" renderAs="PDF" showHeader="false" sidebar="false"  applyBodyTag="false" applyHtmlTag="false">
+    <html>
+    <head>
+        <style>    
+            body {
+                font-family: sans-serif;
+                font-size: 12px;
+                }
+            table {
+                table-layout: fixed;
+                width: 700px;
+                }
+            td {
+                overflow: hidden;
+                }    
+        </style>
+    </head>
+
+
+<body>
+<apex:form > 
+<div align="center" style="font-family:sans-serif">
+      <img src="http://d85fd144eb6d904e1307-ee0389f939f121fe3a9bfdd4a2fec20f.r35.cf2.rackcdn.com/images/QuoteAssets/PRNQuoteHeaderNoTurnaround.jpg" />
+</div>
+
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Turnaround Times</p>
+</div>
+<div>
+    <p> <strong>Pre-Press:</strong> Electronic proofs take one full business day to generate after you submit your files. If you need to make changes to your files after that time, it will take us another business day each time you submit new files to generate a new proof. For orders with physical proofing, prototypes take 2-3 weeks to create and ship, and production begins once we have your approval on your prototype.</p>
+    <p> <strong>Production Time:</strong> Production time for most custom games is 3-5 weeks, on average. Complex games may take extra time depending on the level of complexity.</p>
+    <p> <strong>Standard Shipping:</strong> Standard-speed ocean shipping to the US and Canada takes approximately 6 weeks from the time production is finished.  Please note shipping estimates are only estimates as random customs inspections and unpredictable port conditions can cause delays that are out of our control.  Please also note that we do not offer inside delivery for residential addresses.</p>
+    <p> <strong>Expedited Shipping:</strong> Expedited shipping takes approximately 1 week from the time production is finished.  Premium Expedited service is available for an extra charge and can shorten delivery from 1 week to 2-3 days. Please speak to an account manager about adding in this service. </p>
+    <p> Production and shipping times can be delayed by many factors, including Chinese Holidays, port strikes, and more. For up to date information, check <a url="http://www.printninja.com/turnaround">www.printninja.com/turnaround</a></p>
+</div>
+
+
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Design Considerations:</p>
+</div>
+<div>
+    <p> We strongly recommend reviewing our <a href="http://www.printninja.com/printing-resource-center/file-setup/custom-game-design-considerations">Custom Game Design Considerations</a> page before submitting your files</p>
+</div>
+
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Please Note:</p>
+</div>
+<div >
+    <p> <strong>Duties and Taxes:</strong>Prices shown are in USD and include all taxes and duties for delivery to addresses in the USA. Orders delivered to other countries are subject to any applicable taxes and duties charged by the destination country.</p>
+    <p> <strong>Production Variance:</strong>All orders are subject to a 2% overrun / underrun / defect variance. Orders over 2500 units will cap off at 75 overrun / underrun / defect variance units.</p>
+    <p> For contractual terms of placing an order please see our website https://www.printninja.com/about/terms.</P> 
+    <p> <strong>Testing:</strong>Unless your product is intended for use by individuals 13+ in age (14+ in EU), you may be asked to provide a product safety certificate during the customs process. Please inquire about safety testing if your product is intended for individuals ages 12 or younger (13 or younger in EU).</p>
+</div>
+
+<apex:pageBlock html-style="page-break-after: always;">
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Quote Information</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quote Number:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.QuoteNumber__c}" /></td>
+        <td width="150px"><strong>Shipping Address:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.gq_shiptostreet__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Quote Name:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Name}" /></td>
+        <td width="150px"><strong>Shipping City:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.gq_shiptocity__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Quote Created:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.gq_Quote_Created__c}" /></td>
+        <td width="150px"><strong>Shipping State:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.gq_shiptostate__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Quote Valid Until:</strong></td>
+        <td width="200px"> <apex:outputField value="{!Game_Quote__c.Quote_Valid_Until__c}" /></td>
+        <td width="150px"><strong>Shipping ZIP:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.gq_shiptozip__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Contact Email:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Account_Email_New__c}" /></td>
+        <td width="150px"><strong>Shipping Country:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.gq_shiptocountry__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Contact Phone:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Phone__c}" /></td>
+        <td width="150px"><strong>Proofing Options:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.gq_proofingoptions__c}" /></td>
+    </tr>
+
+</table>
+</apex:pageBlock>
+
+
+<apex:PageBlock >        
+<div style="background-color:#dee5ec;font-size:16px;text-align:center;">
+    <p> Budgetary Pricing</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Display_Quantity_1__c}" /></td>
+        <td width="150px"><strong>Quantity 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Display_Quantity_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Expedited Quantity 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Expedited_Quantity_1__c}" /></td>
+        <td width="150px"><strong>Expedited Quantity 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Expedited_Quantity_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Product Price 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Product_Price_1__c}" /></td>
+        <td width="150px"><strong>Product Price 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Product_Price_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Standard Shipping 1:</strong></td>
+        <td width="200px"> <apex:outputField value="{!Game_Quote__c.Total_Standard_Shipping_Price_1__c}" /></td>
+        <td width="150px"><strong>Standard Shipping 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Total_Standard_Shipping_Price_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Expedited Shipping 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Expedited_Freight_Price1__c}" /></td>
+        <td width="150px"><strong>Expedited Shipping 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Expedited_Freight_Price2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Prototyping Price 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Prototyping_Cost_1__c}" /></td>
+        <td width="150px"><strong>Prototyping Price 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Prototyping_Cost_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Assembly Price 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Assembly_Cost_1__c}" /></td>
+        <td width="150px"><strong>Assembly Price 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Assembly_Cost_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Additional Charges 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Additional_charge_s_1__c}" /></td>
+        <td width="150px"><strong>Additional Charges 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Additional_charge_s_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tax 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Tax_1__c}" /></td>
+        <td width="150px"><strong>Tax 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Tax_2__c}" /></td>
+    </tr>    
+    <tr>                       
+        <td width="150px"><strong>Grand Total 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.International_Grand_Total_1__c}" /></td>
+        <td width="150px"><strong>Grand Total 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.International_Grand_Total_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Price Per Unit 1:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Int_l_Price_per_unit_1__c}" /></td>
+        <td width="150px"><strong>Price Per Unit 2:</strong></td>
+        <td width="200px"><apex:outputField value="{!Game_Quote__c.Int_l_Price_per_unit_2__c}" /></td>
+    </tr>                    
+</table>
+<table> 
+    <tr>                       
+        <td width="70px"><strong>Remarks 1:</strong></td>
+        <td width="280px"><apex:outputField value="{!Game_Quote__c.Remark_1__c}" /></td>
+        <td width="70px"><strong>Remarks 2:</strong></td>
+        <td width="280px"><apex:outputField value="{!Game_Quote__c.Remark_2__c}" /></td>
+    </tr>    
+</table>
+                
+<div style="background-color:#dee5ec;font-size:16px" align="center">
+    <p> Game Components</p>
+</div>
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cards and Card Packaging (Deck 1)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Card Trim Size:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_trimsize_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Length (custom):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_lengthcustom_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Width (custom):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_widthcustom_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cards_material_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Cards in Deck 1:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_numberindeck_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+        <tr>                       
+        <td width="150px"><strong>Number of Card Backs:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.Number_of_Card_Backs_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_printingoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_finishtype_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_finishstyle_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_specialtyoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_printingoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tuckbox Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishtype_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tuckbox Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishstyle_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_specialtyoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cards_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cards and Card Packaging (Deck 2)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Card Trim Size:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_trimsize_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q1_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Length (custom):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_lengthcustom_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q2_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Width (custom):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_widthcustom_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cards_material_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Cards in Deck 2:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_numberindeck_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Card Backs:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.Number_of_Card_Backs_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_printingoptions_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_finishtype_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_finishstyle_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_specialtyoptions_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_printingoptions_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tuckbox Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishtype_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tuckbox Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishstyle_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_specialtyoptions_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cards_additionalinfo_2__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cards and Card Packaging (Deck 3)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Card Trim Size:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_trimsize_3__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q1_3__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Length (custom):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_lengthcustom_3__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q2_3__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Width (custom):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_widthcustom_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cards_material_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Cards in Deck 3:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_numberindeck_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Card Backs:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.Number_of_Card_Backs_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_printingoptions_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_finishtype_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_finishstyle_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_specialtyoptions_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_printingoptions_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tuckbox Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishtype_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tuckbox Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishstyle_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_specialtyoptions_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cards_additionalinfo_3__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cards and Card Packaging (Deck 4)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Card Trim Size:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_trimsize_4__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q1_4__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Length (custom):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_lengthcustom_4__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q2_4__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Width (custom):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_widthcustom_4__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cards_material_4__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Cards in Deck 4:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_numberindeck_4__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Card Backs:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.Number_of_Card_Backs_4__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_printingoptions_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_finishtype_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_finishstyle_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Card Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_specialtyoptions_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_printingoptions_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tuckbox Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishtype_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Tuckbox Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishstyle_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Packaging Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cards_packaging_specialtyoptions_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cards_additionalinfo_4__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Instruction Books and Inserts</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Length:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_length_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_ib_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_width_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_ib_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Binding Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_binding_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_ib_printingoptions_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Interior Page Count:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_pagecount_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Cover Paper Weight:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_coverstock_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Cover Paper Coating:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_covercoat_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Cover Paper Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_coverfinishtype_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Cover Paper Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_coverfinishstyle_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Inside Paper Weight:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_interiorstock_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Inside Paper Coating:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_interiorcoat_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_ib_specialtyoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_ib_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Game Boards</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_gb_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Length:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_length_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_gb_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_width_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_gb_material_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Folding:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_folding_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_printingoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_finishtype_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_finishstyle_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_specialtyoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Wrapped Edges:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_gb_wrappededges_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_gb_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cardboard Punch Outs (Board 1)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity of Punch Out Sheets:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cpo_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Length (of sheet):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_length_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cpo_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width (of sheet):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_width_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Quantity of Punch outs:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cpo_quantity_punchouts_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Size of Punch Outs (inches):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_size_punchouts_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_material_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_printingoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_finishtype_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_finishstyle_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_specialtyoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cpo_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cardboard Punch Outs (Board 2)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity of Punch Out Sheets:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_quantity_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cpo_componentprice_q1_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Length (of sheet):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_length_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cpo_componentprice_q2_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width (of sheet):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_width_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Quantity of Punch outs:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cpo_quantity_punchouts_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Size of Punch Outs (inches):</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_size_punchouts_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_material_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_printingoptions_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_finishtype_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_finishstyle_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cpo_specialtyoptions_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cpo_additionalinfo_2__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cardboard Mats, Tiles, and Screens (Set 1)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cmts_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Length:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_length_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cmts_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_width_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cmts_material_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_printingoptions_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Folding:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_folding_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_finishtype_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_finishstyle_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_specialtyoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cmts_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cardboard Mats, Tiles, and Screens (Set 2)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_quantity_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cmts_componentprice_q1_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Length:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_length_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cmts_componentprice_q2_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_width_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cmts_material_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_printingoptions_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Folding:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_folding_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_finishtype_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_finishstyle_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmts_specialtyoptions_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cmts_additionalinfo_2__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Pre-Made Pieces (Set 1)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material and Shape:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_shape_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Colors:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_premadepcs_colors_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_specialtyoptions_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Pre-Made Pieces (Set 2)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_quantity_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q1_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material and Shape:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_shape_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q2_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Colors:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_premadepcs_colors_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_specialtyoptions_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_additionalinfo_2__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Pre-Made Pieces (Set 3)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_quantity_3__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q1_3__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material and Shape:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_shape_3__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q2_3__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Colors:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_premadepcs_colors_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_specialtyoptions_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_premadepcs_additionalinfo_3__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Dice (Set 1)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_material_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Sides:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_numberofsides_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Size:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_dice_size_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Face Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_facetype_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Corners:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_corners_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Die Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_diecolor_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Pip Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_pipcolor_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_dice_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Dice (Set 2)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_quantity_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q1_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_material_2__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q2_2__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Sides:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_numberofsides_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Size:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_dice_size_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Face Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_facetype_2__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Corners:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_corners_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Die Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_diecolor_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Pip Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_pipcolor_2__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_dice_additionalinfo_2__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Dice (Set 3)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_quantity_3__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q1_3__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_material_3__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q2_3__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Sides:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_numberofsides_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Size:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_dice_size_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Face Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_facetype_3__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Corners:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_corners_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Die Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_diecolor_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Pip Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_pipcolor_3__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_dice_additionalinfo_3__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Dice (Set 4)</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_quantity_4__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q1_4__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_material_4__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q2_4__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Number of Sides:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_numberofsides_4__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Size:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_dice_size_4__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Face Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_facetype_4__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Corners:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_corners_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Die Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_diecolor_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Pip Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_dice_pipcolor_4__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_dice_additionalinfo_4__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Paper and Pads</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_pp_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_pp_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Trim Size:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_pp_trimsize_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_pp_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Page Count:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_pp_pagecount_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Paper Weight:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_pp_textstock_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Binding Side:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_pp_bindingside_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_pp_printingoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_pp_specialtyoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_pp_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Custom Metal and Resin Pieces</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_material_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Type:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_type_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Length:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_length_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_width_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Height:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_height_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_color_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Design Submission:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_designsubmission_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_cmrpcs_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Cloth And Plastic Bags</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_bags_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_bags_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Size:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_bags_size_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_bags_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_bags_material_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong># of Drawstrings:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_bags_drawstrings_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Color:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_bags_color_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_bags_specialtyoptions_1__c}"  /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_bags_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Rubber Playmats</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_rp_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_rp_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Length:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_rp_length_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_rp_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_rp_width_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_rp_specialtyoptions_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_rp_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> 2 Piece Box</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Length:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_2pcbox_length_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_2pcbox_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_2pcbox_width_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_2pcbox_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Height:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_2pcbox_height_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_2pcbox_material_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_2pcbox_printingoptions_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Finish Style:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_2pcbox_finishstyle_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Specialty Options:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_2pcbox_specialtyoptions_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_2pcbox_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Organizing Box Insert</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Length:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_obi_length_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_obi_componentprice_q1_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Width:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_obi_width_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_obi_componentprice_q2_1__c}" /></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Height:</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_obi_height_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Material:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_obi_material_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Color:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_obi_color_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Printing Options:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_obi_printingoptions_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+    <tr>                       
+        <td width="150px"><strong>Layout:</strong></td>
+        <td width="300px"> <apex:outputField value="{!Game_Quote__c.gq_obi_layout_1__c}" /></td>
+        <td width="150px"><strong></strong></td>
+        <td width="100px"></td>
+    </tr>
+</table>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Additional Info:</strong></td>
+        <td width="550px"><apex:outputField value="{!Game_Quote__c.gq_obi_additionalinfo_1__c}"  /></td>
+    </tr>
+</table>        
+</apex:PageBlock>
+
+<apex:PageBlock rendered="{!Game_Quote__c.gq_misc_selectedforquote_1__c == TRUE}">
+<div style="background-color:#dee5ec;font-size:16px"  >
+    <p> Miscellaneous Items</p>
+</div>
+<table>
+    <tr>                       
+        <td width="150px"><strong>Quantity Per Unit</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_misc_quantity_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 1):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_misc_componentprice_q1_1__c}" /></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td width="150px"><strong>Item Description</strong></td>
+        <td width="300px"><apex:outputField value="{!Game_Quote__c.gq_misc_description_1__c}" /></td>
+        <td width="150px"><strong>Component Price (Qty 2):</strong></td>
+        <td width="100px"><apex:outputField value="{!Game_Quote__c.gq_misc_componentprice_q2_1__c}" /></td>
+    </tr>
+</table>
+</apex:PageBlock>
+
+</apex:form> 
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,107 @@
+<!--
+  @description       : 
+  @author            : Ashwani Soni
+  @group             : 
+  @last modified on  : 07-30-2021
+  @last modified by  : Ashwani Soni
+  Modifications Log 
+  Ver   Date         Author         Modification
+  1.0   07-02-2021   Ashwani Soni   Initial Version
+-->
+<template>
+    <lightning-card  class="c-card" title="Attachment Uploader">
+      <div slot="actions">
+        <lightning-input type="toggle" name="input1" value={hideUploadedFiles} message-toggle-active="All Files" message-toggle-inactive="Files to Upload" onchange={showHideUploadFiles}></lightning-input>
+      </div>
+      <div style="margin: 11px;" class="slds-truncate"><b>Note:</b> Select files from your local folder, downloaded for manual upload</div>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" aria-label="Example table of Opportunities with vertical borders">
+            <thead>
+              <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="File Name">File Name</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Task ID">Task ID</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Created Date">Created Date</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Size">Size</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Progress">Progress</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Status">Status</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Upload">Select Files for Manual Upload</div>
+                </th>
+                <th class="" scope="col">
+                  <div class="slds-truncate" title="Action">Action</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+                <template for:each={uploadInfo} for:item="uploadRecord">
+                    <template if:false={uploadRecord.hideRow}>
+                        <tr class="slds-hint-parent" key={uploadRecord.Id}>
+                            <th data-label="Opportunity Name" scope="row">
+                            <div class="slds-truncate" title={uploadRecord.attRecord.Name}>
+                                <a href={uploadRecord.attId} tabindex="-1" target="_blank">{uploadRecord.attRecord.Name}</a>
+                            </div>
+                            </th>
+                            <td data-label="Task ID">
+                            <div class="slds-truncate" title={uploadRecord.Name}>{uploadRecord.attRecord.ParentId}</div>
+                            </td>
+                            <td data-label="Created Date">
+                            <div class="slds-truncate" title="4/14/2015">
+                              <lightning-formatted-date-time
+                                  value={uploadRecord.attRecord.CreatedDate}
+                                  year="numeric"
+                                  month="numeric"
+                                  day="numeric"
+                                  hour="2-digit"
+                                  minute="2-digit">
+                                </lightning-formatted-date-time>
+                            </div>
+                            </td>
+                            <td data-label="Size">
+                            <div class="slds-truncate" title="Prospecting">{uploadRecord.fileSize} MB</div>
+                            </td>
+                            <td data-label="Progress">
+                              <div class="slds-truncate" title={uploadRecord.progress}>
+                                <template if:true={uploadRecord.isFilePresent}>
+                                  <div class="slds-truncate" title={uploadRecord.awsFile.Name}>
+                                    <a href={uploadRecord.awsFileId} tabindex="-1" target="_blank">View Record</a>
+                                  </div>
+                                </template>
+                                <template if:false={uploadRecord.isFilePresent}>
+                                  <lightning-progress-bar variant="circular" value={uploadRecord.progress}></lightning-progress-bar>
+                                </template>
+                              </div>
+                            </td>
+                            <td data-label="Status">
+                            <div class="slds-truncate" title="$25k">{uploadRecord.status}</div>
+                            </td>
+                            
+                              <td data-label="Action">
+                                <lightning-input id={uploadRecord.attRecord.Id} type="file" label={uploadRecord.fileName} onchange={handleSelectedFiles}></lightning-input>
+                              </td>
+                            <td data-label="Action">
+                              <template if:true={uploadRecord.isFilePresent}>
+                                <lightning-button id={uploadRecord.attRecord.Id} label="Re-Upload" title="Upload Attachment" onclick={handleFileUpload} class="slds-m-left_x-small"></lightning-button>
+                              </template>
+                              
+                              <template if:false={uploadRecord.isFilePresent}>
+                                <lightning-button id={uploadRecord.attRecord.Id} variant="brand" label="Upload" title="Upload Attachment" onclick={handleFileUpload} class="slds-m-left_x-small"></lightning-button>
+                              </template>
+                            </td>
+                        </tr>
+                    </template>
+            </template>
+            </tbody>
+          </table>
+    </lightning-card>
+</template>

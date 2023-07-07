@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Piece__c</fullName>
+    <externalId>false</externalId>
+    <label>Type of Piece</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wood Standard Meeple</fullName>
+                <default>false</default>
+                <label>Wood Standard Meeple</label>
+            </value>
+            <value>
+                <fullName>Wood Tall Meeple</fullName>
+                <default>false</default>
+                <label>Wood Tall Meeple</label>
+            </value>
+            <value>
+                <fullName>Wood Standard Pawn</fullName>
+                <default>false</default>
+                <label>Wood Standard Pawn</label>
+            </value>
+            <value>
+                <fullName>Wood Halma Pawn</fullName>
+                <default>false</default>
+                <label>Wood Halma Pawn</label>
+            </value>
+            <value>
+                <fullName>Wood Small Cube</fullName>
+                <default>false</default>
+                <label>Wood Small Cube</label>
+            </value>
+            <value>
+                <fullName>Wood Large Cube</fullName>
+                <default>false</default>
+                <label>Wood Large Cube</label>
+            </value>
+            <value>
+                <fullName>Wood Small Disc</fullName>
+                <default>false</default>
+                <label>Wood Small Disc</label>
+            </value>
+            <value>
+                <fullName>Wood Large Disc</fullName>
+                <default>false</default>
+                <label>Wood Large Disc</label>
+            </value>
+            <value>
+                <fullName>Wood Thin Cylinder</fullName>
+                <default>false</default>
+                <label>Wood Thin Cylinder</label>
+            </value>
+            <value>
+                <fullName>Wood Thick Cylinder</fullName>
+                <default>false</default>
+                <label>Wood Thick Cylinder</label>
+            </value>
+            <value>
+                <fullName>Wood Octagon</fullName>
+                <default>false</default>
+                <label>Wood Octagon</label>
+            </value>
+            <value>
+                <fullName>Wood Cone</fullName>
+                <default>false</default>
+                <label>Wood Cone</label>
+            </value>
+            <value>
+                <fullName>Wood Tile</fullName>
+                <default>false</default>
+                <label>Wood Tile</label>
+            </value>
+            <value>
+                <fullName>Wood Stick</fullName>
+                <default>false</default>
+                <label>Wood Stick</label>
+            </value>
+            <value>
+                <fullName>Wood House</fullName>
+                <default>false</default>
+                <label>Wood House</label>
+            </value>
+            <value>
+                <fullName>Wood City</fullName>
+                <default>false</default>
+                <label>Wood City</label>
+            </value>
+            <value>
+                <fullName>Plastic Standard Pawn</fullName>
+                <default>false</default>
+                <label>Plastic Standard Pawn</label>
+            </value>
+            <value>
+                <fullName>Plastic Halma Pawn</fullName>
+                <default>false</default>
+                <label>Plastic Halma Pawn</label>
+            </value>
+            <value>
+                <fullName>Plastic Ball Pawn</fullName>
+                <default>false</default>
+                <label>Plastic Ball Pawn</label>
+            </value>
+            <value>
+                <fullName>Plastic Poker Chip</fullName>
+                <default>false</default>
+                <label>Plastic Poker Chip</label>
+            </value>
+            <value>
+                <fullName>Plastic Small Chip</fullName>
+                <default>false</default>
+                <label>Plastic Small Chip</label>
+            </value>
+            <value>
+                <fullName>Plastic Medium Chip</fullName>
+                <default>false</default>
+                <label>Plastic Medium Chip</label>
+            </value>
+            <value>
+                <fullName>Plastic Large Chip</fullName>
+                <default>false</default>
+                <label>Plastic Large Chip</label>
+            </value>
+            <value>
+                <fullName>Plastic Round Card Stand</fullName>
+                <default>false</default>
+                <label>Plastic Round Card Stand</label>
+            </value>
+            <value>
+                <fullName>Plastic Square Card Stand</fullName>
+                <default>false</default>
+                <label>Plastic Square Card Stand</label>
+            </value>
+            <value>
+                <fullName>Plastic Pyramid Card Stand</fullName>
+                <default>false</default>
+                <label>Plastic Pyramid Card Stand</label>
+            </value>
+            <value>
+                <fullName>Glass Marble</fullName>
+                <default>false</default>
+                <label>Glass Marble</label>
+            </value>
+            <value>
+                <fullName>Glass Stone</fullName>
+                <default>false</default>
+                <label>Glass Stone</label>
+            </value>
+            <value>
+                <fullName>Arrow Spinner</fullName>
+                <default>false</default>
+                <label>Arrow Spinner</label>
+            </value>
+            <value>
+                <fullName>Pointer Spinner</fullName>
+                <default>false</default>
+                <label>Pointer Spinner</label>
+            </value>
+            <value>
+                <fullName>0:30 Sand Timer</fullName>
+                <default>false</default>
+                <label>0:30 Sand Timer</label>
+            </value>
+            <value>
+                <fullName>1:00 Sand Timer</fullName>
+                <default>false</default>
+                <label>1:00 Sand Timer</label>
+            </value>
+            <value>
+                <fullName>2:00 Sand Timer</fullName>
+                <default>false</default>
+                <label>2:00 Sand Timer</label>
+            </value>
+            <value>
+                <fullName>3:00 Sand Timer</fullName>
+                <default>false</default>
+                <label>3:00 Sand Timer</label>
+            </value>
+            <value>
+                <fullName>Dry Erase Marker</fullName>
+                <default>false</default>
+                <label>Dry Erase Marker</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

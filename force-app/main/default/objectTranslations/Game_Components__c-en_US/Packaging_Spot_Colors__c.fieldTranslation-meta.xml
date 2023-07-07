@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label></label>
+    <name>Packaging_Spot_Colors__c</name>
+    <picklistValues>
+        <masterLabel>+1 Spot Color</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>+2 Spot Colors</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>+3 Spot Colors</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>+4 Spot Colors</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

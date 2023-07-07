@@ -1,0 +1,123 @@
+<apex:page standardController="Split_Shipping__c" recordSetVar="splitshippingaddresses" tabStyle="Split_Shipping__c" extensions="tenPageSizeExt">
+    <apex:form >
+    <apex:pageBlock title="Split Shipping Summary" mode="maindetail">
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Back" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+    </apex:pageBlock>
+    <apex:pageBlock mode="maindetail" >
+        <apex:repeat value="{!selected}" var="splitshipping" rows="1">
+            <apex:pageBlockSection title="New Printing Specifications" >
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_bindingtype__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_dustjacket__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_width__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_dustjacketfinishstyle__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_height__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_endsheets__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_insidepagecount__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.Foil_Stamp_Color__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_printingcolor__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.Sequential_Foil_Numbering__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_coverpaperweight__c}" />
+                <!--<apex:outputField value="{!splitshipping.Quote__r.PRN_basicembossdeboss__c}" />--><!-- PG 02/16/2023 removed from direction of Jeff-->
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_coverpapercoating__c}" />
+            <!--<apex:outputField value="{!splitshipping.Quote__r.PRN_spotuv__c}" />--><!-- PG 02/16/2023 removed from direction of Jeff-->
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_coverpaperfinishtype__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.Faux_Leather_Cover_Options__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_insidepaperweight__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.Fabric_Cover_Options__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.PRN_insidepapercoating__c}" />
+            <apex:outputField value="{!splitshipping.Quote__r.Texture_Options__c}" />
+            <br /><apex:outputField value="{!splitshipping.Quote__r.PRN_variantcovers__c}" />
+            <br /><apex:outputField value="{!splitshipping.Quote__r.PRN_frenchfoldcovers__c}" />
+            <br /><apex:outputField value="{!splitshipping.Quote__r.Shrink_Wrapping__c}" />
+            <br /><apex:outputField value="{!splitshipping.Quote__r.PRN_additionalinfo__c}" />
+            </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+    <apex:pageBlock mode="maindetail">
+            <apex:pageMessages />
+        <apex:repeat value="{!selected}" var="splitshipping">
+        <apex:pageBlockSection title="Address">
+        <apex:inlineEditSupport >
+        <apex:outputField value="{!splitshipping.Shipping_Attn__c}" />
+        <br /><apex:outputField value="{!splitshipping.Shipping_Street__c}" />
+        <br /><apex:outputField value="{!splitshipping.Shipping_City__c}" />
+        <br /><apex:outputField value="{!splitshipping.Shipping_State__c}" />
+        <br /><apex:outputField value="{!splitshipping.Shipping_Postal_Code__c}" />
+        <br /><apex:outputField value="{!splitshipping.Shipping_Country__c}" />
+        <br /><apex:outputField value="{!splitshipping.Shipping_Phone__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices">
+        <apex:inlineEditSupport >
+        <apex:outputField value="{!splitshipping.Standard_Quantity_1__c}" />
+        <apex:outputField value="{!splitshipping.Standard_Quantity_2__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Quantity_1__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Quantity_2__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Cost_1__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Cost_2__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Markup_1__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Markup_2__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Price_1__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Price_2__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Cost_1__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Cost_2__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Markup_1__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Markup_2__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Price_1__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Price_2__c}" />
+        <apex:outputField value="{!splitshipping.Total_Standard_Shipping_Price_1__c}" />
+        <apex:outputField value="{!splitshipping.Total_Standard_Shipping_Price_2__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Cost_1__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Cost_2__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Markup_1__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Markup_2__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Price_1__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Price_2__c}" />
+        <apex:outputField value="{!splitshipping.Quoted_Shipping_Company_1__c}" />
+        <apex:outputField value="{!splitshipping.Quoted_Shipping_Company_2__c}" />
+        <apex:outputField value="{!splitshipping.Remark_1__c}" />
+        <apex:outputField value="{!splitshipping.Remark_2__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockSection title="International Prices">
+        <apex:inlineEditSupport >
+        <apex:outputField value="{!splitshipping.Standard_Quantity_3__c}" />
+        <apex:outputField value="{!splitshipping.Standard_Quantity_4__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Quantity_3__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Quantity_4__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Cost_3__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Cost_4__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Markup_3__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Markup_4__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Price_3__c}" />
+        <apex:outputField value="{!splitshipping.Ocean_Freight_Price_4__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Cost_3__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Cost_4__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Markup_3__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Markup_4__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Price_3__c}" />
+        <apex:outputField value="{!splitshipping.Ground_Freight_Price_4__c}" />
+        <apex:outputField value="{!splitshipping.Total_Standard_Shipping_Price_3__c}" />
+        <apex:outputField value="{!splitshipping.Total_Standard_Shipping_Price_4__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Cost_3__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Cost_4__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Markup_3__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Markup_4__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Price_3__c}" />
+        <apex:outputField value="{!splitshipping.Expedited_Freight_Price_4__c}" />
+        <apex:outputField value="{!splitshipping.Quoted_Shipping_Company_3__c}" />
+        <apex:outputField value="{!splitshipping.Quoted_Shipping_Company_4__c}" />
+        <apex:outputField value="{!splitshipping.Remark_3__c}" />
+        <apex:outputField value="{!splitshipping.Remark_4__c}" />
+        </apex:inlineEditSupport>
+        </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+    </apex:form>
+    </apex:page>

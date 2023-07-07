@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Saddle_Perfect_Binding_Printing_Cost_Mar__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Saddle/Perfect Binding Printing Cost Mar</inlineHelpText>
+    <label>Saddle/Perfect Binding Printing Cost Mar</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

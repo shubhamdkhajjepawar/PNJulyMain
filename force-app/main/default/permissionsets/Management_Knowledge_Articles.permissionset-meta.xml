@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows manager to view management knowledge articles.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Management Knowledge Articles</label>
+</PermissionSet>

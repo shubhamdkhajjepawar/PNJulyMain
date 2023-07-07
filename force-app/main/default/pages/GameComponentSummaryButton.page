@@ -1,0 +1,5 @@
+<apex:page standardController="Custom_Game_Quote__c" tabStyle="Game_Components__c">
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+        <apex:detail subject="{!gameComponent.Id}" inlineEdit="true"/>
+    </apex:repeat>
+</apex:page>

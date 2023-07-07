@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Convert_Lead</name>
+        <label>Convert Lead</label>
+        <locationX>525</locationX>
+        <locationY>244</locationY>
+        <actionName>ConvertLeadAction</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Update_Lead</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>leadId</name>
+            <value>
+                <elementReference>Create_Lead</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Task_Both_Message_Sent</name>
+        <label>Task: Both Message Sent</label>
+        <locationX>792</locationX>
+        <locationY>776</locationY>
+        <actionName>rcsfl__NewTask</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>Confirmation_Screen_0</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActivityDate</name>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>Convert_Lead.opportunityId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhatId</name>
+            <value>
+                <elementReference>Convert_Lead.opportunityId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Status</name>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <stringValue>Crowdfunding Int&apos;l &amp; Domestic Message Sent</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Task_Domestic_Message_Sent</name>
+        <label>Task: Domestic Message Sent</label>
+        <locationX>962</locationX>
+        <locationY>780</locationY>
+        <actionName>rcsfl__NewTask</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>Confirmation_Screen_0_0</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActivityDate</name>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>Convert_Lead.opportunityId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhatId</name>
+            <value>
+                <elementReference>Convert_Lead.opportunityId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Status</name>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <stringValue>Crowdfunding Domestic Message Sent</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Task_International_Message_Sent</name>
+        <label>Task: International Message Sent</label>
+        <locationX>599</locationX>
+        <locationY>771</locationY>
+        <actionName>rcsfl__NewTask</actionName>
+        <actionType>quickAction</actionType>
+        <connector>
+            <targetReference>Confirmation_Screen</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActivityDate</name>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>contextId</name>
+            <value>
+                <elementReference>Convert_Lead.opportunityId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhatId</name>
+            <value>
+                <elementReference>Convert_Lead.opportunityId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Status</name>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <stringValue>Crowdfunding International Message Sent</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <description>Assigns selected project type to text template variable.</description>
+        <name>Assign_Project_Type</name>
+        <label>Assign Project Type</label>
+        <locationX>792</locationX>
+        <locationY>396</locationY>
+        <assignmentItems>
+            <assignToReference>ProjectExamples</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Project_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Domestic_Project</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Both</name>
+        <choiceText>Both</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Both</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Domestic_Digital</name>
+        <choiceText>Domestic Digital</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Domestic Digital</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Indiegogo_Donation</name>
+        <choiceText>Indiegogo Donation</choiceText>
+        <dataType>String</dataType>
+    </choices>
+    <choices>
+        <name>International</name>
+        <choiceText>International</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>International</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>International_Offset</name>
+        <choiceText>International Offset</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>International Offset</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Kickstarter_Donation</name>
+        <choiceText>Kickstarter Donation</choiceText>
+        <dataType>String</dataType>
+    </choices>
+    <choices>
+        <name>KSArtbook</name>
+        <choiceText>Art Book/Photography</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Pokenatomy, What Follows Is True: Crescent Hotel, Goose Mouth, Brightmare Art Book, Dream On, and No Small Plans</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>KSCard</name>
+        <choiceText>Board/Card Game</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Sip &amp; Sayvor, Gone Caving, Serpents, Earworm, Dichotomia, and Drinks with Frenemies</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>KSChildrensBook</name>
+        <choiceText>Children&apos;s Book</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Spaceship Samuel, City Walk, Peet: The Creature with Big Feet, Bobo and the Fuss, The Furry Princess, Money Monsters, and Amelia the Flying Cat</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>KSComic</name>
+        <choiceText>Comic/Graphic Novel</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Issunboshi, REBURN, Beastlands, Area 51: The Helix Project, Kokoro, Check Please, and Strong Female Protagonist</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>KSTarotOracle</name>
+        <choiceText>Tarot/Oracle</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>The Mushroom Tarot, The Adventurer&apos;s Tarot, Stitcher&apos;s Oracle, The Prism Tarot, Many Queens Tarot, and The Meraki Tarot</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>KSText</name>
+        <choiceText>TTRPG/Text Heavy</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Monster Care Squad, Necronautilus, Pocket Full of Do, Monstre, The Moth, and Wanderlust</stringValue>
+        </value>
+    </choices>
+    <constants>
+        <description>Add line breaks in emails</description>
+        <name>EmptyString</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Domestic_Project</name>
+        <label>Domestic Project?</label>
+        <locationX>784</locationX>
+        <locationY>528</locationY>
+        <defaultConnector>
+            <targetReference>Task_Both_Message_Sent</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Both</defaultConnectorLabel>
+        <rules>
+            <name>Domestic_Path</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PrintNinja_Offering</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Domestic_Digital</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Task_Domestic_Message_Sent</targetReference>
+            </connector>
+            <label>Domestic</label>
+        </rules>
+        <rules>
+            <name>International_Path</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PrintNinja_Offering</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>International_Offset</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Task_International_Message_Sent</targetReference>
+            </connector>
+            <label>International Offset</label>
+        </rules>
+    </decisions>
+    <description>Updated text template spacing</description>
+    <environments>Default</environments>
+    <interviewLabel>New Kickstarter Lead {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>New Kickstarter Lead</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Create_Lead</name>
+        <label>Create Lead</label>
+        <locationX>348</locationX>
+        <locationY>244</locationY>
+        <connector>
+            <targetReference>Convert_Lead</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Company</field>
+            <value>
+                <elementReference>Project</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>First_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>Last_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadSource</field>
+            <value>
+                <stringValue>Kickstarter Donation</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>Update_Lead</name>
+        <label>Update Lead</label>
+        <locationX>792</locationX>
+        <locationY>244</locationY>
+        <connector>
+            <targetReference>Assign_Project_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Convert_Lead.accountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AccountSource</field>
+            <value>
+                <stringValue>Kickstarter Donation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Kickstarters__c</field>
+            <value>
+                <elementReference>Crowdfunding_Link</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <screens>
+        <name>Confirmation_Screen</name>
+        <label>Confirmation Screen (Int&apos;l)</label>
+        <locationX>595</locationX>
+        <locationY>973</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Account_Created_Confirmation</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Lead added.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Here is your canned response:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>GeneratedCannedResponse</name>
+            <fieldText>&lt;p&gt;&lt;em&gt;{!KSCannedResponse}&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Confirmation_Screen_0</name>
+        <label>Confirmation Screen (Both)</label>
+        <locationX>792</locationX>
+        <locationY>979</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Account_Created_Confirmation_0</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Lead added.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Here is your canned response:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>GeneratedCannedResponse_0</name>
+            <fieldText>&lt;p&gt;&lt;em&gt;{!BothCannedResponse}&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Confirmation_Screen_0_0</name>
+        <label>Confirmation Screen (Domestic)</label>
+        <locationX>959</locationX>
+        <locationY>982</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Account_Created_Confirmation_0_0</name>
+            <fieldText>&lt;p&gt;&lt;b&gt;Lead added.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Here is your canned response:&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>GeneratedCannedResponse_0_0</name>
+            <fieldText>&lt;p&gt;&lt;em&gt;{!DomesticCannedResponse}&lt;/em&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>New_Kickstarter_Lead</name>
+        <label>New Kickstarter Lead</label>
+        <locationX>176</locationX>
+        <locationY>243</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Create_Lead</targetReference>
+        </connector>
+        <fields>
+            <name>PrintNinja_Offering</name>
+            <choiceReferences>International_Offset</choiceReferences>
+            <choiceReferences>Domestic_Digital</choiceReferences>
+            <choiceReferences>Both</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>PrintNinja Offering</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Project</name>
+            <dataType>String</dataType>
+            <fieldText>Project Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Project_Type</name>
+            <choiceReferences>KSComic</choiceReferences>
+            <choiceReferences>KSArtbook</choiceReferences>
+            <choiceReferences>KSChildrensBook</choiceReferences>
+            <choiceReferences>KSCard</choiceReferences>
+            <choiceReferences>KSTarotOracle</choiceReferences>
+            <choiceReferences>KSText</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Project Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>First_Name</name>
+            <dataType>String</dataType>
+            <fieldText>First Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Last_Name</name>
+            <dataType>String</dataType>
+            <fieldText>Last Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Crowdfunding_Link</name>
+            <dataType>String</dataType>
+            <fieldText>Crowdfunding Link</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>New_Kickstarter_Lead</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>BothCannedResponse</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Hi {!First_Name},{!LineBreak}{!LineBreak}My name’s {!$User.FirstName} — I work for a custom book &amp;amp; game printer called PrintNinja. We’ve printed lots of Kickstarter-funded projects like {!ProjectExamples}.{!LineBreak}{!LineBreak}I just backed {!Project} and wanted to wish you the very best on the rest of your campaign.{!LineBreak}{!LineBreak}You may already have a printer lined up, but if not, you should check us out! We have a sample guidebook that we’ll send for free. This booklet is an all-in-one guide to getting to know us and our paper weights, finishes, and specialty options. If you save a quote with us, we’ll send one of our Deluxe Samples for free. You can read up on what is included in each sample here: https://www.printninja.com/standard-sample-pack{!LineBreak}{!LineBreak}We have an easy-to-use online pricing calculator to help determine the cost of your project: https://www.printninja.com/printing-products{!LineBreak}{!LineBreak}Also, feel free to check out our Kickstarter promotion we have going on: https://www.printninja.com/printing-resource-center/beyond-printing/kickstarter-promotion&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!LineBreak}{!LineBreak}&lt;/span&gt;In exchange for putting our banner in your campaign, we’ll print up extra copies of your project and help promote it on social media - it’s pretty sweet.{!LineBreak}{!LineBreak}Additionally, your project looks like it might be a good fit for our BRAND NEW U.S.-based digital print service! This service offers high-quality printed works and faster turnaround at unbeatable rates. It is specifically designed for limited print runs: https://printninja.com/printninja-domestic-printing/&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!LineBreak}{!LineBreak}&lt;/span&gt;Congratulations to you and your team! I’m excited to watch {!Project} continue to come to life!{!LineBreak}{!LineBreak}All my best,{!LineBreak}{!$User.FirstName}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DomesticCannedResponse</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Hi {!First_Name},&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;My name is {!$User.FirstName} -- I work for a custom book &amp;amp; game printer called PrintNinja. We’ve printed lots of Kickstarter-funded projects like Beastlands, REBURN, AREA 51, Nottingham, and Velour &amp;amp; Tweed Playing Cards. We also work with larger publishers and have printed limited runs of titles you may recognize like Green Hornet, Bad Kitty, and Tales of the Night Watchman.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;I just backed {!Project} and wanted to wish you the very best on the rest of your campaign.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;You may have a printer lined up, but if not, you should check us out! We own and operate our very own state of the art printing facility here in the United States. This service offers high-quality printed works and faster turnaround at unbeatable rates. It is specifically designed for limited print runs:&lt;/span&gt;&lt;span style=&quot;font-size: 12pt; font-family: Arial; color: rgb(40, 40, 40); background-color: rgb(255, 255, 255);&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://printninja.com/printninja-domestic-printing/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 12pt; font-family: Arial; color: rgb(39, 82, 255); background-color: rgb(255, 255, 255);&quot;&gt;https://printninja.com/printninja-domestic-printing/&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Also, feel free to check out our Kickstarter promotion we have going on:&lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(40, 40, 40); background-color: transparent;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.printninja.com/printing-resource-center/beyond-printing/kickstarter-promotion&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 12pt; font-family: Arial; color: rgb(39, 82, 255); background-color: transparent;&quot;&gt;https://www.printninja.com/printing-resource-center/beyond-printing/kickstarter-promotion&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;In exchange for putting our banner in your campaign, we’ll print up extra copies of your project and help promote it on social media - it’s pretty sweet.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Our U.S. based option is still pretty new, and we’re in the midst of getting our online quote calculator up and running, but if you’re interested in a quote, just let me know and I’d be happy to get you started.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;Congratulations to you and your team! I’m excited to watch &lt;/span&gt;&lt;span style=&quot;font-size: 14.6667px; font-family: Arial; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;{!Project}&lt;/span&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt; continue to come to life!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent;&quot;&gt;All my best,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14.6667px; font-family: Arial; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;{!$User.FirstName}&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Crowdfunding canned response to send to lead</description>
+        <name>KSCannedResponse</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!First_Name},{!LineBreak}{!LineBreak}My name’s {!$User.FirstName} — I work for a custom book &amp; game printer called PrintNinja. We’ve printed lots of Kickstarter-funded projects like {!ProjectExamples}.{!LineBreak}{!LineBreak}I just backed {!Project} and wanted to wish you the very best on the rest of your campaign.&amp;nbsp;{!LineBreak}{!LineBreak}You may already have a printer lined up, but if not, you should check us out! We have a sample guidebook that we’ll send for free. This booklet is an all-in-one guide to getting to know us and our paper weights, finishes, and specialty options. If you save a quote with us, we’ll send one of our Deluxe Samples for free. You can read up on what is included in each sample here: https://www.printninja.com/standard-sample-pack&amp;nbsp;{!LineBreak}{!LineBreak}We have an easy-to-use online pricing calculator to help determine the cost of your project: https://www.printninja.com/printing-products{!LineBreak}{!LineBreak}Also, feel free to check out our Kickstarter promotion we have going on: https://www.printninja.com/printing-resource-center/beyond-printing/kickstarter-promotion&lt;/p&gt;&lt;p&gt;In exchange for putting our banner in your campaign, we’ll print up extra copies of your project and help promote it on social media - it’s pretty sweet.{!LineBreak}{!LineBreak}Congratulations to you and your team! I’m excited to watch {!Project} continue to come to life!{!LineBreak}{!LineBreak}All my best,{!LineBreak}{!$User.FirstName}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>Create a line break in an email template</description>
+        <name>LineBreak</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!EmptyString}
+{!EmptyString}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Tax_Benefits</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;{!LineBreak}&lt;/p&gt;&lt;p&gt;P.S.  Campaign ending before January 1st?  There may be a tax benefit for ordering now!  Read more about how you can pay now and upload your files later:  https://printninja.com/custom-game-design-considerations/&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <description>Holds examples of crowdfunded projects for email template</description>
+        <name>ProjectExamples</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

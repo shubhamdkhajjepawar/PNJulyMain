@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Purchase_Cost1__c</fullName>
+    <externalId>false</externalId>
+    <formula>gq_2pcbox_componentpurchasecost_q1_1__c + gq_obi_componentpurchasecost_q1_1__c + gq_cards_componentpurchasecost_q1_1__c + gq_cards_componentpurchasecost_q1_2__c + gq_cards_componentpurchasecost_q1_3__c + gq_cards_componentpurchasecost_q1_4__c  + gq_ib_componentpurchasecost_q1_1__c + gq_pp_componentpurchasecost_q1_1__c + gq_gb_componentpurchasecost_q1_1__c + gq_rp_componentpurchasecost_q1_1__c + gq_cmts_componentpurchasecost_q1_1__c + gq_cmts_componentpurchasecost_q1_2__c + gq_cpo_componentpurchasecost_q1_1__c + gq_cpo_componentpurchasecost_q1_2__c + gq_premadepcs_componentpurchasecost_q1_1__c + gq_premadepcs_componentpurchasecost_q1_2__c + gq_premadepcs_componentpurchasecost_q1_3__c + gq_cmrpcs_componentpurchasecost_q1_1__c + gq_dice_componentpurchasecost_q1_1__c + gq_dice_componentpurchasecost_q1_2__c + gq_dice_componentpurchasecost_q1_3__c + gq_dice_componentpurchasecost_q1_4__c + gq_bags_componentpurchasecost_q1_1__c + gq_misc_componentpurchasecost_q1_1__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Purchase Cost (Q1)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

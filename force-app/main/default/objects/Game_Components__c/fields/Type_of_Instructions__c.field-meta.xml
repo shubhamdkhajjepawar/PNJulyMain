@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Instructions__c</fullName>
+    <externalId>false</externalId>
+    <label>Type of Instructions</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>On Card or Box</fullName>
+                <default>false</default>
+                <label>On Card or Box</label>
+            </value>
+            <value>
+                <fullName>Booklet</fullName>
+                <default>false</default>
+                <label>Booklet</label>
+            </value>
+            <value>
+                <fullName>Accordion</fullName>
+                <default>false</default>
+                <label>Accordion</label>
+            </value>
+            <value>
+                <fullName>Folded Sheet</fullName>
+                <default>false</default>
+                <label>Folded Sheet</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

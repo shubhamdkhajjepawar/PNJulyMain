@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Game Component</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Game Components</value>
+    </caseValues>
+    <layouts>
+        <layout>Bag</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Book</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Box</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Card Deck</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Custom</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Dice</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Game Board</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Game Piece</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Instructions</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Notepad</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Playmat</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Punch-Out Sheet</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Record Innersleeve</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Record Insert</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Record Jacket</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Screen</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Tile</layout>
+        <sections>
+            <label></label>
+            <section>Component Specifications</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Bag</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Box</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Card_Deck</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Custom</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Dice</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Game_Board</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Game_Piece</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Instructions</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Notepad</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Playmat</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Punch_Out_Sheet</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Screen</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Tile</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label></label>
+        <name>Game_Component_Summary</name>
+    </webLinks>
+</CustomObjectTranslation>

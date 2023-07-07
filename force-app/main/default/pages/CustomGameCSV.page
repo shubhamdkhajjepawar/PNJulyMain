@@ -1,0 +1,5 @@
+<apex:page standardController="Custom_Game_Quote__c" cache="true" contentType="text/csv#{!Custom_Game_Quote__c.Name}.csv">"Custom Game Quote","Game Component Name","Salesforce.com ID","Component_Purchase_Cost_1","Component_Purchase_Cost_2","Component_Purchase_Cost_3","Component_Purchase_Cost_4"
+<apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+"{!Custom_Game_Quote__c.ID}","{!gameComponent.Name}","{!gameComponent.ID}"," "," "," "," "
+</apex:repeat>
+</apex:page>

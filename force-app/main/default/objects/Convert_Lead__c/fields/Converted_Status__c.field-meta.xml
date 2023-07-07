@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Converted_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Converted Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Closed - Converted</fullName>
+                <default>true</default>
+                <label>Closed - Converted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

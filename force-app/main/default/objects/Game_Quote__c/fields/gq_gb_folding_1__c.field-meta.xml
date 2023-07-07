@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_gb_folding_1__c</fullName>
+    <description>Fold pattern of game board</description>
+    <externalId>false</externalId>
+    <label>Folding</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1/2 Fold</fullName>
+                <default>false</default>
+                <label>1/2 Fold</label>
+            </value>
+            <value>
+                <fullName>1/3 Fold</fullName>
+                <default>false</default>
+                <label>1/3 Fold</label>
+            </value>
+            <value>
+                <fullName>1/4 Fold</fullName>
+                <default>false</default>
+                <label>1/4 Fold</label>
+            </value>
+            <value>
+                <fullName>1/6 Fold</fullName>
+                <default>false</default>
+                <label>1/6 Fold</label>
+            </value>
+            <value>
+                <fullName>No Fold</fullName>
+                <default>false</default>
+                <label>No Fold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

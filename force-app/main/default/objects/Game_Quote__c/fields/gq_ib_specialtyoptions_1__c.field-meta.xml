@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_ib_specialtyoptions_1__c</fullName>
+    <description>Specialty printing options for instruction booklet or insert</description>
+    <externalId>false</externalId>
+    <label>Specialty Options</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Spot UV</fullName>
+                <default>false</default>
+                <label>Spot UV</label>
+            </value>
+            <value>
+                <fullName>Foil Stamp</fullName>
+                <default>false</default>
+                <label>Foil Stamp</label>
+            </value>
+            <value>
+                <fullName>Emboss/Deboss</fullName>
+                <default>false</default>
+                <label>Emboss/Deboss</label>
+            </value>
+            <value>
+                <fullName>Print on Inside Covers</fullName>
+                <default>false</default>
+                <label>Print on Inside Covers</label>
+            </value>
+            <value>
+                <fullName>Metallic Gold or Silver  Ink</fullName>
+                <default>false</default>
+                <label>Metallic Gold or Silver  Ink</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foil_Stamp_Color__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Color of the project&apos;s foil stamp.</inlineHelpText>
+    <label>Packaging Foil Stamp Color</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gold</fullName>
+                <default>false</default>
+                <label>Gold</label>
+            </value>
+            <value>
+                <fullName>Silver</fullName>
+                <default>false</default>
+                <label>Silver</label>
+            </value>
+            <value>
+                <fullName>Red</fullName>
+                <default>false</default>
+                <label>Red</label>
+            </value>
+            <value>
+                <fullName>Blue</fullName>
+                <default>false</default>
+                <label>Blue</label>
+            </value>
+            <value>
+                <fullName>Green</fullName>
+                <default>false</default>
+                <label>Green</label>
+            </value>
+            <value>
+                <fullName>Purple</fullName>
+                <default>false</default>
+                <label>Purple</label>
+            </value>
+            <value>
+                <fullName>Hot Pink</fullName>
+                <default>false</default>
+                <label>Hot Pink</label>
+            </value>
+            <value>
+                <fullName>Copper</fullName>
+                <default>false</default>
+                <label>Copper</label>
+            </value>
+            <value>
+                <fullName>Indigo</fullName>
+                <default>false</default>
+                <label>Indigo</label>
+            </value>
+            <value>
+                <fullName>Rose Gold</fullName>
+                <default>false</default>
+                <label>Rose Gold</label>
+            </value>
+            <value>
+                <fullName>Teal</fullName>
+                <default>false</default>
+                <label>Teal</label>
+            </value>
+            <value>
+                <fullName>Lime Green</fullName>
+                <default>false</default>
+                <label>Lime Green</label>
+            </value>
+            <value>
+                <fullName>Stained Glass Gold</fullName>
+                <default>false</default>
+                <label>Stained Glass Gold</label>
+            </value>
+            <value>
+                <fullName>Stained Glass Silver</fullName>
+                <default>false</default>
+                <label>Stained Glass Silver</label>
+            </value>
+            <value>
+                <fullName>Stained Glass Green</fullName>
+                <default>false</default>
+                <label>Stained Glass Green</label>
+            </value>
+            <value>
+                <fullName>Stained Glass Red</fullName>
+                <default>false</default>
+                <label>Stained Glass Red</label>
+            </value>
+            <value>
+                <fullName>Stained Glass Blue</fullName>
+                <default>false</default>
+                <label>Stained Glass Blue</label>
+            </value>
+            <value>
+                <fullName>Stained Glass Pink</fullName>
+                <default>false</default>
+                <label>Stained Glass Pink</label>
+            </value>
+            <value>
+                <fullName>Holographic Gold</fullName>
+                <default>false</default>
+                <label>Holographic Gold</label>
+            </value>
+            <value>
+                <fullName>Holographic Silver</fullName>
+                <default>false</default>
+                <label>Holographic Silver</label>
+            </value>
+            <value>
+                <fullName>Glitter Gold</fullName>
+                <default>false</default>
+                <label>Glitter Gold</label>
+            </value>
+            <value>
+                <fullName>Glitter Silver</fullName>
+                <default>false</default>
+                <label>Glitter Silver</label>
+            </value>
+            <value>
+                <fullName>Glitter Lime</fullName>
+                <default>false</default>
+                <label>Glitter Lime</label>
+            </value>
+            <value>
+                <fullName>Glitter Pink</fullName>
+                <default>false</default>
+                <label>Glitter Pink</label>
+            </value>
+            <value>
+                <fullName>Pixel Gold</fullName>
+                <default>false</default>
+                <label>Pixel Gold</label>
+            </value>
+            <value>
+                <fullName>Pixel Silver</fullName>
+                <default>false</default>
+                <label>Pixel Silver</label>
+            </value>
+            <value>
+                <fullName>Chunky Glitter Gold</fullName>
+                <default>false</default>
+                <label>Chunky Glitter Gold</label>
+            </value>
+            <value>
+                <fullName>Chunky Glitter Silver</fullName>
+                <default>false</default>
+                <label>Chunky Glitter Silver</label>
+            </value>
+            <value>
+                <fullName>Industrial Silver</fullName>
+                <default>false</default>
+                <label>Industrial Silver</label>
+            </value>
+            <value>
+                <fullName>Rainbow Silver</fullName>
+                <default>false</default>
+                <label>Rainbow Silver</label>
+            </value>
+            <value>
+                <fullName>Techno Silver</fullName>
+                <default>false</default>
+                <label>Techno Silver</label>
+            </value>
+            <value>
+                <fullName>Atomic Silver</fullName>
+                <default>false</default>
+                <label>Atomic Silver</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

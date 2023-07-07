@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Game Quote</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Game Quotes</value>
+    </caseValues>
+    <layouts>
+        <layout>Custom Game Quote Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Shipping Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Totals</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Custom_Game_Quote</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label></label>
+        <name>Clone_Game</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Domestic_Game_Quote</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Download_CSV</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Game_Component_Summary</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Invoice_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Quote_PDF</name>
+    </webLinks>
+    <workflowTasks>
+        <name>Game_Quote_over_8_000</name>
+        <subject></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Quote_Game_Specialty_Add_Ons</name>
+        <subject></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

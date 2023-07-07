@@ -1,0 +1,1480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Add_On_Mark_Up_1</fullName>
+        <field>Add_On_Markup_1__c</field>
+        <formula>IF(AND(Additional_charge_s_1__c &gt; 0,Additional_charge_s_1__c &lt; 1000), 1,
+IF(AND(Additional_charge_s_1__c &gt;= 1000,Additional_charge_s_1__c &lt; 2500), 0.80,
+IF(AND(Additional_charge_s_1__c &gt;= 2500,Additional_charge_s_1__c &lt; 3000), 0.70,
+IF(AND(Additional_charge_s_1__c &gt;= 3000,Additional_charge_s_1__c &lt; 12500), 0.60,
+IF(Additional_charge_s_1__c &gt;= 12500, 0.50,0
+)))))</formula>
+        <name>Add-On Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_On_Mark_Up_2</fullName>
+        <field>Add_On_Markup_2__c</field>
+        <formula>IF(AND(Additional_charge_s_2__c &gt; 0,Additional_charge_s_2__c &lt; 1000), 1,
+IF(AND(Additional_charge_s_2__c &gt;= 1000,Additional_charge_s_2__c &lt; 2500), 0.80,
+IF(AND(Additional_charge_s_2__c &gt;= 2500,Additional_charge_s_2__c &lt; 3000), 0.70,
+IF(AND(Additional_charge_s_2__c &gt;= 3000,Additional_charge_s_2__c &lt; 12500), 0.60,
+IF(Additional_charge_s_2__c &gt;= 12500, 0.50,0
+)))))</formula>
+        <name>Add-On Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_On_Mark_Up_3</fullName>
+        <field>Add_On_Markup_3__c</field>
+        <formula>IF(AND(Additional_charge_s_3__c &gt; 0,Additional_charge_s_3__c &lt; 1000), 1,
+IF(AND(Additional_charge_s_3__c &gt;= 1000,Additional_charge_s_3__c &lt; 2500), 0.80,
+IF(AND(Additional_charge_s_3__c &gt;= 2500,Additional_charge_s_3__c &lt; 3000), 0.70,
+IF(AND(Additional_charge_s_3__c &gt;= 3000,Additional_charge_s_3__c &lt; 12500), 0.60,
+IF(Additional_charge_s_3__c &gt;= 12500, 0.50,0
+)))))</formula>
+        <name>Add-On Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_On_Mark_Up_4</fullName>
+        <field>Add_On_Markup_4__c</field>
+        <formula>IF(AND(Additional_charge_s_4__c &gt; 0,Additional_charge_s_4__c &lt; 1000), 1,
+IF(AND(Additional_charge_s_4__c &gt;= 1000,Additional_charge_s_4__c &lt; 2500), 0.80,
+IF(AND(Additional_charge_s_4__c &gt;= 2500,Additional_charge_s_4__c &lt; 3000), 0.70,
+IF(AND(Additional_charge_s_4__c &gt;= 3000,Additional_charge_s_4__c &lt; 12500), 0.60,
+IF(Additional_charge_s_4__c &gt;= 12500, 0.50,0
+)))))</formula>
+        <name>Add-On Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Calculate_Total_Quantity_1</fullName>
+        <description>Updates Total Quantity to Order Quantity + 2% or + 5% if Kickstarter or 0% if Gotta Groove</description>
+        <field>Total_Quantity_1__c</field>
+        <formula>IF(Email = &quot;matt@gottagrooverecords.com&quot;, Display_Quantity_1__c,
+(IF(Opportunity.Eligible_For_Free_5_Overrun_Promotion__c = true, MIN(Display_Quantity_1__c*1.07,(Display_Quantity_1__c*1.05)+75), MIN(Display_Quantity_1__c*1.02,Display_Quantity_1__c+75))))</formula>
+        <name>Calculate Total Quantity 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Calculator_Proofing_Method_Update</fullName>
+        <field>PRN_proofing__c</field>
+        <literalValue>Standard Hard Copy Proofing - 1 Press Sheet</literalValue>
+        <name>Calculator Proofing Method Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Erase_Total_Quantity</fullName>
+        <field>Total_Quantity_1__c</field>
+        <name>Erase Total Quantity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Expedited_Mark_Up_1</fullName>
+        <field>Expedited_Freight_Markup_i1__c</field>
+        <formula>IF(Expedited_Freight_1__c &gt; 0, 0.20, 0)</formula>
+        <name>Expedited Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Expedited_Mark_Up_2</fullName>
+        <field>Expedited_Freight_Markup_i2__c</field>
+        <formula>IF(Expedited_Freight_2__c &gt; 0, 0.20, 0)</formula>
+        <name>Expedited Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Expedited_Mark_Up_3</fullName>
+        <field>Expedited_Freight_Markup_i3__c</field>
+        <formula>IF(Expedited_Freight_3__c &gt; 0, 0.20, 0)</formula>
+        <name>Expedited Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Expedited_Mark_Up_4</fullName>
+        <field>Expedited_Freight_Markup_i4__c</field>
+        <formula>IF(Expedited_Freight_4__c &gt; 0, 0.20, 0)</formula>
+        <name>Expedited Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ground_Mark_Up_1</fullName>
+        <field>Ground_Freight_Markup_i1__c</field>
+        <formula>IF(Grd_Freight_1__c &gt; 0, 0.20, 0)</formula>
+        <name>Ground Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ground_Mark_Up_2</fullName>
+        <field>Ground_Freight_Markup_i2__c</field>
+        <formula>IF(Grd_Freight_2__c &gt; 0, 0.20, 0)</formula>
+        <name>Ground Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ground_Mark_Up_3</fullName>
+        <field>Ground_Freight_Markup_i3__c</field>
+        <formula>IF(Grd_Freight_3__c &gt; 0, 0.20, 0)</formula>
+        <name>Ground Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ground_Mark_Up_4</fullName>
+        <field>Ground_Freight_Markup_i4__c</field>
+        <formula>IF(Grd_Freight_4__c &gt; 0, 0.20, 0)</formula>
+        <name>Ground Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>IPP1_to_0</fullName>
+        <field>Product_Price_1__c</field>
+        <name>IPP1 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OF1_to_0</fullName>
+        <field>Ocean_Freight_1__c</field>
+        <name>OF1 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OF2_to_0</fullName>
+        <field>Ocean_Freight_2__c</field>
+        <name>OF2 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OF3_to_0</fullName>
+        <field>Ocean_Freight_3__c</field>
+        <name>OF3 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OF4_to_0</fullName>
+        <field>Ocean_Freight_4__c</field>
+        <name>OF4 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OF5_to_0</fullName>
+        <field>Ocean_Freight_5__c</field>
+        <name>OF5 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ocean_Mark_Up_1</fullName>
+        <field>Ocean_Freight_Markup_i1__c</field>
+        <formula>IF(Ocean_Freight_1__c &gt; 0, 0.20, 0)</formula>
+        <name>Ocean Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ocean_Mark_Up_2</fullName>
+        <field>Ocean_Freight_Markup_i2__c</field>
+        <formula>IF(Ocean_Freight_2__c &gt; 0, 0.20, 0)</formula>
+        <name>Ocean Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ocean_Mark_Up_3</fullName>
+        <field>Ocean_Freight_Markup_i3__c</field>
+        <formula>IF(Ocean_Freight_3__c &gt; 0, 0.20, 0)</formula>
+        <name>Ocean Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Ocean_Mark_Up_4</fullName>
+        <field>Ocean_Freight_Markup_i4__c</field>
+        <formula>IF(Ocean_Freight_4__c &gt; 0, 0.20, 0)</formula>
+        <name>Ocean Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PP1_to_0</fullName>
+        <field>Product_Purchase_Cost1__c</field>
+        <name>PP1 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PP2_to_0</fullName>
+        <field>Product_Purchase_Cost2__c</field>
+        <name>PP2 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PP3_to_0</fullName>
+        <field>Product_Purchase_Cost3__c</field>
+        <name>PP3 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PP4_to_0</fullName>
+        <field>Product_Purchase_Cost4__c</field>
+        <name>PP4 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PPM2_to_0</fullName>
+        <field>Product_Purchase_Markup2__c</field>
+        <name>PPM2 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PPM3_to_0</fullName>
+        <field>Product_Purchase_Markup3__c</field>
+        <name>PPM3 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PPM4_to_0</fullName>
+        <field>Product_Purchase_Markup4__c</field>
+        <name>PPM4 to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PPM_to_0</fullName>
+        <field>Product_Purchase_Markup1__c</field>
+        <name>PPM to 0</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Mark_Up_1</fullName>
+        <field>Product_Purchase_Markup1__c</field>
+        <formula>( 
+IF(AND(Product_Purchase_Cost1__c &gt; 0,Product_Purchase_Cost1__c &lt; 400), 0.80, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 400,Product_Purchase_Cost1__c &lt; 450), 0.75, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 450,Product_Purchase_Cost1__c &lt; 500), 0.70, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 500,Product_Purchase_Cost1__c &lt; 550), 0.65, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 550,Product_Purchase_Cost1__c &lt; 600), 0.60, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 600,Product_Purchase_Cost1__c &lt; 700), 0.55, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 700,Product_Purchase_Cost1__c &lt; 800), 0.50, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 800,Product_Purchase_Cost1__c &lt; 1000), 0.45, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 1000,Product_Purchase_Cost1__c &lt; 2500), 0.40, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 2500,Product_Purchase_Cost1__c &lt; 3000), 0.39, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 3000,Product_Purchase_Cost1__c &lt; 3500), 0.38, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 3500,Product_Purchase_Cost1__c &lt; 4000), 0.37, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 4000,Product_Purchase_Cost1__c &lt; 5000), 0.36, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 5000,Product_Purchase_Cost1__c &lt; 6000), 0.35, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 6000,Product_Purchase_Cost1__c &lt; 7000), 0.34, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 7000,Product_Purchase_Cost1__c &lt; 8000), 0.33, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 8000,Product_Purchase_Cost1__c &lt; 9000), 0.32, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 9000,Product_Purchase_Cost1__c &lt; 10000), 0.31, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 10000,Product_Purchase_Cost1__c &lt; 12500), 0.30, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 12500,Product_Purchase_Cost1__c &lt; 15000), 0.29, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 15000,Product_Purchase_Cost1__c &lt; 17500), 0.28, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 17500,Product_Purchase_Cost1__c &lt; 20000), 0.27, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 20000,Product_Purchase_Cost1__c &lt; 25000), 0.26, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 25000,Product_Purchase_Cost1__c &lt; 30000), 0.25, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 30000,Product_Purchase_Cost1__c &lt; 40000), 0.24, 
+IF(AND(Product_Purchase_Cost1__c &gt;= 40000,Product_Purchase_Cost1__c &lt; 50000), 0.23, 
+IF(Product_Purchase_Cost1__c &gt;= 50000, 0.22, 0 
+))))))))))))))))))))))))))) 
+) + ( 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Perfect (Softcover)&quot;),0.01, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Case (Hardcover)&quot;),0.02, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Wire binding&quot;),0.03, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Spiral binding&quot;),0.03, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Board Book&quot;),0.05,0 
+))))) 
+)</formula>
+        <name>Product Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Mark_Up_2</fullName>
+        <field>Product_Purchase_Markup2__c</field>
+        <formula>( 
+IF(AND(Product_Purchase_Cost2__c &gt; 0,Product_Purchase_Cost2__c &lt; 400), 0.80, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 400,Product_Purchase_Cost2__c &lt; 450), 0.75, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 450,Product_Purchase_Cost2__c &lt; 500), 0.70, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 500,Product_Purchase_Cost2__c &lt; 550), 0.65, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 550,Product_Purchase_Cost2__c &lt; 600), 0.60, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 600,Product_Purchase_Cost2__c &lt; 700), 0.55, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 700,Product_Purchase_Cost2__c &lt; 800), 0.50, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 800,Product_Purchase_Cost2__c &lt; 1000), 0.45, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 1000,Product_Purchase_Cost2__c &lt; 2500), 0.40, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 2500,Product_Purchase_Cost2__c &lt; 3000), 0.39, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 3000,Product_Purchase_Cost2__c &lt; 3500), 0.38, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 3500,Product_Purchase_Cost2__c &lt; 4000), 0.37, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 4000,Product_Purchase_Cost2__c &lt; 5000), 0.36, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 5000,Product_Purchase_Cost2__c &lt; 6000), 0.35, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 6000,Product_Purchase_Cost2__c &lt; 7000), 0.34, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 7000,Product_Purchase_Cost2__c &lt; 8000), 0.33, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 8000,Product_Purchase_Cost2__c &lt; 9000), 0.32, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 9000,Product_Purchase_Cost2__c &lt; 10000), 0.31, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 10000,Product_Purchase_Cost2__c &lt; 12500), 0.30, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 12500,Product_Purchase_Cost2__c &lt; 15000), 0.29, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 15000,Product_Purchase_Cost2__c &lt; 17500), 0.28, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 17500,Product_Purchase_Cost2__c &lt; 20000), 0.27, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 20000,Product_Purchase_Cost2__c &lt; 25000), 0.26, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 25000,Product_Purchase_Cost2__c &lt; 30000), 0.25, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 30000,Product_Purchase_Cost2__c &lt; 40000), 0.24, 
+IF(AND(Product_Purchase_Cost2__c &gt;= 40000,Product_Purchase_Cost2__c &lt; 50000), 0.23, 
+IF(Product_Purchase_Cost2__c &gt;= 50000, 0.22, 0 
+))))))))))))))))))))))))))) 
+) + ( 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Perfect (Softcover)&quot;),0.01, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Case (Hardcover)&quot;),0.02, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Wire binding&quot;),0.03, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Spiral binding&quot;),0.03, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Board Book&quot;),0.05,0 
+))))) 
+)</formula>
+        <name>Product Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Mark_Up_3</fullName>
+        <field>Product_Purchase_Markup3__c</field>
+        <formula>( 
+IF(AND(Product_Purchase_Cost3__c &gt; 0,Product_Purchase_Cost3__c &lt; 400), 0.80, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 400,Product_Purchase_Cost3__c &lt; 450), 0.75, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 450,Product_Purchase_Cost3__c &lt; 500), 0.70, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 500,Product_Purchase_Cost3__c &lt; 550), 0.65, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 550,Product_Purchase_Cost3__c &lt; 600), 0.60, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 600,Product_Purchase_Cost3__c &lt; 700), 0.55, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 700,Product_Purchase_Cost3__c &lt; 800), 0.50, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 800,Product_Purchase_Cost3__c &lt; 1000), 0.45, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 1000,Product_Purchase_Cost3__c &lt; 2500), 0.40, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 2500,Product_Purchase_Cost3__c &lt; 3000), 0.39, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 3000,Product_Purchase_Cost3__c &lt; 3500), 0.38, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 3500,Product_Purchase_Cost3__c &lt; 4000), 0.37, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 4000,Product_Purchase_Cost3__c &lt; 5000), 0.36, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 5000,Product_Purchase_Cost3__c &lt; 6000), 0.35, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 6000,Product_Purchase_Cost3__c &lt; 7000), 0.34, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 7000,Product_Purchase_Cost3__c &lt; 8000), 0.33, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 8000,Product_Purchase_Cost3__c &lt; 9000), 0.32, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 9000,Product_Purchase_Cost3__c &lt; 10000), 0.31, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 10000,Product_Purchase_Cost3__c &lt; 12500), 0.30, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 12500,Product_Purchase_Cost3__c &lt; 15000), 0.29, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 15000,Product_Purchase_Cost3__c &lt; 17500), 0.28, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 17500,Product_Purchase_Cost3__c &lt; 20000), 0.27, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 20000,Product_Purchase_Cost3__c &lt; 25000), 0.26, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 25000,Product_Purchase_Cost3__c &lt; 30000), 0.25, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 30000,Product_Purchase_Cost3__c &lt; 40000), 0.24, 
+IF(AND(Product_Purchase_Cost3__c &gt;= 40000,Product_Purchase_Cost3__c &lt; 50000), 0.23, 
+IF(Product_Purchase_Cost3__c &gt;= 50000, 0.22, 0 
+))))))))))))))))))))))))))) 
+) + ( 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Perfect (Softcover)&quot;),0.01, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Case (Hardcover)&quot;),0.02, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Wire binding&quot;),0.03, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Spiral binding&quot;),0.03, 
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Board Book&quot;),0.05,0 
+))))) 
+)</formula>
+        <name>Product Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Mark_Up_4</fullName>
+        <field>Product_Purchase_Markup4__c</field>
+        <formula>(
+IF(AND(Product_Purchase_Cost4__c &gt; 0,Product_Purchase_Cost4__c &lt; 400), 0.80,
+IF(AND(Product_Purchase_Cost4__c &gt;= 400,Product_Purchase_Cost4__c &lt; 450), 0.75,
+IF(AND(Product_Purchase_Cost4__c &gt;= 450,Product_Purchase_Cost4__c &lt; 500), 0.70,
+IF(AND(Product_Purchase_Cost4__c &gt;= 500,Product_Purchase_Cost4__c &lt; 550), 0.65,
+IF(AND(Product_Purchase_Cost4__c &gt;= 550,Product_Purchase_Cost4__c &lt; 600), 0.60,
+IF(AND(Product_Purchase_Cost4__c &gt;= 600,Product_Purchase_Cost4__c &lt; 700), 0.55,
+IF(AND(Product_Purchase_Cost4__c &gt;= 700,Product_Purchase_Cost4__c &lt; 800), 0.50,
+IF(AND(Product_Purchase_Cost4__c &gt;= 800,Product_Purchase_Cost4__c &lt; 1000), 0.45,
+IF(AND(Product_Purchase_Cost4__c &gt;= 1000,Product_Purchase_Cost4__c &lt; 2500), 0.40,
+IF(AND(Product_Purchase_Cost4__c &gt;= 2500,Product_Purchase_Cost4__c &lt; 3000), 0.39,
+IF(AND(Product_Purchase_Cost4__c &gt;= 3000,Product_Purchase_Cost4__c &lt; 3500), 0.38,
+IF(AND(Product_Purchase_Cost4__c &gt;= 3500,Product_Purchase_Cost4__c &lt; 4000), 0.37,
+IF(AND(Product_Purchase_Cost4__c &gt;= 4000,Product_Purchase_Cost4__c &lt; 5000), 0.36,
+IF(AND(Product_Purchase_Cost4__c &gt;= 5000,Product_Purchase_Cost4__c &lt; 6000), 0.35,
+IF(AND(Product_Purchase_Cost4__c &gt;= 6000,Product_Purchase_Cost4__c &lt; 7000), 0.34,
+IF(AND(Product_Purchase_Cost4__c &gt;= 7000,Product_Purchase_Cost4__c &lt; 8000), 0.33,
+IF(AND(Product_Purchase_Cost4__c &gt;= 8000,Product_Purchase_Cost4__c &lt; 9000), 0.32,
+IF(AND(Product_Purchase_Cost4__c &gt;= 9000,Product_Purchase_Cost4__c &lt; 10000), 0.31,
+IF(AND(Product_Purchase_Cost4__c &gt;= 10000,Product_Purchase_Cost4__c &lt; 12500), 0.30,
+IF(AND(Product_Purchase_Cost4__c &gt;= 12500,Product_Purchase_Cost4__c &lt; 15000), 0.29,
+IF(AND(Product_Purchase_Cost4__c &gt;= 15000,Product_Purchase_Cost4__c &lt; 17500), 0.28,
+IF(AND(Product_Purchase_Cost4__c &gt;= 17500,Product_Purchase_Cost4__c &lt; 20000), 0.27,
+IF(AND(Product_Purchase_Cost4__c &gt;= 20000,Product_Purchase_Cost4__c &lt; 25000), 0.26,
+IF(AND(Product_Purchase_Cost4__c &gt;= 25000,Product_Purchase_Cost4__c &lt; 30000), 0.25,
+IF(AND(Product_Purchase_Cost4__c &gt;= 30000,Product_Purchase_Cost4__c &lt; 40000), 0.24,
+IF(AND(Product_Purchase_Cost4__c &gt;= 40000,Product_Purchase_Cost4__c &lt; 50000), 0.23,
+IF(Product_Purchase_Cost4__c &gt;= 50000, 0.22, 0
+)))))))))))))))))))))))))))
+) + (
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Perfect (Softcover)&quot;),0.01,
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Case (Hardcover)&quot;),0.02,
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Wire binding&quot;),0.03,
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Spiral binding&quot;),0.03,
+IF(ISPICKVAL(PRN_bindingtype__c,&quot;Board Book&quot;),0.05,0
+)))))
+)</formula>
+        <name>Product Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Promotion</fullName>
+        <field>Promotion__c</field>
+        <formula>&quot;Kickstarter 5% Overrun&quot;</formula>
+        <name>Promotion</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Field_Update_City</fullName>
+        <field>ShippingCity</field>
+        <formula>Opportunity.Contact__r.MailingCity</formula>
+        <name>Quote Field Update City</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Field_Update_Country</fullName>
+        <field>ShippingCountry</field>
+        <formula>Opportunity.Contact__r.MailingCountry</formula>
+        <name>Quote Field Update Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Field_Update_Phone</fullName>
+        <field>Phone</field>
+        <formula>Opportunity.Contact__r.Phone</formula>
+        <name>Quote Field Update Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Field_Update_State</fullName>
+        <field>ShippingState</field>
+        <formula>Opportunity.Contact__r.MailingState</formula>
+        <name>Quote Field Update State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Field_Update_Street</fullName>
+        <field>ShippingStreet</field>
+        <formula>Opportunity.Contact__r.MailingStreet</formula>
+        <name>Quote Field Update Street</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Quote_Field_Update_Zip</fullName>
+        <field>ShippingPostalCode</field>
+        <formula>Opportunity.Contact__r.MailingPostalCode</formula>
+        <name>Quote Field Update Zip</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Tax_1</fullName>
+        <field>Tax</field>
+        <formula>IF(
+	AND(ISNUMBER(ShippingPostalCode),VALUE(ShippingPostalCode) &gt;= 90001,VALUE(ShippingPostalCode) &lt;= 96162),
+	((Product_i_Price1__c + Add_On_Price_1__c) * 0.0925),
+	IF(
+		OR(
+			ShippingCountry = &quot;Canada&quot;, 
+			ShippingCountry = &quot;CA&quot;
+		), 
+		((Product_i_Price1__c + Add_On_Price_1__c +  Proofing_Price_1__c ) * 0.06),
+		IF(
+			AND(
+													ISNUMBER(ShippingPostalCode),
+										VALUE(ShippingPostalCode) &gt;= 60001, 
+										VALUE(ShippingPostalCode) &lt;= 62999
+						), 
+						((Product_i_Price1__c + Add_On_Price_1__c) * 0.10),
+			0
+		)
+	)
+)</formula>
+        <name>Tax 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Tax_2</fullName>
+        <field>Tax_2__c</field>
+        <formula>IF( 
+AND(ISNUMBER(ShippingPostalCode),VALUE(ShippingPostalCode) &gt;= 90001,VALUE(ShippingPostalCode) &lt;= 96162), 
+((Product_i_Price2__c + Add_On_Price_2__c) * 0.0925), 
+IF(
+OR(
+ShippingCountry = &quot;Canada&quot;, 
+ShippingCountry = &quot;CA&quot;
+), 
+((Product_i_Price2__c + Add_On_Price_2__c) * 0.06),
+IF(
+AND(
+ISNUMBER(ShippingPostalCode),
+VALUE(ShippingPostalCode) &gt;= 60001, 
+VALUE(ShippingPostalCode) &lt;= 62999
+), 
+((Product_i_Price2__c + Add_On_Price_2__c) * 0.10),
+0
+)
+)
+)</formula>
+        <name>Tax 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Tax_3</fullName>
+        <field>Tax_3__c</field>
+        <formula>IF( 
+AND(ISNUMBER(ShippingPostalCode),VALUE(ShippingPostalCode) &gt;= 90001,VALUE(ShippingPostalCode) &lt;= 96162), 
+((Product_i_Price3__c + Add_On_Price_3__c) * 0.0925), 
+IF(
+OR(
+ShippingCountry = &quot;Canada&quot;, 
+ShippingCountry = &quot;CA&quot;
+), 
+((Product_i_Price3__c + Add_On_Price_3__c) * 0.06),
+IF(
+AND(
+ISNUMBER(ShippingPostalCode),
+VALUE(ShippingPostalCode) &gt;= 60001, 
+VALUE(ShippingPostalCode) &lt;= 62999
+), 
+((Product_i_Price3__c + Add_On_Price_3__c) * 0.10),
+0
+)
+)
+)</formula>
+        <name>Tax 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Tax_4</fullName>
+        <field>Tax_4__c</field>
+        <formula>IF( 
+AND(ISNUMBER(ShippingPostalCode),VALUE(ShippingPostalCode) &gt;= 90001,VALUE(ShippingPostalCode) &lt;= 96162), 
+((Product_i_Price4__c + Add_On_Price_4__c) * 0.0925), 
+IF(
+OR(
+ShippingCountry = &quot;Canada&quot;, 
+ShippingCountry = &quot;CA&quot;
+), 
+((Product_i_Price4__c + Add_On_Price_4__c) * 0.06),
+IF(
+AND(
+ISNUMBER(ShippingPostalCode),
+VALUE(ShippingPostalCode) &gt;= 60001, 
+VALUE(ShippingPostalCode) &lt;= 62999
+), 
+((Product_i_Price4__c + Add_On_Price_4__c) * 0.10),
+0
+)
+)
+)</formula>
+        <name>Tax 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Total_Quantity_Update_3</fullName>
+        <field>Total_Quantity_3__c</field>
+        <formula>IF(Opportunity.Eligible_For_Free_5_Overrun_Promotion__c = true, MIN(Display_Quantity_3__c*1.07,(Display_Quantity_3__c*1.05)+75), MIN(Display_Quantity_3__c*1.02,Display_Quantity_3__c+75))</formula>
+        <name>Total Quantity Update 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Total_Quantity_Update_4</fullName>
+        <field>Total_Quantity_4__c</field>
+        <formula>IF(Opportunity.Eligible_For_Free_5_Overrun_Promotion__c = true, MIN(Display_Quantity_4__c*1.07,(Display_Quantity_4__c*1.05)+75), MIN(Display_Quantity_4__c*1.02,Display_Quantity_4__c+75))</formula>
+        <name>Total Quantity Update 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Corners_for_Board_Books</fullName>
+        <description>Update unspecified board book corners to rounded</description>
+        <field>PRN_corners__c</field>
+        <literalValue>Rounded Corners .25&quot; radius</literalValue>
+        <name>Update Corners for Board Books</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Head_Tail_Bands_Default</fullName>
+        <description>Updates Head &amp; Tail Bands to Yellow &amp; Red for casebound books of more than 60 pages with nothing specific selected</description>
+        <field>PRN_headtailbands__c</field>
+        <literalValue>Yellow &amp; Red</literalValue>
+        <name>Update Head &amp; Tail Bands Default</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Order_Quantity</fullName>
+        <field>Display_Quantity_1__c</field>
+        <formula>Total_Quantity_1__c</formula>
+        <name>Update Order Quantity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Total_Quantity_2</fullName>
+        <field>Total_Quantity_2__c</field>
+        <formula>IF(Opportunity.Eligible_For_Free_5_Overrun_Promotion__c = true, MIN(Display_Quantity_2__c*1.07,(Display_Quantity_2__c*1.05)+75), MIN(Display_Quantity_2__c*1.02,Display_Quantity_2__c+75))</formula>
+        <name>Update Total Quantity 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Mark-Up Add-On 1</fullName>
+        <actions>
+            <name>Add_On_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Additional_charge_s_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Add_On_Markup_1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Add-On 2</fullName>
+        <actions>
+            <name>Add_On_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Additional_charge_s_2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Add_On_Markup_2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Add-On 3</fullName>
+        <actions>
+            <name>Add_On_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Additional_charge_s_3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Add_On_Markup_3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Add-On 4</fullName>
+        <actions>
+            <name>Add_On_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Additional_charge_s_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Add_On_Markup_4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Expedited 1</fullName>
+        <actions>
+            <name>Expedited_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Expedited_Freight_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Expedited_Freight_Markup_i1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Expedited 2</fullName>
+        <actions>
+            <name>Expedited_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Expedited_Freight_2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Expedited_Freight_Markup_i2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Expedited 3</fullName>
+        <actions>
+            <name>Expedited_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Expedited_Freight_3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Expedited_Freight_Markup_i3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Expedited 4</fullName>
+        <actions>
+            <name>Expedited_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Expedited_Freight_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Expedited_Freight_Markup_i4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Ground 1</fullName>
+        <actions>
+            <name>Ground_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Grd_Freight_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Ground_Freight_Markup_i1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Ground 2</fullName>
+        <actions>
+            <name>Ground_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Grd_Freight_2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Ground_Freight_Markup_i2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Ground 3</fullName>
+        <actions>
+            <name>Ground_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Grd_Freight_3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Ground_Freight_Markup_i3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Ground 4</fullName>
+        <actions>
+            <name>Ground_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Grd_Freight_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Ground_Freight_Markup_i4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Ocean 1</fullName>
+        <actions>
+            <name>Ocean_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Ocean_Freight_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Ocean_Freight_Markup_i1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Ocean 2</fullName>
+        <actions>
+            <name>Ocean_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Ocean_Freight_2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Ocean_Freight_Markup_i2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Ocean 3</fullName>
+        <actions>
+            <name>Ocean_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Ocean_Freight_3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Ocean_Freight_Markup_i3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Ocean 4</fullName>
+        <actions>
+            <name>Ocean_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Ocean_Freight_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Ocean_Freight_Markup_i4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Product 1</fullName>
+        <actions>
+            <name>Product_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Quote.Product_Purchase_Cost1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Product_Purchase_Markup1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Product 2</fullName>
+        <actions>
+            <name>Product_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Product_Purchase_Cost2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Product_Purchase_Markup2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Product 3</fullName>
+        <actions>
+            <name>Product_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Product_Purchase_Cost3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Product_Purchase_Markup3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Mark-Up Product 4</fullName>
+        <actions>
+            <name>Product_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Product_Purchase_Cost4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.Product_Purchase_Markup4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Tax 1</fullName>
+        <actions>
+            <name>Tax_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>OR( 				ISCHANGED(Product_i_Price1__c), 				ISCHANGED(Add_On_Price_1__c),     ISCHANGED(ShippingPostalCode),     ISCHANGED(ShippingCountry), 				ISNEW() )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Tax 2</fullName>
+        <actions>
+            <name>Tax_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( 				ISCHANGED(Product_i_Price2__c), 				ISCHANGED(Add_On_Price_2__c),     ISCHANGED(ShippingPostalCode),     ISCHANGED(ShippingCountry), 				ISNEW() )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Tax 3</fullName>
+        <actions>
+            <name>Tax_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( 				ISCHANGED(Product_i_Price3__c), 				ISCHANGED(Add_On_Price_3__c),     ISCHANGED(ShippingPostalCode),     ISCHANGED(ShippingCountry), 				ISNEW() )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Tax 4</fullName>
+        <actions>
+            <name>Tax_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR( 				ISCHANGED(Product_i_Price4__c), 				ISCHANGED(Add_On_Price_4__c),     ISCHANGED(ShippingPostalCode),     ISCHANGED(ShippingCountry), 				ISNEW() )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Board Book Rounded Corner Update</fullName>
+        <actions>
+            <name>Update_Corners_for_Board_Books</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.PRN_bindingtype__c</field>
+            <operation>equals</operation>
+            <value>Board Book</value>
+        </criteriaItems>
+        <description>Updates Board Book orders to rounded corners by default</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fill Quantity from Calculator</fullName>
+        <actions>
+            <name>Erase_Total_Quantity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Update_Order_Quantity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISBLANK(Total_Quantity_1__c)),ISBLANK(Display_Quantity_1__c), CreatedDate  &gt;  DATETIMEVALUE(&quot;2014-10-26 17:00:00&quot;)  )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fill Total Quantity if blank 1</fullName>
+        <actions>
+            <name>Calculate_Total_Quantity_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISBLANK(Display_Quantity_1__c)),ISBLANK(Total_Quantity_1__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fill Total Quantity if blank 2</fullName>
+        <actions>
+            <name>Update_Total_Quantity_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISBLANK(Display_Quantity_2__c)),ISBLANK(Total_Quantity_2__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fill Total Quantity if blank 3</fullName>
+        <actions>
+            <name>Total_Quantity_Update_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISBLANK(Display_Quantity_3__c)),ISBLANK(Total_Quantity_3__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Fill Total Quantity if blank 4</fullName>
+        <actions>
+            <name>Total_Quantity_Update_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(NOT(ISBLANK(Display_Quantity_4__c)),ISBLANK(Total_Quantity_4__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Head %26 Tail Defaults</fullName>
+        <actions>
+            <name>Update_Head_Tail_Bands_Default</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.PRN_bindingtype__c</field>
+            <operation>equals</operation>
+            <value>Case (Hardcover)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.PRN_headtailbands__c</field>
+            <operation>notEqual</operation>
+            <value>Yellow &amp; Red,White,Custom</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.PRN_insidepagecount__c</field>
+            <operation>greaterThan</operation>
+            <value>56</value>
+        </criteriaItems>
+        <description>Updates Head &amp; Tail bands to Red &amp; Yellow for casebound books of more than 60 pages</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Promotion Update</fullName>
+        <actions>
+            <name>Promotion</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Eligible_For_Free_5_Overrun_Promotion__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Edits promotion field in Quote if the order is eligible for a 5% overrun.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote Specialty Add-Ons</fullName>
+        <actions>
+            <name>Quote_Specialty_Add_Ons</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.PRN_additionalinfo__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.CreatedById</field>
+            <operation>equals</operation>
+            <value>Developer Administrator</value>
+        </criteriaItems>
+        <description>Sends task to opportunity owner when customer requests specialty add-on quote through calculator.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote over %2410%2C000</fullName>
+        <actions>
+            <name>Quote_over_10_000</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Quote over $10,000</description>
+        <formula>Opportunity.New_ROW__c &gt; 10000</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Quote over %248%2C000</fullName>
+        <actions>
+            <name>Quote_over_8_000</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <description>Quote over $8,000</description>
+        <formula>Opportunity.New_ROW__c &gt; 8000</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample Pack Request From Calculator</fullName>
+        <actions>
+            <name>Sample_Pack_Request_From_Calculator_Quote</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Sample_Packet_Request_From_Calculator__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Creates a task for opportunity owner to contact requester of sample pack</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Split Binding Low Page Count</fullName>
+        <actions>
+            <name>Low_Page_Count_Split_Binding</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.PRN_bindingtype__c</field>
+            <operation>equals</operation>
+            <value>Split Perfect / Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.PRN_insidepagecount__c</field>
+            <operation>lessThan</operation>
+            <value>60</value>
+        </criteriaItems>
+        <description>Alerts opportunity owner.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Proofing From Calculator To New Methods</fullName>
+        <actions>
+            <name>Calculator_Proofing_Method_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.Quote_PDF__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.PRN_proofing__c</field>
+            <operation>equals</operation>
+            <value>Digital Hardcopy Proof + 1 Offset Sheet</value>
+        </criteriaItems>
+        <description>This workflow automatically updates a field.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Quote Address</fullName>
+        <actions>
+            <name>Quote_Field_Update_City</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Quote_Field_Update_Country</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Quote_Field_Update_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Quote_Field_Update_State</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Quote_Field_Update_Street</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Quote_Field_Update_Zip</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Quote.ShippingPostalCode</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Warehousing %26 Fulfillment Info Request</fullName>
+        <actions>
+            <name>Contact_customer_about_Warehousing_Fulfillment</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <criteriaItems>
+            <field>Quote.PRN_AS_Warehousing_Interest__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.PRN_AS_Pick_And_Pack_Interest__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Quote.PRN_AS_Fulfillment_Interest__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Customer has indicated they would like more information about our Warehousing &amp; Fulfillment options</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Contact_customer_about_Warehousing_Fulfillment</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>This customer has indicated interest in our warehousing &amp; fulfillment options, reach out to them to discuss</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Contact customer about Warehousing &amp; Fulfillment</subject>
+    </tasks>
+    <tasks>
+        <fullName>Low_Page_Count_Split_Binding</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>This order has split binding. Since the page count is under 60 we will need to add separated endsheets to the hardcover. Otherwise, we will have to print the inside pages separately for each book, which negates the cost savings of a split binding order.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>In Progress</status>
+        <subject>Low Page Count Split Binding</subject>
+    </tasks>
+    <tasks>
+        <fullName>Quote_Specialty_Add_Ons</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Quote the specialty add-ons the customer has requested.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Quote Specialty Add-Ons</subject>
+    </tasks>
+    <tasks>
+        <fullName>Quote_over_10_000</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Quote.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Quote over $10,000</subject>
+    </tasks>
+    <tasks>
+        <fullName>Quote_over_8_000</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Quote.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Quote over $8,000</subject>
+    </tasks>
+    <tasks>
+        <fullName>Sample_Pack_Request_From_Calculator_Quote</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Sample Pack Request From Calculator</subject>
+    </tasks>
+</Workflow>

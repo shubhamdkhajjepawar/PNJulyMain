@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Dice__c</fullName>
+    <externalId>false</externalId>
+    <label>Material</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wood</fullName>
+                <default>false</default>
+                <label>Wood</label>
+            </value>
+            <value>
+                <fullName>Opaque Resin</fullName>
+                <default>false</default>
+                <label>Opaque Resin</label>
+            </value>
+            <value>
+                <fullName>Transparent Resin</fullName>
+                <default>false</default>
+                <label>Transparent Resin</label>
+            </value>
+            <value>
+                <fullName>Transparent Glitter Resin</fullName>
+                <default>false</default>
+                <label>Transparent Glitter Resin</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

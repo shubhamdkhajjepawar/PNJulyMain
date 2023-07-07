@@ -1,0 +1,726 @@
+<apex:page standardController="Custom_Game_Quote__c" renderAs="PDF" showHeader="false" sidebar="false"  applyBodyTag="false" applyHtmlTag="false">
+    <html>
+    <head>
+        <style>    
+            body {
+                font-family: sans-serif;
+                font-size: 12px;
+                }
+            table {
+                table-layout: fixed;
+                width: 700px;
+                }
+            td {
+                overflow: hidden;
+                }    
+        </style>
+    </head>
+
+
+<body>
+<apex:form >
+<div align="center" style="font-family:sans-serif">
+      <img src="http://d85fd144eb6d904e1307-ee0389f939f121fe3a9bfdd4a2fec20f.r35.cf2.rackcdn.com/images/QuoteAssets/PRNQuoteHeader2.jpg" />
+</div>
+
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Turnaround Times</p>
+</div>
+<div>
+    <p> <strong>Pre-Press:</strong> Electronic proofs take one full business day to generate after you submit your files. If you need to make changes to your files after that time, it will take us another business day each time you submit new files to generate a new proof. *For orders with physical proofing, proofs take approx. 3-4 weeks for delivery. Premium expedited shipping is included in your proof cost, which is our fastest shipping option. There is no way to expedite the production process on hard-copy proofs. Production begins once we have your approval on your electronic proof.</p>
+    <p> <strong>*Custom proofing options will add additional production time. Please reach out to your account manager for your proof turnaround estimate.*</strong></p>
+    <p> <strong>Production Time:</strong> Production time for most custom games is 3-5 weeks on average. Complexity, high-volume order quantity, and specialty options may add extra time to our standard turnarounds. Additionally: Heavy volume and COVID restricted labor at the ports are causing shipping delays. Our standard shipping timelines are currently extended by approximately 2-3 weeks as a result. If you have a hard deadline please let us know as soon as possible so we can give the most accurate estimates possible.</p>
+    <p> <strong>Standard Shipping:</strong> Standard-speed ocean shipping to the USA and Canada takes approximately 6 weeks from the time the order the order is shipped. Please note guaranteed delivery dates are not available as random customs inspections, international and domestic holidays, weather, and unpredictable port conditions can cause delays that are out of our control. For commercial/business address delivery, inside-delivery may be available for an additional fee - please reach out to your account manager if you would like to investigate this option.</p>
+    <p> <strong>Expedited Shipping:</strong> Expedited shipping takes approximately 7-10 days from the time the order is shipped. Premium Expedited service is available for an extra charge and can reduce the expedited shipping turnaround in most cases. Please speak to an account manager about adding in this service. Please note guaranteed delivery dates are not available as random customs inspections, international and domestic holidays, and severe weather can cause delays that are out of our control. For commercial/business address delivery, inside-delivery may be available for an additional fee - please reach out to your account manager if you would like to investigate this option.</p>
+    <p> <strong>AMAZON FULFILMENT CUSTOMERS:</strong> Please reach out to your account manager ASAP as Amazon fulfillment follows a unique process.</p>
+    <p> For more up-to-date turnaround information, check <a url="http://www.printninja.com/turnaround">www.printninja.com/turnaround</a></p>
+</div>
+
+
+<div style="background-color:#dee5ec;font-size:16px">
+    <p>Place Your Order</p>
+</div>
+<div>
+    <p> <strong>Customer File Upload:</strong> <a href="{!Custom_Game_Quote__c.Customer_File_Upload__c}">{!Custom_Game_Quote__c.Customer_File_Upload__c}</a></p>
+    <p> <strong>Submit Payment Here:</strong> <a href="{!Custom_Game_Quote__c.Pay_Now_1__c}">{!Custom_Game_Quote__c.Pay_Now_1__c}</a></p>
+    <p> We strongly recommend reviewing our <a href="https://printninja.com/printing-resource-center/printninja-file-setup-checklist/custom-game-guidelines">Custom Game Design Considerations</a> page before submitting your files</p>
+</div>
+
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Please Note</p>
+</div>
+<div >
+    <p> <strong>Shipping costs included in this quote presume normal delivery conditions. If your destination requires special instructions or equipment to make delivery, additional charges may apply. Please contact your account manager to detail any special requirements for non-standard delivery.</strong></p>
+    <p> <strong>Duties and Taxes:</strong> Prices shown are in USD and include all taxes and duties for delivery to addresses in the USA and CAN. Orders delivered to other countries are subject to any applicable taxes and duties charged by the destination country.</p>
+    <p> <strong>Terms and Conditions:</strong> For contractual terms of placing an order please see our website. <a url="https://www.printninja.com/about/terms">www.printninja.com/about/terms</a></p>   
+    <p> <strong>Production Variance:</strong> All orders are subject to a 2% overrun / underrun / defect variance. Orders over 2500 units will cap off at 75 overrun / underrun / defect variance units.</p>
+    <p> <strong>Safety Testing:</strong> PrintNinja does not require safety testing for any orders. This is an optional additional expense we can add into your quote upon your request. You can see more information about Safety Testing here: <a url="https://printninja.com/printing-resource-center/printing-academy/advanced-concepts/safety-testing">https://printninja.com/printing-resource-center/printing-academy/advanced-concepts/safety-testing</a> <strong>and</strong> <a url="https://printninja.com/printing-resource-center/printninja-process/production-timeline/safety-testing-toxicity">https://printninja.com/printing-resource-center/printninja-process/production-timeline/safety-testing-toxicity</a></p>
+    <p> <strong>Box Templates:</strong> Many tuck-box templates are available on our website here: <a url="https://printninja.com/printing-resource-center/printninja-file-setup-checklist/custom-game-guidelines">https://printninja.com/printing-resource-center/printninja-file-setup-checklist/custom-game-guidelines</a>. If you find your project does not qualify for any of the listed templates or if you have multiple components included in the project you will need to place the full order first to receive your custom template. Once we receive full payment on the order, your account manager will send along the custom box template generally within 2-3 business days.</p>
+</div>
+<div >
+    <p> <strong>Tariff Updates:</strong>PrintNinja reserves the right to adjust shipping costs during the 90 day period if a change in import policies regarding international shipments goes into effect. Changes in tariffs will require you to update your shipping quote to reflect the new policies and subsequent shipping costs.</p>
+</div>
+<div >
+    <p> <strong>Discounts and Promotions:</strong> <a url="https://printninja.com/promos">https://printninja.com/promos</a>.</p>
+</div>
+<apex:pageBlock >
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Quote Information</p>
+</div>
+    <apex:pageBlockSection >
+        <apex:outputField label="Quote Number:" value="{!Custom_Game_Quote__c.Quote_Number__c}" />
+        <apex:outputField label="Shipping Address:" value="{!Custom_Game_Quote__c.Ship_To_Street__c}" />
+        <apex:outputField label="Quote Name:" value="{!Custom_Game_Quote__c.Name}" />
+        <apex:outputField label="Shipping City:" value="{!Custom_Game_Quote__c.Ship_To_City__c}" />
+        <apex:outputField label="Quote Created:" value="{!Custom_Game_Quote__c.Quote_Created__c}" />
+        <apex:outputField label="Shipping State:" value="{!Custom_Game_Quote__c.Ship_To_State_Province__c}" />
+        <apex:outputField label="Quote Valid Until:" value="{!Custom_Game_Quote__c.Quote_Valid_Until__c}" />
+        <apex:outputField label="Shipping ZIP:" value="{!Custom_Game_Quote__c.Ship_To_Zip_Postal_Code__c}" />
+        <apex:outputField label="Contact Email:" value="{!Custom_Game_Quote__c.Email__c}" />
+        <apex:outputField label="Shipping Country:" value="{!Custom_Game_Quote__c.Ship_To_Country__c}" />
+        <apex:outputField label="Contact Phone:" value="{!Custom_Game_Quote__c.Phone__c}" />
+        <apex:outputField label="Proofing Option:" value="{!Custom_Game_Quote__c.Proofing__c}" />
+        <apex:outputText label="Split Shipping Addresses:" rendered="{!IF(Custom_Game_Quote__c.Split_Shipping_Details__c == "",False,True)}" value="" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Split_Shipping_Details__c == "",False,True)}" value="" />
+        <apex:outputField label="" rendered="{!IF(Custom_Game_Quote__c.Split_Shipping_Details__c == "",False,True)}" value="{!Custom_Game_Quote__c.Split_Shipping_Details__c}" />
+        <apex:outputField label="Job Number:" value="{!Custom_Game_Quote__c.Job_Number__c}" />
+    </apex:pageBlockSection>
+</apex:pageBlock>
+    
+<apex:pageBlock html-style="page-break-after: avoid;">
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Pricing</p>
+</div>
+    <apex:pageBlockSection >
+        <apex:outputField label="Order Quantity:" value="{!Custom_Game_Quote__c.Order_Quantity_1__c}" />
+        <apex:outputField label="Order Quantity:" value="{!Custom_Game_Quote__c.Order_Quantity_2__c}" />
+        <apex:outputField label="Expedited Quantity:" value="{!Custom_Game_Quote__c.Expedited_Quantity_1__c}" />
+        <apex:outputField label="Expedited Quantity:" value="{!Custom_Game_Quote__c.Expedited_Quantity_2__c}" />
+        <apex:outputField label="Product Price:" value="{!Custom_Game_Quote__c.Product_Total_Price_1__c}" />
+        <apex:outputField label="Product Price:" value="{!Custom_Game_Quote__c.Product_Total_Price_2__c}" />
+        <apex:outputField label="Standard Shipping Price:" value="{!Custom_Game_Quote__c.Total_Standard_Shipping_Price_1__c}" />
+        <apex:outputField label="Standard Shipping Price:" value="{!Custom_Game_Quote__c.Total_Standard_Shipping_Price_2__c}" />
+        <apex:outputField label="Expedited Shipping Price:" value="{!Custom_Game_Quote__c.Expedited_Freight_Price_1__c}" />
+        <apex:outputField label="Expedited Shipping Price:" value="{!Custom_Game_Quote__c.Expedited_Freight_Price_2__c}" />
+        <apex:outputField label="Prototyping Price:" value="{!Custom_Game_Quote__c.Prototyping_Cost_1__c}" />
+        <apex:outputField label="Prototyping Price:" value="{!Custom_Game_Quote__c.Prototyping_Cost_2__c}" />
+        <apex:outputField label="Assembly Price:" value="{!Custom_Game_Quote__c.Assembly_Cost_1__c}" />
+        <apex:outputField label="Assembly Price:" value="{!Custom_Game_Quote__c.Assembly_Cost_2__c}" />
+        <apex:outputField label="Add-Ons Price:" value="{!Custom_Game_Quote__c.Add_On_Price_1__c}" />
+        <apex:outputField label="Add-Ons Price:" value="{!Custom_Game_Quote__c.Add_On_Price_2__c}" />
+        <apex:outputField label="Additional Charges:" value="{!Custom_Game_Quote__c.Additional_Charges_1__c}" />
+        <apex:outputField label="Additional Charges:" value="{!Custom_Game_Quote__c.Additional_Charges_2__c}" />
+        <apex:outputField label="Tax:" value="{!Custom_Game_Quote__c.Tax_Dollars_1__c}" />
+        <apex:outputField label="Tax:" value="{!Custom_Game_Quote__c.Tax_Dollars_2__c}" />
+        <apex:outputField label="Discount:" value="{!Custom_Game_Quote__c.Discount_1__c}" />
+        <apex:outputField label="Discount:" value="{!Custom_Game_Quote__c.Discount_2__c}" />
+        <apex:outputField label="Grand Total:" value="{!Custom_Game_Quote__c.International_Grand_Total_1__c}" />
+        <apex:outputField label="Grand Total:" value="{!Custom_Game_Quote__c.International_Grand_Total_2__c}" />
+        <apex:outputField label="Price Per Unit:" value="{!Custom_Game_Quote__c.Price_Per_Piece_1__c}" />
+        <apex:outputField label="Price Per Unit:" value="{!Custom_Game_Quote__c.Price_Per_Piece_2__c}" />
+        <apex:outputText style="font-weight:bold" value="Pay Now:"/>
+        <apex:outputText style="font-weight:bold" value="Pay Now:"/>
+        <apex:outputLink value="{!Custom_Game_Quote__c.Pay_Now_1__c}" id="theLink1">{!Custom_Game_Quote__c.Pay_Now_1__c}</apex:outputLink>
+        <apex:outputLink value="{!Custom_Game_Quote__c.Pay_Now_2__c}" id="theLink2">{!Custom_Game_Quote__c.Pay_Now_2__c}</apex:outputLink>
+        <apex:outputField label="Remarks:" value="{!Custom_Game_Quote__c.Remark_1__c}" />
+        <apex:outputField label="Remarks:" value="{!Custom_Game_Quote__c.Remark_2__c}" />
+    </apex:pageBlockSection>
+
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Pricing</p>
+</div>
+    <apex:pageBlockSection >
+        <apex:outputField label="Order Quantity:" value="{!Custom_Game_Quote__c.Order_Quantity_3__c}" />
+        <apex:outputField label="Order Quantity:" value="{!Custom_Game_Quote__c.Order_Quantity_4__c}" />
+        <apex:outputField label="Expedited Quantity:" value="{!Custom_Game_Quote__c.Expedited_Quantity_3__c}" />
+        <apex:outputField label="Expedited Quantity:" value="{!Custom_Game_Quote__c.Expedited_Quantity_4__c}" />
+        <apex:outputField label="Product Price:" value="{!Custom_Game_Quote__c.Product_Total_Price_3__c}" />
+        <apex:outputField label="Product Price:" value="{!Custom_Game_Quote__c.Product_Total_Price_4__c}" />
+        <apex:outputField label="Standard Shipping Price:" value="{!Custom_Game_Quote__c.Total_Standard_Shipping_Price_3__c}" />
+        <apex:outputField label="Standard Shipping Price:" value="{!Custom_Game_Quote__c.Total_Standard_Shipping_Price_4__c}" />
+        <apex:outputField label="Expedited Shipping Price:" value="{!Custom_Game_Quote__c.Expedited_Freight_Price_3__c}" />
+        <apex:outputField label="Expedited Shipping Price:" value="{!Custom_Game_Quote__c.Expedited_Freight_Price_4__c}" />
+        <apex:outputField label="Prototyping Price:" value="{!Custom_Game_Quote__c.Prototyping_Cost_3__c}" />
+        <apex:outputField label="Prototyping Price:" value="{!Custom_Game_Quote__c.Prototyping_Cost_4__c}" />
+        <apex:outputField label="Assembly Price:" value="{!Custom_Game_Quote__c.Assembly_Cost_3__c}" />
+        <apex:outputField label="Assembly Price:" value="{!Custom_Game_Quote__c.Assembly_Cost_4__c}" />
+        <apex:outputField label="Add-Ons Price:" value="{!Custom_Game_Quote__c.Add_On_Price_3__c}" />
+        <apex:outputField label="Add-Ons Price:" value="{!Custom_Game_Quote__c.Add_On_Price_4__c}" />
+        <apex:outputField label="Additional Charges:" value="{!Custom_Game_Quote__c.Additional_Charges_3__c}" />
+        <apex:outputField label="Additional Charges:" value="{!Custom_Game_Quote__c.Additional_Charges_4__c}" />
+        <apex:outputField label="Tax:" value="{!Custom_Game_Quote__c.Tax_Dollars_3__c}" />
+        <apex:outputField label="Tax:" value="{!Custom_Game_Quote__c.Tax_Dollars_4__c}" />
+        <apex:outputField label="Discount:" value="{!Custom_Game_Quote__c.Discount_3__c}" />
+        <apex:outputField label="Discount:" value="{!Custom_Game_Quote__c.Discount_4__c}" />
+        <apex:outputField label="Grand Total:" value="{!Custom_Game_Quote__c.International_Grand_Total_3__c}" />
+        <apex:outputField label="Grand Total:" value="{!Custom_Game_Quote__c.International_Grand_Total_4__c}" />
+        <apex:outputField label="Price Per Unit:" value="{!Custom_Game_Quote__c.Price_Per_Piece_3__c}" />
+        <apex:outputField label="Price Per Unit:" value="{!Custom_Game_Quote__c.Price_Per_Piece_4__c}" />
+        <apex:outputText style="font-weight:bold" value="Pay Now:"/>
+        <apex:outputText style="font-weight:bold" value="Pay Now:"/>
+        <apex:outputLink value="{!Custom_Game_Quote__c.Pay_Now_3__c}" id="theLink1">{!Custom_Game_Quote__c.Pay_Now_3__c}</apex:outputLink>
+        <apex:outputLink value="{!Custom_Game_Quote__c.Pay_Now_4__c}" id="theLink2">{!Custom_Game_Quote__c.Pay_Now_4__c}</apex:outputLink>
+        <apex:outputField label="Remarks:" value="{!Custom_Game_Quote__c.Remark_3__c}" />
+        <apex:outputField label="Remarks:" value="{!Custom_Game_Quote__c.Remark_4__c}" />
+    </apex:pageBlockSection>
+</apex:pageBlock>
+    
+<apex:pageBlock >  
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Game Components</p>
+</div>
+</apex:pageBlock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Card_Deck_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Card Decks</i>
+
+    </div>
+                <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Card Deck',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Card Count:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Count__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Card Size:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Quote_Card_Size__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Card Stock:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Stock__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Number of Card Backs:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Number_of_Card_Backs__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Card Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Specialty_Options_Card__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Number of Spot Colors:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Number_of_Spot_Colors__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField label="Metallic Ink Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Metallic_Ink_Color__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField label="Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Foil_Stamp_Color__c}" />        
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputField label="Deck Packaging:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Deck_Packaging__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Material__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Finish_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Finish_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Specialty_Options__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Foil_Stamp_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Spot Colors:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Spot_Colors__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Metallic Ink Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Metallic_Ink_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Game_Board_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Game Boards</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Board',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Panel Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Panel_Style__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField label="Game Board Backing:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Game_Board_Backing__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField label="Wrapped Edges:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Wrapped_Edges__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Specialty_Options_Board__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Foil_Stamp_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Number of Spot Colors:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Number_of_Spot_Colors__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Metallic Ink Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Metallic_Ink_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Punch_Out_Sheet_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Punch-Out Sheets</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Punch-Out Sheet',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" /> 
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Token Shape:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Token_Shape__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField label="Printing Sides:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Specialty_Options_Token__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputField label="Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Foil_Stamp_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Number of Spot Colors:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Number_of_Spot_Colors__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Metallic Ink Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Metallic_Ink_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Tile_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Tiles</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Tile',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Printing Sides:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Specialty_Options_Tile__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField label="Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Foil_Stamp_Color__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputField label="Number of Spot Colors:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Number_of_Spot_Colors__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Metallic Ink Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Metallic_Ink_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Screen_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Screens</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Screen',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Number of Folds:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Number_of_Folds__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField label="Printing Sides:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField label="Wrapped Edges:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Wrapped_Edges__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Specialty_Options_Screen__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Foil_Stamp_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Number of Spot Colors:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Number_of_Spot_Colors__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Metallic Ink Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Metallic_Ink_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Playmat_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Playmats</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Playmat',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Game_Piece_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Game Pieces</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Piece',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Type of Piece:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Type_of_Piece__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_1__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_1__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_2__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_2__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_3__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_3__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_4__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_4__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_5__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_5__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_6__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_6__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_7__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_7__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_8__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_8__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_9__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_9__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_10__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_10__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_11__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_11__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_12__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_12__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Dice_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Dice</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Dice',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Size:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Size__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Number of Sides:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Number_of_Sides__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Material_Dice__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Dice Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Dice_Color__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Pip Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Pip_Color__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Corners:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Corners__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Face Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Face_Type__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Bag_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Bags</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Bag',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Size:"  rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Size_Bag__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Type_of_Bag__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Bag Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Bag_Color__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Notepad_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Notepads</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Notepad',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Binding Side:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Binding_Side__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Size:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Size_Pad__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Number of Pages:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Number_of_Pages_Pad__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Paper Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Paper_Color__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Printing_Color_Pad__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Specialty_Options_Pad__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Foil_Stamp_Color__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Instructions_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Instructions</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Instructions',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Type of Instructions:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Type_of_Instructions__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Number of Pages:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Page_Count__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Paper Weight:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Paper_Weight__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Paper Coating:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Paper_Coating__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Specialty_Options_Instructions__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Foil_Stamp_Color__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField label="Number of Spot Colors:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Number_of_Spot_Colors__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField label="Metallic Ink Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Metallic_Ink_Color__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Box_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Box</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Box',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Type of Box:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Type_of_Box__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputField label="Height (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Height__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputField label="Type of Organizer:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Type_of_Organizer__c}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputField label="Number of Sections:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Number_of_Sections__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Specialty_Options_Box__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputField label="Foil Stamp Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Foil_Stamp_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Number of Spot Colors:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Number_of_Spot_Colors__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Metallic Ink Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Metallic_Ink_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Custom_Component_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Other Components</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Custom',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Order_Quantity_1__c}" />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Component_Total_Price_1__c}" />
+        <apex:outputField label="Component Information:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Add_On_Price_1__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Order_Quantity_2__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Component_Total_Price_2__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Add_On_Price_2__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Order_Quantity_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Component_Total_Price_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Add_On_Price_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Order Quantity:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Order_Quantity_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Component Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Component_Total_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />        
+        <apex:outputField label="Add-Ons Price:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Add_On_Price_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+</apex:form> 
+</body>
+</html>
+</apex:page>

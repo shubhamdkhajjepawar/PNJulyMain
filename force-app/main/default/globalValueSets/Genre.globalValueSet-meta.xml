@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agriculture</fullName>
+        <default>false</default>
+        <label>Agriculture</label>
+    </customValue>
+    <customValue>
+        <fullName>Architecture</fullName>
+        <default>false</default>
+        <label>Architecture</label>
+    </customValue>
+    <customValue>
+        <fullName>Art</fullName>
+        <default>false</default>
+        <label>Art</label>
+    </customValue>
+    <customValue>
+        <fullName>Astrology</fullName>
+        <default>false</default>
+        <label>Astrology</label>
+    </customValue>
+    <customValue>
+        <fullName>Australia_History</fullName>
+        <default>false</default>
+        <label>Australia_History</label>
+    </customValue>
+    <customValue>
+        <fullName>Bible_Commentaries</fullName>
+        <default>false</default>
+        <label>Bible_Commentaries</label>
+    </customValue>
+    <customValue>
+        <fullName>Biography</fullName>
+        <default>false</default>
+        <label>Biography</label>
+    </customValue>
+    <customValue>
+        <fullName>Business</fullName>
+        <default>false</default>
+        <label>Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Canada_History</fullName>
+        <default>false</default>
+        <label>Canada_History</label>
+    </customValue>
+    <customValue>
+        <fullName>Children’s Fiction</fullName>
+        <default>false</default>
+        <label>Children’s Fiction</label>
+    </customValue>
+    <customValue>
+        <fullName>Collectors and Collecting</fullName>
+        <default>false</default>
+        <label>Collectors and Collecting</label>
+    </customValue>
+    <customValue>
+        <fullName>Comics and Graphic Novels_General</fullName>
+        <default>false</default>
+        <label>Comics and Graphic Novels_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Computers</fullName>
+        <default>false</default>
+        <label>Computers</label>
+    </customValue>
+    <customValue>
+        <fullName>Computer Software</fullName>
+        <default>false</default>
+        <label>Computer Software</label>
+    </customValue>
+    <customValue>
+        <fullName>Cooking</fullName>
+        <default>false</default>
+        <label>Cooking</label>
+    </customValue>
+    <customValue>
+        <fullName>Crime</fullName>
+        <default>false</default>
+        <label>Crime</label>
+    </customValue>
+    <customValue>
+        <fullName>Curiosities and Wonders</fullName>
+        <default>false</default>
+        <label>Curiosities and Wonders</label>
+    </customValue>
+    <customValue>
+        <fullName>Drama_Collections</fullName>
+        <default>false</default>
+        <label>Drama_Collections</label>
+    </customValue>
+    <customValue>
+        <fullName>Drama_History and Criticism</fullName>
+        <default>false</default>
+        <label>Drama_History and Criticism</label>
+    </customValue>
+    <customValue>
+        <fullName>Drama (Dramatic works by one author)</fullName>
+        <default>false</default>
+        <label>Drama (Dramatic works by one author)</label>
+    </customValue>
+    <customValue>
+        <fullName>Economics</fullName>
+        <default>false</default>
+        <label>Economics</label>
+    </customValue>
+    <customValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <label>Education</label>
+    </customValue>
+    <customValue>
+        <fullName>Family</fullName>
+        <default>false</default>
+        <label>Family</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Action and Adventure</fullName>
+        <default>false</default>
+        <label>Fiction_Action and Adventure</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Anthologies (multiple authors)</fullName>
+        <default>false</default>
+        <label>Fiction_Anthologies (multiple authors)</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Erotica_General</fullName>
+        <default>false</default>
+        <label>Fiction_Erotica_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Fantasy_General</fullName>
+        <default>false</default>
+        <label>Fiction_Fantasy_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_General</fullName>
+        <default>false</default>
+        <label>Fiction_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Historical_General</fullName>
+        <default>false</default>
+        <label>Fiction_Historical_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Horror</fullName>
+        <default>false</default>
+        <label>Fiction_Horror</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_LGBTQ+_Gay</fullName>
+        <default>false</default>
+        <label>Fiction_LGBTQ+_Gay</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Mystery and Detective_General</fullName>
+        <default>false</default>
+        <label>Fiction_Mystery and Detective_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Psychological</fullName>
+        <default>false</default>
+        <label>Fiction_Psychological</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Religious</fullName>
+        <default>false</default>
+        <label>Fiction_Religious</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Romance_General</fullName>
+        <default>false</default>
+        <label>Fiction_Romance_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Science Fiction_General</fullName>
+        <default>false</default>
+        <label>Fiction_Science Fiction_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Short Stories (single author)</fullName>
+        <default>false</default>
+        <label>Fiction_Short Stories (single author)</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Thrillers_Espionage</fullName>
+        <default>false</default>
+        <label>Fiction_Thrillers_Espionage</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Thrillers_General</fullName>
+        <default>false</default>
+        <label>Fiction_Thrillers_General</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Thrillers_Suspense</fullName>
+        <default>false</default>
+        <label>Fiction_Thrillers_Suspense</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Visionary and Metaphysical</fullName>
+        <default>false</default>
+        <label>Fiction_Visionary and Metaphysical</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_War and Military</fullName>
+        <default>false</default>
+        <label>Fiction_War and Military</label>
+    </customValue>
+    <customValue>
+        <fullName>Fiction_Westerns</fullName>
+        <default>false</default>
+        <label>Fiction_Westerns</label>
+    </customValue>
+    <customValue>
+        <fullName>Finance, Personal</fullName>
+        <default>false</default>
+        <label>Finance, Personal</label>
+    </customValue>
+    <customValue>
+        <fullName>Games</fullName>
+        <default>false</default>
+        <label>Games</label>
+    </customValue>
+    <customValue>
+        <fullName>Gardening</fullName>
+        <default>false</default>
+        <label>Gardening</label>
+    </customValue>
+    <customValue>
+        <fullName>Genealogy</fullName>
+        <default>false</default>
+        <label>Genealogy</label>
+    </customValue>
+    <customValue>
+        <fullName>Great Britain_History</fullName>
+        <default>false</default>
+        <label>Great Britain_History</label>
+    </customValue>
+    <customValue>
+        <fullName>Handicraft</fullName>
+        <default>false</default>
+        <label>Handicraft</label>
+    </customValue>
+    <customValue>
+        <fullName>Health</fullName>
+        <default>false</default>
+        <label>Health</label>
+    </customValue>
+    <customValue>
+        <fullName>Interior Decoration</fullName>
+        <default>false</default>
+        <label>Interior Decoration</label>
+    </customValue>
+    <customValue>
+        <fullName>Internet</fullName>
+        <default>false</default>
+        <label>Internet</label>
+    </customValue>
+    <customValue>
+        <fullName>Interpersonal Relations</fullName>
+        <default>false</default>
+        <label>Interpersonal Relations</label>
+    </customValue>
+    <customValue>
+        <fullName>Language and Languages_Study and Teaching</fullName>
+        <default>false</default>
+        <label>Language and Languages_Study and Teaching</label>
+    </customValue>
+    <customValue>
+        <fullName>Language Arts</fullName>
+        <default>false</default>
+        <label>Language Arts</label>
+    </customValue>
+    <customValue>
+        <fullName>Law</fullName>
+        <default>false</default>
+        <label>Law</label>
+    </customValue>
+    <customValue>
+        <fullName>Literature_Collections</fullName>
+        <default>false</default>
+        <label>Literature_Collections</label>
+    </customValue>
+    <customValue>
+        <fullName>Literature_History and Criticism</fullName>
+        <default>false</default>
+        <label>Literature_History and Criticism</label>
+    </customValue>
+    <customValue>
+        <fullName>Mathematics</fullName>
+        <default>false</default>
+        <label>Mathematics</label>
+    </customValue>
+    <customValue>
+        <fullName>Medicine</fullName>
+        <default>false</default>
+        <label>Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Military Art and Science</fullName>
+        <default>false</default>
+        <label>Military Art and Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Mind and Body</fullName>
+        <default>false</default>
+        <label>Mind and Body</label>
+    </customValue>
+    <customValue>
+        <fullName>Music</fullName>
+        <default>false</default>
+        <label>Music</label>
+    </customValue>
+    <customValue>
+        <fullName>Nature</fullName>
+        <default>false</default>
+        <label>Nature</label>
+    </customValue>
+    <customValue>
+        <fullName>New Zealand_History</fullName>
+        <default>false</default>
+        <label>New Zealand_History</label>
+    </customValue>
+    <customValue>
+        <fullName>Nutrition</fullName>
+        <default>false</default>
+        <label>Nutrition</label>
+    </customValue>
+    <customValue>
+        <fullName>Parenting</fullName>
+        <default>false</default>
+        <label>Parenting</label>
+    </customValue>
+    <customValue>
+        <fullName>Performing Arts</fullName>
+        <default>false</default>
+        <label>Performing Arts</label>
+    </customValue>
+    <customValue>
+        <fullName>Pets</fullName>
+        <default>false</default>
+        <label>Pets</label>
+    </customValue>
+    <customValue>
+        <fullName>Philosophy</fullName>
+        <default>false</default>
+        <label>Philosophy</label>
+    </customValue>
+    <customValue>
+        <fullName>Photography</fullName>
+        <default>false</default>
+        <label>Photography</label>
+    </customValue>
+    <customValue>
+        <fullName>Physical Fitness</fullName>
+        <default>false</default>
+        <label>Physical Fitness</label>
+    </customValue>
+    <customValue>
+        <fullName>Physics</fullName>
+        <default>false</default>
+        <label>Physics</label>
+    </customValue>
+    <customValue>
+        <fullName>Poetry_Collections</fullName>
+        <default>false</default>
+        <label>Poetry_Collections</label>
+    </customValue>
+    <customValue>
+        <fullName>Poetry_History and Criticism</fullName>
+        <default>false</default>
+        <label>Poetry_History and Criticism</label>
+    </customValue>
+    <customValue>
+        <fullName>Poetry (poetic works by one author)</fullName>
+        <default>false</default>
+        <label>Poetry (poetic works by one author)</label>
+    </customValue>
+    <customValue>
+        <fullName>Political Science</fullName>
+        <default>false</default>
+        <label>Political Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Psychology</fullName>
+        <default>false</default>
+        <label>Psychology</label>
+    </customValue>
+    <customValue>
+        <fullName>Reference Books</fullName>
+        <default>false</default>
+        <label>Reference Books</label>
+    </customValue>
+    <customValue>
+        <fullName>Religion</fullName>
+        <default>false</default>
+        <label>Religion</label>
+    </customValue>
+    <customValue>
+        <fullName>Science</fullName>
+        <default>false</default>
+        <label>Science</label>
+    </customValue>
+    <customValue>
+        <fullName>Self-Help Techniques</fullName>
+        <default>false</default>
+        <label>Self-Help Techniques</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Sciences</fullName>
+        <default>false</default>
+        <label>Social Sciences</label>
+    </customValue>
+    <customValue>
+        <fullName>Spirituality</fullName>
+        <default>false</default>
+        <label>Spirituality</label>
+    </customValue>
+    <customValue>
+        <fullName>Sports</fullName>
+        <default>false</default>
+        <label>Sports</label>
+    </customValue>
+    <customValue>
+        <fullName>Technology</fullName>
+        <default>false</default>
+        <label>Technology</label>
+    </customValue>
+    <customValue>
+        <fullName>Transportation</fullName>
+        <default>false</default>
+        <label>Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Travel</fullName>
+        <default>false</default>
+        <label>Travel</label>
+    </customValue>
+    <customValue>
+        <fullName>United States_History</fullName>
+        <default>false</default>
+        <label>United States_History</label>
+    </customValue>
+    <customValue>
+        <fullName>Wit and Humor</fullName>
+        <default>false</default>
+        <label>Wit and Humor</label>
+    </customValue>
+    <customValue>
+        <fullName>World History</fullName>
+        <default>false</default>
+        <label>World History</label>
+    </customValue>
+    <description>Subjects &amp; Genres available for ISBN registry</description>
+    <masterLabel>Genre</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

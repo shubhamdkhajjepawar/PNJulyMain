@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&amp;lt;div id=&amp;quot;kf-embed-container-e5c142ce87e2f664e159d30dd39144a2&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;br&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://ae0521ba008c6c6dd67f-667e6d5e490a1bc46688be42ea525d83.ssl.cf1.rackcdn.com/kf_embed_api-20131030.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;br&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;&lt;br&gt;KF.embed.embedKlip({&lt;br&gt;   profile : &amp;quot;e5c142ce87e2f664e159d30dd39144a2&amp;quot;,&lt;br&gt;   settings : {&amp;quot;width&amp;quot;:395,&amp;quot;theme&amp;quot;:&amp;quot;light&amp;quot;,&amp;quot;borderStyle&amp;quot;:&amp;quot;round&amp;quot;,&amp;quot;borderColor&amp;quot;:&amp;quot;#cccccc&amp;quot;},&lt;br&gt;   title : &amp;quot;Rolling 30&amp;quot;&lt;br&gt;});&lt;br&gt;&amp;lt;/script&amp;gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

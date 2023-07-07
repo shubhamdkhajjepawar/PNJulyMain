@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Poster_Size__c</name>
+    <picklistValues>
+        <masterLabel>11&quot; x 11&quot;</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>11&quot; x 22&quot;</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>11&quot; x 33&quot;</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>22&quot; x 22&quot;</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>22&quot; x 33&quot;</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

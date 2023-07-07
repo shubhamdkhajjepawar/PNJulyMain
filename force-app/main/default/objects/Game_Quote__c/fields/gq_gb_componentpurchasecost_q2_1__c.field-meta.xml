@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_gb_componentpurchasecost_q2_1__c</fullName>
+    <description>Purchase cost (pre-markup) of component for Q2</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Purchase cost (pre-markup) of component for Q2
+
+If this field = $0, then this component will be gang-runned with the 2 piece box. This means its costs are included with the cost shown for the 2 piece box.</inlineHelpText>
+    <label>Purchase Cost (Q2)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

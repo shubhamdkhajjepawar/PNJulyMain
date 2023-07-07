@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amazon_Diamond__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether or not the customer is shipping any portion of their order direct to Diamond Dist. or Amazon.com</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates whether or not the customer is shipping any portion of their order direct to Diamond Dist. or Amazon.com</inlineHelpText>
+    <label>Amazon/Diamond</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Game Quote (Old)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Game Quotes (Old)</value>
+    </caseValues>
+    <layouts>
+        <layout>Game Quote Layout</layout>
+        <sections>
+            <label></label>
+            <section>2 Piece Box</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cardboard Mats, Tiles &amp; Screens (Set 1)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cardboard Mats, Tiles &amp; Screens (Set 2)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cardboard Punch Outs (Board 1)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cardboard Punch Outs (Board 2)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cards &amp; Card Packaging (Deck 1)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cards &amp; Card Packaging (Deck 2)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cards &amp; Card Packaging (Deck 3)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cards &amp; Card Packaging (Deck 4)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Cloth &amp; Plastic Bags</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Metal and Resin Pieces</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Dice (Set 1)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Dice (Set 2)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Dice (Set 3)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Dice (Set 4)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Game Boards</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Game Quote Hiding Test</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Instruction Books &amp; Inserts</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>International Prices</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Organizing Box Insert</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Paper Pads</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pre-Made Pieces (Set 1)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pre-Made Pieces (Set 2)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pre-Made Pieces (Set 3)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Rubber Playmats</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>ROW_Only_One_Configuration</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>QuotePDF</name>
+    </webLinks>
+    <workflowTasks>
+        <name>Custom_Game_Quote_Request_Existing</name>
+        <subject></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

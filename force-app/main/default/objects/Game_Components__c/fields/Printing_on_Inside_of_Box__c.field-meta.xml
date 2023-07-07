@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Printing_on_Inside_of_Box__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check for printing on both the front and inside of the box.</description>
+    <externalId>false</externalId>
+    <label>Printing on Inside of Box</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

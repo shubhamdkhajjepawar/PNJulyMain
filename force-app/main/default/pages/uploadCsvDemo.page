@@ -1,0 +1,43 @@
+<apex:page standardController="Opportunity" extensions="uploadCSVcontroller" >
+
+  <apex:PageBlock id="pb">
+  <p><strong style="color:Green;">
+  <apex:outputText value="{!OrderMsg}" escape="false" ></apex:outputText>
+  </strong></p>
+   <p><strong style="color:Green;">
+     <apex:outputText value="{!OrderUPSMsg}" escape="false" ></apex:outputText>
+
+   </strong></p>
+  <apex:PageBlockSection title="Upload Order Tracking File">
+  <apex:form >
+    <apex:pagemessages ></apex:pagemessages> 
+  <apex:inputFile value="{!contentFile}" filename="{!nameFile}" />
+  <apex:commandButton value="Upload" id="theButton" action="{!UpdateOppor}"/>
+  </apex:form>
+  </apex:PageBlockSection>
+ <apex:PageBlockSection title="Upload UPS Order Tracking File">
+  
+  <apex:form >
+   
+  <apex:inputFile value="{!contentFileUPS}" filename="{!nameFileUPS}" />
+  <apex:commandButton value="Upload UPS Tracking File" style="width:150px;" id="theButton" action="{!UpdateOpporByUPS}"/>
+  </apex:form>
+   </apex:PageBlockSection>
+   </apex:PageBlock>
+  
+ <!-- <apex:outputPanel id="results" rendered="{!NOT(ISNULL(results))}">
+  <p>FileName: {!nameFile}</p>
+  <p>Total Rows: {!rowCount}</p>
+  <p>Test String: {!NameID}</p>
+    <table title="CSV Output" border="1" width="100%">
+       <apex:repeat value="{!results}" var="row">
+           <tr>
+               <apex:repeat value="{!row}" var="cell">
+                   <td> {!cell} </td>
+               </apex:repeat>
+           </tr>
+       </apex:repeat>
+     </table>
+  </apex:outputPanel>
+-->
+</apex:page>

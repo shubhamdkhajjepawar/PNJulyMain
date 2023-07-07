@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_cards_trimsize_1__c</fullName>
+    <description>Pre-existing trim sizes (dies) of playing cards.</description>
+    <externalId>false</externalId>
+    <label>Card Trim Size</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2.75 x 4.75 - Tarot (30 / sheet)</fullName>
+                <default>false</default>
+                <label>2.75 x 4.75 - Tarot (30 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.35 x 3.6 - Euro (44 / sheet)</fullName>
+                <default>false</default>
+                <label>2.35 x 3.6 - Euro (44 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.5 x 3.5 - Poker (55 / sheet)</fullName>
+                <default>false</default>
+                <label>2.5 x 3.5 - Poker (55 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.25 x 3.5 - Bridge (55 / sheet)</fullName>
+                <default>false</default>
+                <label>2.25 x 3.5 - Bridge (55 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.5 x 2.5 - Square (55 / sheet)</fullName>
+                <default>false</default>
+                <label>2.5 x 2.5 - Square (55 / sheet)</label>
+            </value>
+            <value>
+                <fullName>1.65 x 2.5 - Mini (55 / sheet)</fullName>
+                <default>false</default>
+                <label>1.65 x 2.5 - Mini (55 / sheet)</label>
+            </value>
+            <value>
+                <fullName>3.95 x 1 (104 / sheet)</fullName>
+                <default>false</default>
+                <label>3.95 x 1 (104 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.45 x 3.45 (55 / sheet)</fullName>
+                <default>false</default>
+                <label>2.45 x 3.45 (55 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.25 x 3.45 (55 / sheet)</fullName>
+                <default>false</default>
+                <label>2.25 x 3.45 (55 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.15 x 3.15 (55 / sheet)</fullName>
+                <default>false</default>
+                <label>2.15 x 3.15 (55 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2 x 3.25 (55 / sheet)</fullName>
+                <default>false</default>
+                <label>2 x 3.25 (55 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.4 x 3.5 (54 / sheet)</fullName>
+                <default>false</default>
+                <label>2.4 x 3.5 (54 / sheet)</label>
+            </value>
+            <value>
+                <fullName>3.15 x 3.15 (45 / sheet)</fullName>
+                <default>false</default>
+                <label>3.15 x 3.15 (45 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.4 x 4.5 (44 / sheet)</fullName>
+                <default>false</default>
+                <label>2.4 x 4.5 (44 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.45 x 3.9 (44 / sheet)</fullName>
+                <default>false</default>
+                <label>2.45 x 3.9 (44 / sheet)</label>
+            </value>
+            <value>
+                <fullName>3.85 x 2.9 (36 / sheet)</fullName>
+                <default>false</default>
+                <label>3.85 x 2.9 (36 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.95 x 4.1 (36 / sheet)</fullName>
+                <default>false</default>
+                <label>2.95 x 4.1 (36 / sheet)</label>
+            </value>
+            <value>
+                <fullName>2.8 x 4.4 (36 / sheet)</fullName>
+                <default>false</default>
+                <label>2.8 x 4.4 (36 / sheet)</label>
+            </value>
+            <value>
+                <fullName>5.1 x 3.35 (24 / sheet)</fullName>
+                <default>false</default>
+                <label>5.1 x 3.35 (24 / sheet)</label>
+            </value>
+            <value>
+                <fullName>5 x 3.5 (24 / sheet)</fullName>
+                <default>false</default>
+                <label>5 x 3.5 (24 / sheet)</label>
+            </value>
+            <value>
+                <fullName>4.75 x 3.5 (24 / sheet)</fullName>
+                <default>false</default>
+                <label>4.75 x 3.5 (24 / sheet)</label>
+            </value>
+            <value>
+                <fullName>5.5 x 3.75 (21 / sheet)</fullName>
+                <default>false</default>
+                <label>5.5 x 3.75 (21 / sheet)</label>
+            </value>
+            <value>
+                <fullName>4 x 6 (21 / sheet)</fullName>
+                <default>false</default>
+                <label>4 x 6 (21 / sheet)</label>
+            </value>
+            <value>
+                <fullName>4 x 5 (21 / sheet)</fullName>
+                <default>false</default>
+                <label>4 x 5 (21 / sheet)</label>
+            </value>
+            <value>
+                <fullName>4.3 x 6.3 (12 / sheet)</fullName>
+                <default>false</default>
+                <label>4.3 x 6.3 (12 / sheet)</label>
+            </value>
+            <value>
+                <fullName>Custom Size</fullName>
+                <default>false</default>
+                <label>Custom Size</label>
+            </value>
+            <value>
+                <fullName>Custom Shape</fullName>
+                <default>false</default>
+                <label>Custom Shape</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

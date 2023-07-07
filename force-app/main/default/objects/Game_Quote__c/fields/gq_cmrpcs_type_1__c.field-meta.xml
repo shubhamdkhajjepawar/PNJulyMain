@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_cmrpcs_type_1__c</fullName>
+    <description>Type of custom piece</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Factory assembled pieces require a 3d graphic file to create</inlineHelpText>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Simple Shapes</fullName>
+                <default>false</default>
+                <label>Simple Shapes</label>
+            </value>
+            <value>
+                <fullName>Solid Piece Miniature</fullName>
+                <default>false</default>
+                <label>Solid Piece Miniature</label>
+            </value>
+            <value>
+                <fullName>Factory Assembled Miniature</fullName>
+                <default>false</default>
+                <label>Factory Assembled Miniature</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Electronic_Game_Proof</fullName>
+        <field>PRN_proofing__c</field>
+        <literalValue>Electronic</literalValue>
+        <name>Electronic Game Proof</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Expedited_Mark_Up_1</fullName>
+        <field>Expedited_Freight_Markup_1__c</field>
+        <formula>IF(Expedited_Freight_Cost_1__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Expedited Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Expedited_Mark_Up_2</fullName>
+        <field>Expedited_Freight_Markup_2__c</field>
+        <formula>IF(Expedited_Freight_Cost_2__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Expedited Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Expedited_Mark_Up_3</fullName>
+        <field>Expedited_Freight_Markup_3__c</field>
+        <formula>IF(Expedited_Freight_Cost_3__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Expedited Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Expedited_Mark_Up_4</fullName>
+        <field>Expedited_Freight_Markup_4__c</field>
+        <formula>IF(Expedited_Freight_Cost_4__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Expedited Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Ground_Mark_Up_1</fullName>
+        <field>Ground_Freight_Markup_1__c</field>
+        <formula>IF(Ground_Freight_Cost_1__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Ground Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Ground_Mark_Up_2</fullName>
+        <field>Ground_Freight_Markup_2__c</field>
+        <formula>IF(Ground_Freight_Cost_2__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Ground Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Ground_Mark_Up_3</fullName>
+        <field>Ground_Freight_Markup_3__c</field>
+        <formula>IF(Ground_Freight_Cost_3__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Ground Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Ground_Mark_Up_4</fullName>
+        <field>Ground_Freight_Markup_4__c</field>
+        <formula>IF(Ground_Freight_Cost_4__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Ground Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Ocean_Mark_Up_1</fullName>
+        <field>Ocean_Freight_Markup_1__c</field>
+        <formula>IF(Ocean_Freight_Cost_1__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Ocean Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Ocean_Mark_Up_2</fullName>
+        <field>Ocean_Freight_Markup_2__c</field>
+        <formula>IF(Ocean_Freight_Cost_2__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Ocean Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Ocean_Mark_Up_3</fullName>
+        <field>Ocean_Freight_Markup_3__c</field>
+        <formula>IF(Ocean_Freight_Cost_3__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Ocean Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Ocean_Mark_Up_4</fullName>
+        <field>Ocean_Freight_Markup_4__c</field>
+        <formula>IF(Ocean_Freight_Cost_4__c &gt; 0, 0.20, 0)</formula>
+        <name>Game Ocean Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Product_Mark_Up_1</fullName>
+        <field>Product_Markup_1__c</field>
+        <formula>IF(AND(Product_Purchase_Cost_1__c &gt; 0,Product_Purchase_Cost_1__c &lt; 400), 0.80, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 400,Product_Purchase_Cost_1__c &lt; 450), 0.75, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 450,Product_Purchase_Cost_1__c &lt; 500), 0.70, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 500,Product_Purchase_Cost_1__c &lt; 550), 0.65, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 550,Product_Purchase_Cost_1__c &lt; 600), 0.60, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 600,Product_Purchase_Cost_1__c &lt; 700), 0.55, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 700,Product_Purchase_Cost_1__c &lt; 800), 0.50, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 800,Product_Purchase_Cost_1__c &lt; 1000), 0.45, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 1000,Product_Purchase_Cost_1__c &lt; 2500), 0.40, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 2500,Product_Purchase_Cost_1__c &lt; 3000), 0.39, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 3000,Product_Purchase_Cost_1__c &lt; 3500), 0.38, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 3500,Product_Purchase_Cost_1__c &lt; 4000), 0.37, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 4000,Product_Purchase_Cost_1__c &lt; 5000), 0.36, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 5000,Product_Purchase_Cost_1__c &lt; 6000), 0.35, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 6000,Product_Purchase_Cost_1__c &lt; 7000), 0.34, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 7000,Product_Purchase_Cost_1__c &lt; 8000), 0.33, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 8000,Product_Purchase_Cost_1__c &lt; 9000), 0.32, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 9000,Product_Purchase_Cost_1__c &lt; 10000), 0.31, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 10000,Product_Purchase_Cost_1__c &lt; 12500), 0.30, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 12500,Product_Purchase_Cost_1__c &lt; 15000), 0.29, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 15000,Product_Purchase_Cost_1__c &lt; 17500), 0.28, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 17500,Product_Purchase_Cost_1__c &lt; 20000), 0.27, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 20000,Product_Purchase_Cost_1__c &lt; 25000), 0.26, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 25000,Product_Purchase_Cost_1__c &lt; 30000), 0.25, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 30000,Product_Purchase_Cost_1__c &lt; 40000), 0.24, 
+IF(AND(Product_Purchase_Cost_1__c &gt;= 40000,Product_Purchase_Cost_1__c &lt; 50000), 0.23, 
+IF(Product_Purchase_Cost_1__c &gt;= 50000, 0.22, 0 
+)))))))))))))))))))))))))))</formula>
+        <name>Game Product Mark-Up 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Product_Mark_Up_2</fullName>
+        <field>Product_Markup_2__c</field>
+        <formula>IF(AND(Product_Purchase_Cost_2__c &gt; 0,Product_Purchase_Cost_2__c &lt; 400), 0.80, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 400,Product_Purchase_Cost_2__c &lt; 450), 0.75, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 450,Product_Purchase_Cost_2__c &lt; 500), 0.70, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 500,Product_Purchase_Cost_2__c &lt; 550), 0.65, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 550,Product_Purchase_Cost_2__c &lt; 600), 0.60, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 600,Product_Purchase_Cost_2__c &lt; 700), 0.55, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 700,Product_Purchase_Cost_2__c &lt; 800), 0.50, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 800,Product_Purchase_Cost_2__c &lt; 1000), 0.45, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 1000,Product_Purchase_Cost_2__c &lt; 2500), 0.40, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 2500,Product_Purchase_Cost_2__c &lt; 3000), 0.39, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 3000,Product_Purchase_Cost_2__c &lt; 3500), 0.38, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 3500,Product_Purchase_Cost_2__c &lt; 4000), 0.37, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 4000,Product_Purchase_Cost_2__c &lt; 5000), 0.36, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 5000,Product_Purchase_Cost_2__c &lt; 6000), 0.35, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 6000,Product_Purchase_Cost_2__c &lt; 7000), 0.34, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 7000,Product_Purchase_Cost_2__c &lt; 8000), 0.33, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 8000,Product_Purchase_Cost_2__c &lt; 9000), 0.32, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 9000,Product_Purchase_Cost_2__c &lt; 10000), 0.31, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 10000,Product_Purchase_Cost_2__c &lt; 12500), 0.30, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 12500,Product_Purchase_Cost_2__c &lt; 15000), 0.29, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 15000,Product_Purchase_Cost_2__c &lt; 17500), 0.28, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 17500,Product_Purchase_Cost_2__c &lt; 20000), 0.27, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 20000,Product_Purchase_Cost_2__c &lt; 25000), 0.26, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 25000,Product_Purchase_Cost_2__c &lt; 30000), 0.25, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 30000,Product_Purchase_Cost_2__c &lt; 40000), 0.24, 
+IF(AND(Product_Purchase_Cost_2__c &gt;= 40000,Product_Purchase_Cost_2__c &lt; 50000), 0.23, 
+IF(Product_Purchase_Cost_2__c &gt;= 50000, 0.22, 0 
+)))))))))))))))))))))))))))</formula>
+        <name>Game Product Mark-Up 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Product_Mark_Up_3</fullName>
+        <field>Product_Markup_3__c</field>
+        <formula>IF(AND(Product_Purchase_Cost_3__c &gt; 0,Product_Purchase_Cost_3__c &lt; 400), 0.80, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 400,Product_Purchase_Cost_3__c &lt; 450), 0.75, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 450,Product_Purchase_Cost_3__c &lt; 500), 0.70, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 500,Product_Purchase_Cost_3__c &lt; 550), 0.65, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 550,Product_Purchase_Cost_3__c &lt; 600), 0.60, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 600,Product_Purchase_Cost_3__c &lt; 700), 0.55, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 700,Product_Purchase_Cost_3__c &lt; 800), 0.50, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 800,Product_Purchase_Cost_3__c &lt; 1000), 0.45, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 1000,Product_Purchase_Cost_3__c &lt; 2500), 0.40, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 2500,Product_Purchase_Cost_3__c &lt; 3000), 0.39, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 3000,Product_Purchase_Cost_3__c &lt; 3500), 0.38, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 3500,Product_Purchase_Cost_3__c &lt; 4000), 0.37, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 4000,Product_Purchase_Cost_3__c &lt; 5000), 0.36, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 5000,Product_Purchase_Cost_3__c &lt; 6000), 0.35, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 6000,Product_Purchase_Cost_3__c &lt; 7000), 0.34, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 7000,Product_Purchase_Cost_3__c &lt; 8000), 0.33, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 8000,Product_Purchase_Cost_3__c &lt; 9000), 0.32, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 9000,Product_Purchase_Cost_3__c &lt; 10000), 0.31, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 10000,Product_Purchase_Cost_3__c &lt; 12500), 0.30, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 12500,Product_Purchase_Cost_3__c &lt; 15000), 0.29, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 15000,Product_Purchase_Cost_3__c &lt; 17500), 0.28, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 17500,Product_Purchase_Cost_3__c &lt; 20000), 0.27, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 20000,Product_Purchase_Cost_3__c &lt; 25000), 0.26, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 25000,Product_Purchase_Cost_3__c &lt; 30000), 0.25, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 30000,Product_Purchase_Cost_3__c &lt; 40000), 0.24, 
+IF(AND(Product_Purchase_Cost_3__c &gt;= 40000,Product_Purchase_Cost_3__c &lt; 50000), 0.23, 
+IF(Product_Purchase_Cost_3__c &gt;= 50000, 0.22, null 
+)))))))))))))))))))))))))))</formula>
+        <name>Game Product Mark-Up 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Product_Mark_Up_4</fullName>
+        <field>Product_Markup_4__c</field>
+        <formula>IF(AND(Product_Purchase_Cost_4__c &gt; 0,Product_Purchase_Cost_4__c &lt; 400), 0.80, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 400,Product_Purchase_Cost_4__c &lt; 450), 0.75, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 450,Product_Purchase_Cost_4__c &lt; 500), 0.70, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 500,Product_Purchase_Cost_4__c &lt; 550), 0.65, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 550,Product_Purchase_Cost_4__c &lt; 600), 0.60, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 600,Product_Purchase_Cost_4__c &lt; 700), 0.55, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 700,Product_Purchase_Cost_4__c &lt; 800), 0.50, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 800,Product_Purchase_Cost_4__c &lt; 1000), 0.45, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 1000,Product_Purchase_Cost_4__c &lt; 2500), 0.40, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 2500,Product_Purchase_Cost_4__c &lt; 3000), 0.39, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 3000,Product_Purchase_Cost_4__c &lt; 3500), 0.38, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 3500,Product_Purchase_Cost_4__c &lt; 4000), 0.37, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 4000,Product_Purchase_Cost_4__c &lt; 5000), 0.36, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 5000,Product_Purchase_Cost_4__c &lt; 6000), 0.35, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 6000,Product_Purchase_Cost_4__c &lt; 7000), 0.34, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 7000,Product_Purchase_Cost_4__c &lt; 8000), 0.33, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 8000,Product_Purchase_Cost_4__c &lt; 9000), 0.32, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 9000,Product_Purchase_Cost_4__c &lt; 10000), 0.31, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 10000,Product_Purchase_Cost_4__c &lt; 12500), 0.30, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 12500,Product_Purchase_Cost_4__c &lt; 15000), 0.29, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 15000,Product_Purchase_Cost_4__c &lt; 17500), 0.28, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 17500,Product_Purchase_Cost_4__c &lt; 20000), 0.27, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 20000,Product_Purchase_Cost_4__c &lt; 25000), 0.26, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 25000,Product_Purchase_Cost_4__c &lt; 30000), 0.25, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 30000,Product_Purchase_Cost_4__c &lt; 40000), 0.24, 
+IF(AND(Product_Purchase_Cost_4__c &gt;= 40000,Product_Purchase_Cost_4__c &lt; 50000), 0.23, 
+IF(Product_Purchase_Cost_4__c &gt;= 50000, 0.22, 0 
+)))))))))))))))))))))))))))</formula>
+        <name>Game Product Mark-Up 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Quote_Field_Update_City</fullName>
+        <field>Ship_To_City__c</field>
+        <formula>Opportunity__r.Contact__r.MailingCity</formula>
+        <name>Game Quote Field Update City</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Quote_Field_Update_Country</fullName>
+        <field>Ship_To_Country__c</field>
+        <formula>Opportunity__r.Contact__r.MailingCountry</formula>
+        <name>Game Quote Field Update Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Quote_Field_Update_Phone</fullName>
+        <field>Phone__c</field>
+        <formula>Opportunity__r.Contact__r.Phone</formula>
+        <name>Game Quote Field Update Phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Quote_Field_Update_State</fullName>
+        <field>Ship_To_State_Province__c</field>
+        <formula>Opportunity__r.Contact__r.MailingState</formula>
+        <name>Game Quote Field Update State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Quote_Field_Update_Street</fullName>
+        <field>Ship_To_Street__c</field>
+        <formula>Opportunity__r.Contact__r.MailingStreet</formula>
+        <name>Game Quote Field Update Street</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Game_Quote_Field_Update_Zip</fullName>
+        <field>Ship_To_Zip_Postal_Code__c</field>
+        <formula>Opportunity__r.Contact__r.MailingPostalCode</formula>
+        <name>Game Quote Field Update Zip</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Need_Over_8000_Task</fullName>
+        <field>Need_Over_8000_Task__c</field>
+        <literalValue>0</literalValue>
+        <name>Need Over 8000 Task</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opportunity_Proof_Update_Physical</fullName>
+        <field>PRN_proofing__c</field>
+        <literalValue>Standard Hard Copy Proofing - 1 Press Sheet</literalValue>
+        <name>Opportunity Proof Update Physical</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>WFU_Ship_To_Street_2</fullName>
+        <field>Ship_To_Street_2__c</field>
+        <formula>Ship_To_Street_2__c</formula>
+        <name>WFU_Ship_To_Street_2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>Opportunity__c</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>Auto Game Mark-Up Expedited 1</fullName>
+        <actions>
+            <name>Game_Expedited_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Expedited_Freight_Cost_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Expedited_Freight_Markup_1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Expedited 2</fullName>
+        <actions>
+            <name>Game_Expedited_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Expedited_Freight_Cost_2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Expedited_Freight_Markup_2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Expedited 3</fullName>
+        <actions>
+            <name>Game_Expedited_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Expedited_Freight_Cost_3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Expedited_Freight_Markup_3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Expedited 4</fullName>
+        <actions>
+            <name>Game_Expedited_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Expedited_Freight_Cost_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Expedited_Freight_Markup_4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Ground 1</fullName>
+        <actions>
+            <name>Game_Ground_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ground_Freight_Cost_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ground_Freight_Markup_1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Ground 2</fullName>
+        <actions>
+            <name>Game_Ground_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ground_Freight_Cost_2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ground_Freight_Markup_2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Ground 3</fullName>
+        <actions>
+            <name>Game_Ground_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ground_Freight_Cost_3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ground_Freight_Markup_3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Ground 4</fullName>
+        <actions>
+            <name>Game_Ground_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ground_Freight_Cost_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ground_Freight_Markup_4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Ocean 1</fullName>
+        <actions>
+            <name>Game_Ocean_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ocean_Freight_Cost_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ocean_Freight_Markup_1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Ocean 2</fullName>
+        <actions>
+            <name>Game_Ocean_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ocean_Freight_Cost_2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ocean_Freight_Markup_2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Ocean 3</fullName>
+        <actions>
+            <name>Game_Ocean_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ocean_Freight_Cost_3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ocean_Freight_Markup_3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Ocean 4</fullName>
+        <actions>
+            <name>Game_Ocean_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ocean_Freight_Cost_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ocean_Freight_Markup_4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Product 1</fullName>
+        <actions>
+            <name>Game_Product_Mark_Up_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Product_Purchase_Cost_1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Product_Markup_1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Product 2</fullName>
+        <actions>
+            <name>Game_Product_Mark_Up_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Product_Markup_2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Product 3</fullName>
+        <actions>
+            <name>Game_Product_Mark_Up_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Product_Markup_3__c</field>
+            <operation>notEqual</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Auto Game Mark-Up Product 4</fullName>
+        <actions>
+            <name>Game_Product_Mark_Up_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Product_Purchase_Cost_4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Product_Markup_4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Game Quote Specialty Add-Ons</fullName>
+        <actions>
+            <name>Quote_Game_Specialty_Add_Ons</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Additional_Customer_Request__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Game Quote over %248%2C000</fullName>
+        <actions>
+            <name>Need_Over_8000_Task</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Game_Quote_over_8_000</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(International_Grand_Total_1__c &gt; 8000, Need_Over_8000_Task__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Proof Update</fullName>
+        <actions>
+            <name>Electronic_Game_Proof</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Is_Used_To_Calculate_ROW__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Proposal/ Custom Quote,Proof Won,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Proofing__c</field>
+            <operation>equals</operation>
+            <value>Electronic</value>
+        </criteriaItems>
+        <description>This workflow updates a field automatically.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity Proof Update Physical</fullName>
+        <actions>
+            <name>Opportunity_Proof_Update_Physical</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Is_Used_To_Calculate_ROW__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Proposal/ Custom Quote,Proof Won,Closed Won</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Proofing__c</field>
+            <operation>equals</operation>
+            <value>Hard Copy</value>
+        </criteriaItems>
+        <description>This workflow updates a field automatically.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Game Quote Address</fullName>
+        <actions>
+            <name>Game_Quote_Field_Update_City</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Game_Quote_Field_Update_Country</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Game_Quote_Field_Update_Phone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Game_Quote_Field_Update_State</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Game_Quote_Field_Update_Street</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Game_Quote_Field_Update_Zip</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Custom_Game_Quote__c.Ship_To_Zip_Postal_Code__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF_OnupdateShipToStreet2</fullName>
+        <actions>
+            <name>WFU_Ship_To_Street_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <formula>OR(ISNEW(), ISCHANGED( Ship_To_Street_2__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Game_Quote_over_8_000</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Custom_Game_Quote__c.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Game Quote over $8,000</subject>
+    </tasks>
+    <tasks>
+        <fullName>Quote_Game_Specialty_Add_Ons</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Custom_Game_Quote__c.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Quote Game Specialty Add-Ons</subject>
+    </tasks>
+</Workflow>

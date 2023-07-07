@@ -1,0 +1,547 @@
+<apex:page standardController="Custom_Game_Quote__c" renderAs="PDF" showHeader="false" sidebar="false"  applyBodyTag="false" applyHtmlTag="false">
+    <html>
+    <head>
+        <style>    
+            body {
+                font-family: sans-serif;
+                font-size: 12px;
+                }
+            table {
+                table-layout: fixed;
+                width: 700px;
+                }
+            td {
+                overflow: hidden;
+                }    
+        </style>
+    </head>
+
+
+<body>
+<apex:form >
+<div align="center" style="font-family:sans-serif">
+      <img src="http://d85fd144eb6d904e1307-ee0389f939f121fe3a9bfdd4a2fec20f.r35.cf2.rackcdn.com/images/QuoteAssets/PRNInvoiceHeader2.jpg" />
+</div>
+
+<apex:pageBlock >
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Order Information</p>
+</div>
+    <apex:pageBlockSection >
+        <apex:outputField label="Job Number:" value="{!Custom_Game_Quote__c.Opportunity__r.Job_Number1__c}" />
+        <apex:outputField label="Shipping Address:" value="{!Custom_Game_Quote__c.Ship_To_Street__c}" />
+        <apex:outputField label="Order Name:" value="{!Custom_Game_Quote__c.Opportunity__r.Name}" />
+        <apex:outputField label="Shipping City:" value="{!Custom_Game_Quote__c.Ship_To_City__c}" />
+        <apex:outputField label="Account Name:" value="{!Custom_Game_Quote__c.Opportunity__r.Account.Name}" />
+        <apex:outputField label="Shipping State:" value="{!Custom_Game_Quote__c.Ship_To_State_Province__c}" />
+        <apex:outputField label="Contact Name:" value="{!Custom_Game_Quote__c.Opportunity__r.Contact__r.Name}" />
+        <apex:outputField label="Shipping ZIP:" value="{!Custom_Game_Quote__c.Ship_To_Zip_Postal_Code__c}" />
+        <apex:outputField label="Contact Email:" value="{!Custom_Game_Quote__c.Email__c}" />
+        <apex:outputField label="Shipping Country:" value="{!Custom_Game_Quote__c.Ship_To_Country__c}" />
+        <apex:outputField label="Contact Phone:" value="{!Custom_Game_Quote__c.Phone__c}" />
+        <apex:outputField label="Proofing Option:" value="{!Custom_Game_Quote__c.Proofing__c}" />
+        <apex:outputText label="Split Shipping Addresses:" rendered="{!IF(Custom_Game_Quote__c.Split_Shipping_Details__c == "",False,True)}" value="" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Split_Shipping_Details__c == "",False,True)}" value="" />
+        <apex:outputField label="" rendered="{!IF(Custom_Game_Quote__c.Split_Shipping_Details__c == "",False,True)}" value="{!Custom_Game_Quote__c.Split_Shipping_Details__c}" />
+    </apex:pageBlockSection>
+</apex:pageBlock>
+    
+<apex:pageBlock html-style="page-break-after: avoid;">
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Payment Information</p>
+</div>
+    <apex:pageBlockSection >
+        <apex:outputField label="Order Quantity:" value="{!Custom_Game_Quote__c.Opportunity__r.Display_Quantity__c}" />
+        <apex:outputField label="Payment Date 1:" value="{!Custom_Game_Quote__c.Opportunity__r.Payment_Date_1__c}" />
+        <apex:outputField label="Expedited Quantity:" value="{!Custom_Game_Quote__c.Opportunity__r.Expedited_Quantity__c}" />
+        <apex:outputField label="Payment Amount 1:" value="{!Custom_Game_Quote__c.Opportunity__r.Amount_1__c}" />
+        <apex:outputField label="Total Payment Amount:" value="{!Custom_Game_Quote__c.Opportunity__r.Total_Amount__c}" />
+        <apex:outputField label="Payment Method 1:" value="{!Custom_Game_Quote__c.Opportunity__r.Payment_Method__c}" />
+        <apex:outputText value=" " />
+        <apex:outputField label="Transaction ID 1:" value="{!Custom_Game_Quote__c.Opportunity__r.Transaction_ID_1__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c = null,False,True)}" label="Payment Date 2:" value="{!Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c = null,False,True)}" label="Payment Amount 2:" value="{!Custom_Game_Quote__c.Opportunity__r.Amount_2__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c = null,False,True)}" label="Payment Method 2:" value="{!Custom_Game_Quote__c.Opportunity__r.Payment_Method_2__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_2__c = null,False,True)}" label="Transaction ID 2:" value="{!Custom_Game_Quote__c.Opportunity__r.Transaction_ID_2__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c = null,False,True)}" label="Payment Date 3:" value="{!Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c = null,False,True)}" label="Payment Amount 3:" value="{!Custom_Game_Quote__c.Opportunity__r.Amount_3__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c = null,False,True)}" label="Payment Method 3:" value="{!Custom_Game_Quote__c.Opportunity__r.Payment_Method_3__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Payment_Date_3__c = null,False,True)}" label="Transaction ID 3:" value="{!Custom_Game_Quote__c.Opportunity__r.Transaction_ID_3__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Refund_Date__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Refund_Date__c = null,False,True)}" label="Refund Date:" value="{!Custom_Game_Quote__c.Opportunity__r.Refund_Date__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Refund_Date__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Refund_Date__c = null,False,True)}" label="Refund Amount:" value="{!Custom_Game_Quote__c.Opportunity__r.Refund__c}" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Refund_Date__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Refund_Date__c = null,False,True)}" label="Refund Method:" value="{!Custom_Game_Quote__c.Opportunity__r.Refund_Method__c }" />
+        <apex:outputText rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Refund_Date__c = null,False,True)}" value=" " />
+        <apex:outputField rendered="{!IF(Custom_Game_Quote__c.Opportunity__r.Refund_Date__c = null,False,True)}" label="Refund Transaction ID:" value="{!Custom_Game_Quote__c.Opportunity__r.Transaction_ID_R__c}" />
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+<apex:pageBlock >  
+<div style="background-color:#dee5ec;font-size:16px">
+    <p> Game Components</p>
+</div>
+</apex:pageBlock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Card_Deck_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Card Decks</i>
+
+    </div>
+                <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Card Deck',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Card Count:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Count__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Card Size:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Quote_Card_Size__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Card Stock:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Card_Stock__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Number of Card Backs:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Number_of_Card_Backs__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Card Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Specialty_Options_Card__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Deck Packaging:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Deck_Packaging__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Material__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Finish_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Finish_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Packaging Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Packaging_Specialty_Options__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Card Deck",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Game_Board_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Game Boards</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Board',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />        
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Panel Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Panel_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Game Board Backing:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Game_Board_Backing__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Wrapped Edges:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Wrapped_Edges__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Specialty_Options_Board__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Board",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Punch_Out_Sheet_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Punch-Out Sheets</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Punch-Out Sheet',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Token Shape:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Token_Shape__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Printing Sides:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Specialty_Options_Token__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Punch-Out Sheet",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Tile_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Tiles</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Tile',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Printing Sides:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Specialty_Options_Tile__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Tile",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Screen_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Screens</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Screen',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Number of Folds:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Number_of_Folds__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Printing Sides:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Printing_Sides__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Wrapped Edges:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Wrapped_Edges__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Specialty_Options_Screen__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Screen",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Playmat_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Playmats</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Playmat',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Number of Variant Artworks:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Variants__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Playmat",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Game_Piece_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Game Pieces</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Game Piece',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Type of Piece:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Type_of_Piece__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_1__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_1__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_2__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_2__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_3__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_4__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_5__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_5__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_6__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_6__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_7__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_7__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_8__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_8__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_9__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_9__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_10__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_10__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_11__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_11__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Color_12__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Number of Pieces:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Number_of_Pieces_12__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Game Piece",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Dice_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Dice</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Dice',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Size:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Size__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Number of Sides:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Number_of_Sides__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Material_Dice__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Dice Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Dice_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Pip Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Pip_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Corners:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Corners__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Face Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Face_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Dice",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Bag_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Bags</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Bag',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Size:"  rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Size_Bag__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Type_of_Bag__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Bag Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Bag_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Bag",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Notepad_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Notepads</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Notepad',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Binding Side:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Binding_Side__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Size:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Size_Pad__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Number of Pages:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Number_of_Pages_Pad__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Paper Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Paper_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Printing_Color_Pad__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Specialty_Options_Pad__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Notepad",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Instructions_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Instructions</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Instructions',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Type of Instructions:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Type_of_Instructions__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Number of Pages:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Page_Count__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Paper Weight:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Paper_Weight__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Paper Coating:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Paper_Coating__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Specialty_Options_Instructions__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Instructions",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Box_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Box</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Box',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Type of Box:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Type_of_Box__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Width (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Width__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Length (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Length__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Height (Inches):" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Height__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Material:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Material__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Finish Type:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Finish_Type__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Finish Style:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Finish_Style__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Printing Color:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Printing_Color__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Type of Organizer:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Type_of_Organizer__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Number of Sections:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Number_of_Sections__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Specialty Options:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Specialty_Options_Box__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputField label="Additional Info:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Box",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock rendered="{!Custom_Game_Quote__c.Custom_Component_Records__c >= 1}">
+    <div style="font-size:14px">
+    <i>Other Components</i>
+    </div>
+    <br />
+    <apex:repeat value="{!Custom_Game_Quote__c.Game_Components__r}" var="gameComponent">
+    <apex:pageBlockSection rendered="{!IF(gameComponent.Game_Component_Type__c == 'Custom',True,False)}">
+        <apex:outputField label="Component Name:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Name}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Quantity Per Game:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Quantity__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputField label="Component Information:" rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value="{!gameComponent.Additional_Info__c}" />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+        <apex:outputText rendered="{!IF(gameComponent.Game_Component_Type__c == "Custom",True,False)}" value=" " />
+    </apex:pageBlockSection>
+    </apex:repeat>
+    </apex:pageblock>
+</apex:form> 
+</body>
+</html>
+</apex:page>

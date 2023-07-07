@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jacket_Finish__c</fullName>
+    <externalId>false</externalId>
+    <label>Jacket Finish</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gloss Varnish</fullName>
+                <default>false</default>
+                <label>Gloss Varnish</label>
+            </value>
+            <value>
+                <fullName>Gloss Lamination</fullName>
+                <default>false</default>
+                <label>Gloss Lamination</label>
+            </value>
+            <value>
+                <fullName>Matte Varnish</fullName>
+                <default>false</default>
+                <label>Matte Varnish</label>
+            </value>
+            <value>
+                <fullName>Matte Lamination</fullName>
+                <default>false</default>
+                <label>Matte Lamination</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

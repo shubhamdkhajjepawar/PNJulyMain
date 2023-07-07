@@ -1,0 +1,37 @@
+<apex:page standardController="Opportunity" id="pg" showHeader="false" sidebar="false">
+<apex:includeScript value="/soap/ajax/28.0/connection.js"/>
+<apex:includeScript value="/soap/ajax/28.0/apex.js"/> 
+  <script language="javascript">
+   
+            var IsQuoteAddress= "{!Opportunity.Is_Quote_Address_Copied__c}"; // Get the Standard field value
+            var IsOpptyStage= "{!Opportunity.StageName}"; // Get the Standard field value
+            var oppId = "{!Opportunity.ID}";
+            var Oppty = new sforce.SObject("Opportunity");
+            Oppty.Id="{!Opportunity.ID}";
+            var viewsCount = "{!Opportunity.Total_Views__c}";
+            
+            if(viewsCount == "" || viewsCount == null || viewsCount == "NaN"){
+            viewsCount = 0;
+            }
+            viewsCount = parseInt(viewsCount);
+            if(IsOpptyStage=='Closed Won'){
+            
+            var quoteRecord = sforce.connection.query("select Phone,ShippingStreet, ShippingCity, ShippingPostalCode, ShippingState, ShippingCountry from Quote where OpportunityID ='" + oppId + "' AND Is_Used_To_Calculate_Row__c=true Limit 1");
+                      
+            records = quoteRecord.getArray("records");
+            
+                
+                Oppty.Is_Quote_Address_Copied__c= true;
+                Oppty.Phone_Quote__c = records[0].Phone;
+                Oppty.Ship_to_Address__c = records[0].ShippingStreet+"\n"+records[0].ShippingCity+"\n"+records[0].ShippingState+"\n"+records[0].ShippingPostalCode+"\n"+records[0].ShippingCountry;
+                
+
+            }
+            Oppty.Total_Views__c = viewsCount + 1;
+            result = sforce.connection.update([Oppty]); 
+            
+  </script>
+    
+
+
+</apex:page>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;pre&gt;
+&amp;lt;iframe src=&amp;quot;/01Z90000000ttgm&amp;quot; frameborder=&amp;quot;0&amp;quot; height=&amp;quot;900&amp;quot; width=&amp;quot;1280&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/pre&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>wide</width>
+</HomePageComponent>

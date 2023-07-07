@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Card_Size__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Card_Width__c = 0,TEXT(Card_Size__c),&quot;Custom: &quot; &amp; TEXT(Card_Width__c) &amp; &apos;&quot;&apos; &amp; &quot; x &quot; &amp; TEXT(Card_Length__c) &amp; &apos;&quot;&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quote Card Size</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_cmts_printingoptions_2__c</fullName>
+    <description>Printing options of cardboard mat, tile or screen</description>
+    <externalId>false</externalId>
+    <label>Printing Options</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full CMYK Front and Back</fullName>
+                <default>false</default>
+                <label>Full CMYK Front and Back</label>
+            </value>
+            <value>
+                <fullName>Full CMYK Front and Black Gameboard Backing</fullName>
+                <default>false</default>
+                <label>Full CMYK Front and Black Gameboard Backing</label>
+            </value>
+            <value>
+                <fullName>Full CMYK Front, Unprinted Greyboard Back</fullName>
+                <default>false</default>
+                <label>Full CMYK Front, Unprinted Greyboard Back</label>
+            </value>
+            <value>
+                <fullName>Black &amp; White Front and Back</fullName>
+                <default>false</default>
+                <label>Black &amp; White Front and Back</label>
+            </value>
+            <value>
+                <fullName>Black &amp; White Front and Black Gameboard Backing</fullName>
+                <default>false</default>
+                <label>Black &amp; White Front and Black Gameboard Backing</label>
+            </value>
+            <value>
+                <fullName>Black &amp; White Front, Unprinted Greyboard Back</fullName>
+                <default>false</default>
+                <label>Black &amp; White Front, Unprinted Greyboard Back</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

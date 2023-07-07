@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Packaging_Welcome</fullName>
+        <description>Packaging Welcome</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>customerservice@printninja.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Packaging_Welcome_1614701872430</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_On_Request_Your_Printing_Quote</fullName>
+        <description>Send Email On Request Your Printing Quote</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>webaccounts@511capital.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>customerservice@printninja.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Request_Your_Printing_Quote</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Add_to_Spam_Queue</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Spam</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Add to Spam Queue</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>International_Sample_Pack</fullName>
+        <field>International_Payment_Link__c</field>
+        <formula>&quot;https://pay.printninja.com/25/&quot;&amp;(FirstName)&amp;&quot; &quot;&amp;(LastName)&amp;&quot; Sample Pack&quot;</formula>
+        <name>International Sample Pack</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Payment_Amount</fullName>
+        <field>Payment_Amount__c</field>
+        <formula>0</formula>
+        <name>Lead Payment Amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PRN_AM_Field_Update</fullName>
+        <field>PRN_AM_Assigned__c</field>
+        <formula>OwnerId</formula>
+        <name>PRN AM Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PRN_Round_Robin_1</fullName>
+        <field>OwnerId</field>
+        <lookupValue>jzwirek@printninja.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>PRN Round Robin 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PRN_Round_Robin_3</fullName>
+        <field>OwnerId</field>
+        <lookupValue>jzwirek@printninja.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>PRN Round Robin 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PRN_Round_Robin_4</fullName>
+        <field>OwnerId</field>
+        <lookupValue>jzwirek@printninja.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>PRN Round Robin 4</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PRN_Update_AM_Field</fullName>
+        <field>PRN_AM_Assigned__c</field>
+        <formula>OwnerId</formula>
+        <name>PRN Update AM Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PRN_Web_to_Lead</fullName>
+        <field>OwnerId</field>
+        <lookupValue>General_Web_Lead</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>PRN Web to Lead</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Lead_Company</fullName>
+        <field>Company</field>
+        <formula>FirstName &amp; &quot; &quot; &amp; LastName</formula>
+        <name>Update Lead Company</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Custom Game Quote Form</fullName>
+        <actions>
+            <name>Custom_Game_Quote_Request</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Custom Card Game Quote Form</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>International Payment Amount</fullName>
+        <actions>
+            <name>Lead_Payment_Amount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Payment_Amount__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>International Shipping Payment</fullName>
+        <actions>
+            <name>International_Sample_Pack</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.International_Payment_Link__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead Company Name</fullName>
+        <actions>
+            <name>Update_Lead_Company</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>equals</operation>
+            <value>[not provided]</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Move to Spam</fullName>
+        <actions>
+            <name>Add_to_Spam_Queue</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Email</field>
+            <operation>equals</operation>
+            <value>jameshill01121@gmail.com</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Email</field>
+            <operation>equals</operation>
+            <value>op2i4i+b8jkm95171m94@sharklasers.com</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Card Game Print Quote Request</fullName>
+        <actions>
+            <name>Custom_Card_Game_Request</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Card Game Print Quote Request</value>
+        </criteriaItems>
+        <description>Assigns a task to lead owner for card game custom quote requests.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Custom Card Game Quote Form</fullName>
+        <actions>
+            <name>PRN_Custom_Card_Game_Quote_Form</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Custom Card Game Quote Form</value>
+        </criteriaItems>
+        <description>Assigns task to lead owner to address PRN Custom Card Game Quote Form request.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Email</fullName>
+        <actions>
+            <name>Contact_Us_Request</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Email,CBN Save/Print Quote</value>
+        </criteriaItems>
+        <description>Assigns task to lead owner to address Contact Us request.
+
+Note: lead owner may be assigned via Round Robin.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Game Artwork Submisson</fullName>
+        <actions>
+            <name>PRN_Game_Artwork_Submisson</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Game Artwork Submisson</value>
+        </criteriaItems>
+        <description>Assigns task to lead owner to address Artwork Submission request.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Game Budgetary Quote Request</fullName>
+        <actions>
+            <name>PRN_Game_Budgetary_Quote_Request</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Game Budgetary Quote Request</value>
+        </criteriaItems>
+        <description>Assigns task to lead owner to address PRN Game Budgetary Quote Request request.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Print Quote Request</fullName>
+        <actions>
+            <name>Custom_Quote_Request</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Print Quote Request</value>
+        </criteriaItems>
+        <description>Assigns task to Round Robin for website visitor requests a custom quote.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Round Robin 2</fullName>
+        <active>false</active>
+        <booleanFilter>(1 OR 3) AND 2 AND 4</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Is_Web_To_Lead__c</field>
+            <operation>equals</operation>
+            <value>yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Round_Robin_ID__c</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Site Freight Quote,PRN Blind Order,PRN Site Blind Quote</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>notEqual</operation>
+            <value>PRN Sample Packet Request,PRN Email</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>PRN Sample Packet</fullName>
+        <actions>
+            <name>Sample_Packet_First_email</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Sample Packet Request,PRN Paper Sample Guide Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.OwnerId</field>
+            <operation>notContain</operation>
+            <value>Queue</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Prepared_For_Conversion__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.FirstName</field>
+            <operation>notEqual</operation>
+            <value>First Name</value>
+        </criteriaItems>
+        <description>Round Robin to email requester to validate email, fulfill sample packet, and send follow-up emails</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPAM Request</fullName>
+        <actions>
+            <name>SPAM_Sample_Packet_Request</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PRN Sample Packet Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.OwnerId</field>
+            <operation>notContain</operation>
+            <value>Queue</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Prepared_For_Conversion__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.cloudamp__Initial_Source__c</field>
+            <operation>equals</operation>
+            <value>freedisk.ru,freestuffok.com,anti-free.ru,sh.st,works.if.ua,halyava24.ru,ilovefreebies.ru</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Team Contact Us</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Team Contact Us</value>
+        </criteriaItems>
+        <description>When a lead comes in with source of Team Contact Us, create a task for the contacted team member.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update IsUnreadbyOwner</fullName>
+        <actions>
+            <name>Lead_has_been_viewed_by_you</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <formula>AND((PRIORVALUE(IsUnreadByOwner__c)=true), IsUnreadByOwner__c=false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF JJandJTonAccts With</fullName>
+        <actions>
+            <name>WT_JJandJTonAccts_With</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create existing request task for Grace Iverson</description>
+        <formula>AND(OR(TEXT(LeadSource) = &apos;PRN Email&apos;, TEXT(LeadSource) = &apos;PRN Sample Packet Request&apos;, TEXT(LeadSource) = &apos;PRN Paper Sample Guide Request&apos;), ISCHANGED( Question_from_website__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF JJandJTonAccts Without</fullName>
+        <actions>
+            <name>WT_JJandJTonAccts_Without</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create existing request task for Justin Jurczak</description>
+        <formula>AND(NOT(OR(TEXT(LeadSource) = &apos;PRN Email&apos;, TEXT(LeadSource) = &apos;PRN Sample Packet Request&apos;, TEXT(LeadSource) = &apos;PRN Paper Sample Guide Request&apos;)), ISCHANGED( Question_from_website__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF PRN Email 1</fullName>
+        <actions>
+            <name>WT_PRN_Email_1</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create existing request task for Jen Talvensaari</description>
+        <formula>AND(TEXT(LeadSource) = &apos;PRN Email&apos;,  Round_Robin_ID__c = 1, ISCHANGED( Question_from_website__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF PRN Email 2</fullName>
+        <actions>
+            <name>WT_PRN_Email_2</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create existing request task for Grace Iverson</description>
+        <formula>AND(TEXT(LeadSource) = &apos;PRN Email&apos;,  Round_Robin_ID__c = 2, ISCHANGED( Question_from_website__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF PRN Others 1</fullName>
+        <actions>
+            <name>WT_PRN_Others_1</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create existing request task for Justin Jurczak</description>
+        <formula>AND(AND(TEXT(LeadSource) != &apos;PRN Email&apos;, TEXT(LeadSource) != &apos;PRN Sample Packet Request&apos;, TEXT(LeadSource) != &apos;PRN Paper Sample Guide Request&apos;),  Round_Robin_ID__c = 1, ISCHANGED( Question_from_website__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF PRN Others 2</fullName>
+        <actions>
+            <name>WT_PRN_Others_2</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create existing request task for Chase McCurdy</description>
+        <formula>AND(AND(TEXT(LeadSource) != &apos;PRN Email&apos;, TEXT(LeadSource) != &apos;PRN Sample Packet Request&apos;, TEXT(LeadSource) != &apos;PRN Paper Sample Guide Request&apos;),  Round_Robin_ID__c = 2, ISCHANGED( Question_from_website__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF PRN Sample Request</fullName>
+        <actions>
+            <name>WT_PRN_Sample_request</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create existing request task for Jen Talvensaari</description>
+        <formula>AND(OR(TEXT(LeadSource) = &apos;PRN Sample Packet Request&apos;, TEXT(LeadSource) = &apos;PRN Paper Sample Guide Request&apos;),  ISCHANGED( Question_from_website__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>WF Without Round Robin</fullName>
+        <actions>
+            <name>WT_Without_Round_Robin</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create existing request task for Jeff Zwirek</description>
+        <formula>AND(Round_Robin_ID__c = null, ISCHANGED( Question_from_website__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Blacklisted_Customer</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>This customer is blacklisted, please delete this request and do not respond.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Blacklisted Customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>Contact_Us_Request</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Contact Us Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>Create_Sample_Pack</fullName>
+        <assignedTo>jzwirek@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Create Sample Pack</subject>
+    </tasks>
+    <tasks>
+        <fullName>Custom_Card_Game_Request</fullName>
+        <assignedTo>justin@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Custom Game Quote Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>Custom_Game_Quote_Request</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Custom Game Quote Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>Custom_Quote_Request</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Complete Quote Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_to_validate_sample_packet_request_2</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Email to validate sample packet request</subject>
+    </tasks>
+    <tasks>
+        <fullName>Hey</fullName>
+        <assignedTo>jzwirek@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Hey</subject>
+    </tasks>
+    <tasks>
+        <fullName>Lead_Follow_up</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>15</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Lead Follow-up 1</subject>
+    </tasks>
+    <tasks>
+        <fullName>Lead_Follow_up_2</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>45</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Lead Follow-up 2</subject>
+    </tasks>
+    <tasks>
+        <fullName>Lead_Follow_up_3</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>90</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Lead Follow-up 3</subject>
+    </tasks>
+    <tasks>
+        <fullName>Lead_has_been_viewed_by_you</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>This logs each time you view the lead.</description>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Lead has been viewed by you</subject>
+    </tasks>
+    <tasks>
+        <fullName>PRN_Custom_Card_Game_Quote_Form</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>PRN Custom Card Game Quote Form</subject>
+    </tasks>
+    <tasks>
+        <fullName>PRN_Custom_Quote_Request</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>A custom quote has been requested on PrintNinja.com</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <offsetFromField>Lead.CreatedDate</offsetFromField>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>PRN Custom Quote Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>PRN_Game_Artwork_Submisson</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>PRN Game Artwork Submisson</subject>
+    </tasks>
+    <tasks>
+        <fullName>PRN_Game_Budgetary_Quote_Request</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>PRN Game Budgetary Quote Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>SPAM_Request</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>This request came from a spam site, delete this lead.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>SPAM Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>SPAM_Sample_Packet_Request</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>This request came from a spam site, delete this lead.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>SPAM Sample Packet Request</subject>
+    </tasks>
+    <tasks>
+        <fullName>Sample_Packet_First_email</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Email to validate sample packet request</subject>
+    </tasks>
+    <tasks>
+        <fullName>Sample_Packet_Follow_Up_4</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>This is the fourth follow-up phone call.</description>
+        <dueDateOffset>60</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Sample Packet Call 4</subject>
+    </tasks>
+    <tasks>
+        <fullName>Sample_Packet_Follow_Up_5</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>This is the fifth and final follow-up phone call if a customer requests a sample packet.</description>
+        <dueDateOffset>90</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Low</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Sample Packet Call 5</subject>
+    </tasks>
+    <tasks>
+        <fullName>Sample_Packet_Followup</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>10</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Sample Packet Followup</subject>
+    </tasks>
+    <tasks>
+        <fullName>Sample_Packet_Followup_4_8_14</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Follow up on this sample packet for fun and profit.</description>
+        <dueDateOffset>10</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Sample Packet Followup</subject>
+    </tasks>
+    <tasks>
+        <fullName>Sample_Packet_Followup_NEW</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>It has been 10 days since this sample packet request was submitted.  Reach out via email to follow up with this wonderful customer.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Sample Packet Followup</subject>
+    </tasks>
+    <tasks>
+        <fullName>WT_JJandJTonAccts_With</fullName>
+        <assignedTo>jzwirek@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Existing Customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>WT_JJandJTonAccts_Without</fullName>
+        <assignedTo>justin@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Existing customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>WT_PRN_Email_1</fullName>
+        <assignedTo>jtalvensaari@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Contact Us Request - Existing customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>WT_PRN_Email_2</fullName>
+        <assignedTo>jzwirek@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Contact Us Request - Existing Customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>WT_PRN_Others_1</fullName>
+        <assignedTo>justin@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Request - Existing customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>WT_PRN_Others_2</fullName>
+        <assignedTo>jzwirek@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Request - Existing Customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>WT_PRN_Sample_request</fullName>
+        <assignedTo>jtalvensaari@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Sample request - Existing customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>WT_Without_Round_Robin</fullName>
+        <assignedTo>jzwirek@printninja.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Request - existing customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>X270_Day_Sample_Packet_Followup</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>It&apos;s been 270 days since this sample packet was sent, and the lead has not converted.  Follow up!</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>270 Day Sample Packet Followup</subject>
+    </tasks>
+    <tasks>
+        <fullName>X90_Day_Sample_Packet_Followup</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>It&apos;s been 90 days since this sample packet was sent, and the lead has not converted.  Follow up!</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>90 Day Sample Packet Followup</subject>
+    </tasks>
+</Workflow>

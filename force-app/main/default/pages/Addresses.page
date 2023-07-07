@@ -1,0 +1,76 @@
+<apex:page standardController="Quote" cache="true" contentType="application/vnd.ms-excel#{!Quote.Opportunity.Name} Split Shipping Addresses.xls" showHeader="false" sidebar="false">   
+    <apex:dataTable value="{!Quote.Split_Shipping_Addresses__r}" var="splitShipping">
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_1__c == "Yes",True,False)}">
+		<apex:facet name="header">Job Number</apex:facet>
+		<apex:outputText value="{!Quote.Opportunity.Job_Number1__c}"/>
+	</apex:column>
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_1__c == "Yes",True,False)}">
+		<apex:facet name="header">Standard Quantity</apex:facet>
+		<apex:outputText value="{!splitShipping.Standard_Quantity_1__c}"/>
+	</apex:column>
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_2__c == "Yes",True,False)}">
+		<apex:facet name="header">Standard Quantity</apex:facet>
+		<apex:outputText value="{!splitShipping.Standard_Quantity_2__c}"/>
+	</apex:column>
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_3__c == "Yes",True,False)}">
+		<apex:facet name="header">Standard Quantity</apex:facet>
+		<apex:outputText value="{!splitShipping.Standard_Quantity_3__c}"/>
+	</apex:column>
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_4__c == "Yes",True,False)}">
+		<apex:facet name="header">Standard Quantity</apex:facet>
+		<apex:outputText value="{!splitShipping.Standard_Quantity_4__c}"/>
+	</apex:column>
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_1__c == "Yes",True,False)}">
+		<apex:facet name="header">Expedited Quantity</apex:facet>
+		<apex:outputText value="{!splitShipping.Expedited_Quantity_1__c}"/>
+	</apex:column>
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_2__c == "Yes",True,False)}">
+		<apex:facet name="header">Expedited Quantity</apex:facet>
+		<apex:outputText value="{!splitShipping.Expedited_Quantity_2__c}"/>
+	</apex:column>
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_3__c == "Yes",True,False)}">
+		<apex:facet name="header">Expedited Quantity</apex:facet>
+		<apex:outputText value="{!splitShipping.Expedited_Quantity_3__c}"/>
+	</apex:column>
+    <apex:column rendered="{!IF(Quote.Use_to_Calculate_ROW_4__c == "Yes",True,False)}">
+		<apex:facet name="header">Expedited Quantity</apex:facet>
+		<apex:outputText value="{!splitShipping.Expedited_Quantity_4__c}"/>
+	</apex:column>
+    <apex:column >
+		<apex:facet name="header">Ship to Company</apex:facet>
+		<apex:outputText value="{!splitShipping.Ship_To_Company__c}"/>
+	</apex:column>
+    <apex:column >
+		<apex:facet name="header">Shipping Attn.</apex:facet>
+		<apex:outputText value="{!splitShipping.Shipping_Attn__c}"/>
+	</apex:column>
+    <apex:column >
+		<apex:facet name="header">Shipping Street</apex:facet>
+		<apex:outputText value="{!splitShipping.Shipping_Street__c}"/>
+	</apex:column>
+    <apex:column >
+		<apex:facet name="header">Shipping City</apex:facet>
+		<apex:outputText value="{!splitShipping.Shipping_City__c}"/>
+	</apex:column>
+    <apex:column >
+        <apex:facet name="header">Shipping State</apex:facet>
+		<apex:outputText value="{!splitShipping.Shipping_State__c}"/>
+	</apex:column>
+    <apex:column >
+		<apex:facet name="header">Shipping Postal Code</apex:facet>
+		<apex:outputText value="{!splitShipping.Shipping_Postal_Code__c}"/>
+	</apex:column>
+    <apex:column >
+		<apex:facet name="header">Shipping Phone</apex:facet>
+		<apex:outputText value="{!splitShipping.Shipping_Phone__c}"/>
+	</apex:column>
+    <apex:column >
+		<apex:facet name="header">Shipping Country</apex:facet>
+		<apex:outputText value="{!splitShipping.Shipping_Country__c}"/>
+	</apex:column>
+    <apex:column >
+		<apex:facet name="header">Residential Address?</apex:facet>
+		<apex:outputText value="{!splitShipping.Residential_Address__c}"/>
+	</apex:column>
+</apex:dataTable>
+</apex:page>

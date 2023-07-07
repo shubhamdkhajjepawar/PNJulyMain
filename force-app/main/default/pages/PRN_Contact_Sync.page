@@ -1,0 +1,21 @@
+<apex:page standardController="Quote" id="pg" showHeader="false" sidebar="false">
+<apex:includeScript value="/soap/ajax/28.0/connection.js"/>
+<apex:includeScript value="/soap/ajax/28.0/apex.js"/> 
+  <script language="javascript">
+   
+            var quoteId = "{!Quote.Id}";
+            var street = "{!Quote.ShippingStreet}";
+            var city = "{!Quote.ShippingCity}";
+            var state = "{!Quote.ShippingState}";
+            var postcode = "{!Quote.ShippingPostalCode}";
+            var country = "{!Quote.ShippingCountry}";
+            var isAddressUpdate = "{!Quote.Is_Used_To_Calculate_Row__c}";
+            if(isAddressUpdate == "true"){
+            var Oppty = new sforce.SObject("Opportunity");
+            Oppty.Id = "{!Quote.OpportunityId}";
+            
+            Oppty.Ship_to_Address__c = street+"\n"+city+"\n"+state+"\n"+postcode+"\n"+country;
+            result = sforce.connection.update([Oppty]); 
+            }
+  </script>
+</apex:page>

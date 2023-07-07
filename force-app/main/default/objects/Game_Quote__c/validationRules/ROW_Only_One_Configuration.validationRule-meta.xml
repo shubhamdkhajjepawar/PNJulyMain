@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ROW_Only_One_Configuration</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISPICKVAL(Use_to_Calculate_ROW_1__c, &quot;Yes&quot;) , ISPICKVAL(Use_to_Calculate_ROW_2__c, &quot;Yes&quot;))</errorConditionFormula>
+    <errorMessage>Only one configuration can be selected for ROW</errorMessage>
+</ValidationRule>

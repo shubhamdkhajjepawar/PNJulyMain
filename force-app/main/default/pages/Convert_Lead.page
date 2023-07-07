@@ -1,0 +1,211 @@
+<apex:page controller="NewLeadController" tabstyle="Lead" id="page">
+     <apex:includeScript value="{!URLFOR($Resource.ApplicationResource,'ApplicationResource/scripts/jquery-1.7.2.min.js')}"/>
+ 
+    <script type="text/javascript">
+        var cb_tsk5_fu = new Array ();
+        cb_tsk5_fu[0] = 'Call';
+        cb_tsk5_fu[1] = 'Email';
+        cb_tsk5_fu[2] = 'Send Letter';
+        cb_tsk5_fu[3] = 'Send Quote';
+        cb_tsk5_fu[4] = 'Other';
+        
+        window.onload=function(){
+            var obj=document.getElementById("page:form:pb:pbSection:pbSectionItem:pbSectionItem1:pbAccount");
+            $(obj).css("position","absolute");    
+            $(obj).css("left","-1000px");
+            $(obj).css("top","-1000px");
+        };
+        
+        function onAccountSelect(){
+            var id=document.getElementById("page:form:pb:pbSection:pbSectionItem:pbSectionItem1:pbAccount_lkid").value;
+            var text=document.getElementById("page:form:pb:pbSection:pbSectionItem:pbSectionItem1:pbAccount").value;
+            var can_add=true;
+           $.each($(document.getElementById("plAccount")).children(),function(){
+                if($(this).val()==id){
+                    can_add=false;
+                }
+           });
+           if(can_add){
+               $.each($(document.getElementById("plAccount")).children(),function(){
+                    $(this).removeAttr("selected");
+               });
+
+               $(document.getElementById("plAccount")).append("<option value="+id+" selected='selected'>Attach to Existing:"+text+"</option>");
+               document.getElementById("page:form:hidden_account").value=id;
+           }
+        }
+        
+        function onSelectAccountChanged(that){
+            $.each($(that).children(),function(){
+                if($(this).attr("selected")){
+                    document.getElementById("page:form:hidden_account").value=$(this).val();
+                }
+            });
+        }
+        
+         function onConvertStatusChanged(that){
+            $.each($(that).children(),function(){
+                if($(this).attr("selected")){
+                    document.getElementById("page:form:hidden_convert_status").value=$(this).val();
+                }
+            });
+        }
+    </script>
+    <style type="text/css">
+        .reminder-block .dateFormat{
+            display:none;
+        }
+    </style>
+    <div class="bPageTitle">
+   
+      <div class="ptBody">
+          <div class="content">
+              <img title="Lead" class="pageTitleIcon" alt="Lead" src="/s.gif"></img>
+                  <h1 class="pageType">Convert Lead<span class="titleSeparatingColon">:</span></h1>
+                  <h2 class="pageDescription">{!lead.Name}</h2>
+                  <div class="blank">&nbsp;</div>
+          </div>
+          <div class="links">
+              <a title="Help for this Page (New Window)" href="javascript:openPopupFocusEscapePounds(%27https://login.salesforce.com/services/auth/sso/00D30000000XsfGEAS/HTAuthProvider?startURL=%252Fapex%252Fhtdoor%253Floc%253Dhelp%2526target%253Dleads_convert.htm%2526section%253DLeads%2526language%253Den_US%2526release%253D180.19.8%2526instance%253DAP8&amp;site=https%3A%2F%2Fhelp.salesforce.com%27, %27Help%27, 1024, 768, %27width=1024,height=768,resizable=yes,toolbar=yes,status=yes,scrollbars=yes,menubar=yes,directories=no,location=yes,dependant=no%27, false, false);">
+                  <span class="helpLink">Help for this Page</span>
+                      <img class="helpIcon" alt="" src="/s.gif"></img>
+              </a>
+          </div>
+      </div>
+      <div class="ptBreadcrumb"></div>
+    </div>
+    <table border="0" cellspacing="2" cellpadding="0">
+        <tbody>
+            <tr>
+                <td colspan="4">
+                    Leads can be converted to accounts, contacts, opportunities, and followup tasks.<br></br>
+                    You should only convert a lead once you have identified it as qualified.<br></br>
+                    After this lead has been converted, it can no longer be viewed or edited as a lead, but can be viewed in lead reports.<br></br><br></br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+     <apex:form id="form">
+     <apex:inputHidden value="{!hidden_account}" id="hidden_account"/>   
+     <apex:inputHidden value="{!hidden_convert_status}" id="hidden_convert_status"/>
+    <apex:PageBlock mode="edit" id="pb">
+          <apex:pagemessages ></apex:pagemessages> 
+          <apex:pageBlockButtons >
+              <apex:commandButton value="Convert" action="{!convertLead}"/>
+                 <apex:commandButton value="Cancel"/>
+          </apex:pageBlockButtons>
+        
+         <apex:pageBlockSection title="Convert Lead" id="pbSection">
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel for="record_owner" value="Record Owner"></apex:outputLabel>
+                <apex:inputField required="true" value="{!convert_Lead.User__c}"  id="record_owner" />
+             </apex:pageBlockSectionItem>
+             <br/>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel for="record_owner" value="Send Email to owner"></apex:outputLabel>
+                 <apex:inputCheckbox value="{!convert_Lead.Email_To_Owner__c}"/>
+             </apex:pageBlockSectionItem>
+             <br/>
+              <!--<a href="javascript:openPopupFocus%28%27%2Fwidg%2Fcombobox.jsp%3Fform%3DeditPage%26field%3Dtsk5_fu%26display%3D1%26cnt%3D5%27%2C%20%27_blank%27%2C%20270%2C%20200%2C%20%27width%3D270%2Cheight%3D200%2Cresizable%3Dyes%2Ctoolbar%3Dno%2Cstatus%3Dno%2Cscrollbars%3Dyes%2Cmenubar%3Dno%2Cdirectories%3Dno%2Clocation%3Dno%2Cdependant%3Dyes%27%2C%20true%2C%20true%29%3B" class=" error error error" onclick="setLastMousePosition(event)" size="20" title="Combo (New Window)" value="">
+                 <img src="/s.gif" alt="Subject Combo (New Window)" class="comboboxIcon" onblur="this.className = 'comboboxIcon';" onfocus="this.className = 'comboboxIconOn';" onmouseout="this.className = 'comboboxIcon';this.className = 'comboboxIcon';" onmouseover="this.className = 'comboboxIconOn';this.className = 'comboboxIconOn';" title="Subject Combo (New Window)"></img>
+              </a>-->
+             <apex:pageBlockSectionItem id="pbSectionItem">
+                 <apex:outputLabel value="Account Name"></apex:outputLabel>
+                 <apex:pageBlockSectionItem id="pbSectionItem1">
+                         <apex:outputPanel >
+                            <span class="requiredInput">
+                                <div class="requiredBlock" style="height:23px;margin-top:-4px"></div>
+                                <select id="plAccount" onchange="javascript:onSelectAccountChanged(this);">
+                                    <option value="000000000000000" >Create New Account:{!lead.Company}</option>
+                                </select>
+                           </span>
+                         </apex:outputPanel>
+                      <!-- <apex:selectlist id="plAccount" onchange="javascript:onSelectAccountChanged(this);">
+                             <apex:selectOption itemlabel="Create New Account:{!lead.Company}" itemvalue="000000000000000" ></apex:selectOption>
+                         </apex:selectlist>-->
+                         <apex:inputField value="{!convert_Lead.Account__c}" id="pbAccount" onchange="javascript:onAccountSelect();"/>                     
+                 </apex:pageBlockSectionItem>
+             </apex:pageBlockSectionItem>    
+             <br/>
+             <apex:pageblockSectionItem >
+                    <apex:outputLabel value="Do not create opportunity"></apex:outputLabel>    
+                    <apex:inputField value="{!convert_Lead.Can_Create_Opportunity__c}"/> 
+             </apex:pageblockSectionItem>          
+             <br/>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Opportunity Name"></apex:outputLabel>
+                 <apex:inputField value="{!convert_Lead.Opportunity_Name__c}"/>
+             </apex:pageBlockSectionItem>   
+             <br/>           
+              <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Converted Status"></apex:outputLabel>
+                <apex:outputPanel >
+                        <span class="requiredInput">
+                            <div class="requiredBlock" style="height:23px;margin-top:-4px"></div>
+                            <select id="plConvert_Status" onchange="javascript:onConvertStatusChanged(this);">
+                                <option value="1" >Qualified</option>
+                            </select>
+                       </span>
+                 </apex:outputPanel>
+             </apex:pageBlockSectionItem>   
+         </apex:pageBlockSection>
+         <apex:pageblockSection title="Task Information">
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Subject"></apex:outputLabel>
+                 <apex:pageBlockSectionItem >
+                     <apex:inputField value="{!convert_Lead.Subject__c}"/>
+                     <!--<a href="javascript:openPopupFocus%28%27%2Fwidg%2Fcombobox.jsp%3Fform%3DeditPage%26field%3Dtsk5_fu%26display%3D1%26cnt%3D5%27%2C%20%27_blank%27%2C%20270%2C%20200%2C%20%27width%3D270%2Cheight%3D200%2Cresizable%3Dyes%2Ctoolbar%3Dno%2Cstatus%3Dno%2Cscrollbars%3Dyes%2Cmenubar%3Dno%2Cdirectories%3Dno%2Clocation%3Dno%2Cdependant%3Dyes%27%2C%20true%2C%20true%29%3B" class=" error error error" onclick="setLastMousePosition(event)" size="20" title="Combo (New Window)" value="">
+                         <img src="/s.gif" alt="Subject Combo (New Window)" class="comboboxIcon" onblur="this.className = 'comboboxIcon';" onfocus="this.className = 'comboboxIconOn';" onmouseout="this.className = 'comboboxIcon';this.className = 'comboboxIcon';" onmouseover="this.className = 'comboboxIconOn';this.className = 'comboboxIconOn';" title="Subject Combo (New Window)"></img>
+                      </a>-->
+                      </apex:pageBlockSectionItem>
+             </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Status"></apex:outputLabel>
+                  <apex:inputField value="{!convert_Lead.Status__c}"/>
+                 
+             </apex:pageBlockSectionItem>   
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Due Date"></apex:outputLabel>
+                 <apex:inputField value="{!convert_Lead.Due_Date__c}"/>
+             </apex:pageBlockSectionItem>   
+             <!--<br/>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Email"></apex:outputLabel>
+                 <apex:inputField value="{!convert_Lead.Email__c}"/>
+             </apex:pageBlockSectionItem>-->   
+             <br/>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Priority"></apex:outputLabel>
+                 <apex:inputField value="{!convert_Lead.Priority__c}"/>
+             </apex:pageBlockSectionItem>   
+         </apex:pageblockSection>
+         <apex:pageBlockSection title="Description Information">
+             <apex:pageblockSectionItem >
+                 <apex:outputLabel value="Comments"></apex:outputLabel>
+                 <apex:inputTextarea value="{!convert_Lead.Comment__c}" rows="6"  cols="75" />
+             </apex:pageblockSectionItem>
+         
+         </apex:pageBlockSection>
+         <apex:pageBlockSection >
+                 <apex:inputCheckbox value="{!convert_Lead.Send_Notification_Email__c}" />  
+         </apex:pageBlockSection>
+         <span class="reminder-block">
+         <apex:pageBlockSection title="Reminder">
+             <apex:pageblockSectionItem >
+                 <apex:outputLabel value="Reminder"></apex:outputLabel>
+                 <apex:pageBlockSectionItem >
+                       <apex:inputCheckbox value="{!convert_Lead.Reminder__c}" label="" selected="true" />   
+                       <apex:pageblockSectionItem >
+                           <apex:inputField value="{!convert_Lead.Reminder_Date__c}"/>
+                           <apex:inputField value="{!convert_Lead.Reminder_Time__c}"/>
+                       </apex:pageblockSectionItem>                  
+                 </apex:pageBlockSectionItem>
+
+             </apex:pageblockSectionItem>
+         </apex:pageBlockSection>
+         </span>
+         </apex:PageBlock>
+
+    </apex:form>
+       
+</apex:page>

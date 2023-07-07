@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finish_Style__c</fullName>
+    <externalId>false</externalId>
+    <label>Finish Style</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gloss</fullName>
+                <default>false</default>
+                <label>Gloss</label>
+            </value>
+            <value>
+                <fullName>Matte</fullName>
+                <default>false</default>
+                <label>Matte</label>
+            </value>
+            <value>
+                <fullName>Anti-Scratch Matte</fullName>
+                <default>false</default>
+                <label>Anti-Scratch Matte</label>
+            </value>
+            <value>
+                <fullName>Soft-Touch Matte Lamination</fullName>
+                <default>false</default>
+                <label>Soft-Touch Matte Lamination</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

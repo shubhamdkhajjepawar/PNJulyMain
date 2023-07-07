@@ -1,0 +1,672 @@
+<apex:page standardController="Game_Quote__c" >
+<apex:form > 
+
+<apex:pageBlock title="Game Components" id="GameComponents" mode="inlineEdit" >
+    <apex:pageMessages />
+        <apex:pageBlockButtons >                 
+            <apex:commandButton value="Edit" action="{!edit}" />                
+            <apex:commandButton value="Delete" action="{!delete}" />
+            <apex:commandButton action="{!URLFOR($Action.Game_Quote__c.Clone, Game_Quote__c.Id)}" value="Clone"/>
+            <apex:commandButton action="{!save}" value="Save"/>
+            <apex:commandButton action="{!URLFOR($Action.Game_Quote__c.QuotePDF, Game_Quote__c.Id)}" value="Quote PDF"/>
+        </apex:pageBlockButtons>  
+
+<apex:pageBlockSection id="Information" title="Information" >                     
+        <apex:outputField value="{!Game_Quote__c.Name}" />
+        <apex:outputField value="{!Game_Quote__c.Account__c}" />
+        <apex:outputField value="{!Game_Quote__c.Opportunity__c}" />
+        <apex:outputField value="{!Game_Quote__c.Account_Email_New__c}" />
+        <apex:outputField value="{!Game_Quote__c.QuoteNumber__c}" />
+        <apex:outputField value="{!Game_Quote__c.Phone__c}" />
+        <apex:outputField value="{!Game_Quote__c.Quote_PDF__c}" />
+        <apex:outputField value="{!Game_Quote__c.gq_shiptostreet__c}" />
+        <apex:outputField value="{!Game_Quote__c.CreatedById}" />
+        <apex:outputField value="{!Game_Quote__c.gq_shiptocity__c}" />
+        <apex:outputField value="{!Game_Quote__c.LastModifiedById}" />
+        <apex:outputField value="{!Game_Quote__c.gq_shiptostate__c}" />
+        <apex:outputField value="{!Game_Quote__c.gq_Quote_Created__c}" />
+        <apex:outputField value="{!Game_Quote__c.gq_shiptozip__c}" />
+        <apex:outputField value="{!Game_Quote__c.Quote_Valid_Until__c}" />
+        <apex:outputField value="{!Game_Quote__c.gq_shiptocountry__c}" />
+        <apex:outputField value="{!Game_Quote__c.Sample_Packet_Request_From_Calculator__c}" />
+        <apex:inputField value="{!Game_Quote__c.Amazon_Diamond__c}" />
+        <apex:outputField value="{!Game_Quote__c.newshipping_residential__c}" />
+        <apex:outputField value="{!Game_Quote__c.gq_proofingoptions__c}" />
+        <apex:outputField value="{!Game_Quote__c.newshipping_liftgate__c}" />
+        <apex:outputField value="{!Game_Quote__c.MO_Tax__c}" />
+</apex:pageBlockSection>  
+
+<apex:pageBlockSection id="InternationalPrices" title="Pricing">                     
+        <apex:outputField value="{!Game_Quote__c.Use_to_Calculate_ROW_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Use_to_Calculate_ROW_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Display_Quantity_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Display_Quantity_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Total_Quantity_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Total_Quantity_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Expedited_Quantity_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Expedited_Quantity_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Product_Purchase_Cost1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Product_Purchase_Cost2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Product_Purchase_Markup1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Product_Purchase_Markup2__c}" />        
+        <apex:outputField value="{!Game_Quote__c.Product_Price_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Product_Price_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ocean_Freight_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ocean_Freight_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ocean_Freight_Markup_i1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ocean_Freight_Markup_i2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ocean_Freight_Price1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ocean_Freight_Price2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Tax_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Tax_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Grd_Freight_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Grd_Freight_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ground_Freight_Markup_i1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ground_Freight_Markup_i2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ground_Freight_Price1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Ground_Freight_Price2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Total_Standard_Shipping_Price_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Total_Standard_Shipping_Price_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Expedited_Freight_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Expedited_Freight_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Expedited_Freight_Markup_i1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Expedited_Freight_Markup_i2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Expedited_Freight_Price1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Expedited_Freight_Price2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Prototyping_Cost_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Prototyping_Cost_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Assembly_Cost_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Assembly_Cost_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Additional_charge_s_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Additional_charge_s_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.International_Grand_Total_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.International_Grand_Total_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Int_l_Price_per_unit_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Int_l_Price_per_unit_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Quoted_Shipping_Company_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Quoted_Shipping_Company_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Remark_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Remark_2__c}" />
+        <apex:outputField value="{!Game_Quote__c.Pay_Now_1__c}" />
+        <apex:outputField value="{!Game_Quote__c.Pay_Now_2__c}" />
+</apex:pageBlockSection>   
+
+<apex:pageBlockSection id="CardsAndPackaging1" title="Cards & Card Packaging (Deck 1)" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" >                     
+    <apex:outputField value="{!Game_Quote__c.gq_cards_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="CardsAndPackaging1" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cards_trimsize_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_lengthcustom_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_widthcustom_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_material_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_numberindeck_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.Number_of_Card_Backs_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>
+        <apex:outputField value="{!Game_Quote__c.gq_cards_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_finishtype_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_finishstyle_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishtype_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishstyle_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_1__c == TRUE}" />
+</apex:pageBlockSection>  
+
+<apex:pageBlockSection id="CardsAndPackaging2" title="Cards & Card Packaging (Deck 2)" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" >                     
+    <apex:outputField value="{!Game_Quote__c.gq_cards_selectedforquote_2__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="CardsAndPackaging2" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cards_trimsize_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentpurchasecost_q1_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_lengthcustom_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q1_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_widthcustom_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentpurchasecost_q2_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_material_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q2_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_numberindeck_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_additionalinfo_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.Number_of_Card_Backs_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_printingoptions_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_finishtype_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_finishstyle_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_specialtyoptions_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_printingoptions_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishtype_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishstyle_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_specialtyoptions_2__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_2__c == TRUE}" />
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="CardsAndPackaging3" title="Cards & Card Packaging (Deck 3)" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_cards_selectedforquote_3__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="CardsAndPackaging3" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cards_trimsize_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentpurchasecost_q1_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_lengthcustom_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q1_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_widthcustom_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentpurchasecost_q2_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_material_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q2_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_numberindeck_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_additionalinfo_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.Number_of_Card_Backs_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_printingoptions_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_finishtype_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_finishstyle_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_specialtyoptions_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_printingoptions_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishtype_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishstyle_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_specialtyoptions_3__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_3__c == TRUE}" />
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="CardsAndPackaging4" title="Cards & Card Packaging (Deck 4)" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_cards_selectedforquote_4__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="CardsAndPackaging4" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cards_trimsize_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentpurchasecost_q1_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_lengthcustom_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q1_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_widthcustom_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentpurchasecost_q2_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_material_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cards_componentprice_q2_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_numberindeck_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_additionalinfo_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.Number_of_Card_Backs_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_printingoptions_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_finishtype_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_finishstyle_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cards_specialtyoptions_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_printingoptions_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishtype_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_tuckboxfinishstyle_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem>  
+        <apex:outputField value="{!Game_Quote__c.gq_cards_packaging_specialtyoptions_4__c}" rendered="{!Game_Quote__c.gq_cards_selectedforquote_4__c == TRUE}" />
+</apex:pageBlockSection>  
+
+<apex:pageBlockSection id="InstructionBooksInserts" title="Instruction Books & Inserts" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_ib_selectedforquote_1__c}">                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="InstructionBooksInserts" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_ib_length_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_ib_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_ib_width_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_ib_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_ib_binding_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_ib_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_ib_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_ib_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_ib_pagecount_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_ib_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_ib_coverstock_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_ib_covercoat_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_ib_coverfinishtype_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_ib_coverfinishstyle_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_ib_interiorstock_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_ib_interiorcoat_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_ib_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_ib_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="GameBoards" title="Game Boards" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_gb_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="GameBoards" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_gb_quantity_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_gb_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_gb_length_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_gb_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_gb_width_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_gb_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_gb_material_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_gb_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_gb_folding_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_gb_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_gb_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_gb_finishtype_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_gb_finishstyle_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_gb_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_gb_wrappededges_1__c}" rendered="{!Game_Quote__c.gq_gb_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="CardboardPunchOuts1" title="Cardboard Punch Outs (Board 1)" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_cpo_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="CardboardPunchOuts1" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_quantity_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_length_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_width_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_quantity_punchouts_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_size_punchouts_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_material_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_finishtype_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_finishstyle_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_1__c == TRUE}" />
+         
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="CardboardPunchOuts2" title="Cardboard Punch Outs (Board 2)" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_cpo_selectedforquote_2__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="CardboardPunchOuts2" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_quantity_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_componentpurchasecost_q1_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_length_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_componentprice_q1_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_width_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_componentpurchasecost_q2_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_quantity_punchouts_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_componentprice_q2_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_size_punchouts_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_additionalinfo_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_material_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_printingoptions_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_finishtype_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem>
+        <apex:outputField value="{!Game_Quote__c.gq_cpo_finishstyle_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem>
+         <apex:outputField value="{!Game_Quote__c.gq_cpo_specialtyoptions_2__c}" rendered="{!Game_Quote__c.gq_cpo_selectedforquote_2__c == TRUE}" />
+</apex:pageBlockSection>     
+
+<apex:pageBlockSection id="MatsTilesScreens1" title="Cardboard Mats, Tiles & Screens (Set 1)" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_cmts_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="MatsTilesScreens1" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_quantity_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_length_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_width_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_material_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_folding_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_finishtype_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_finishstyle_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection>  
+
+<apex:pageBlockSection id="MatsTilesScreens2" title="Cardboard Mats, Tiles & Screens (Set 2)" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_cmts_selectedforquote_2__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="MatsTilesScreens2" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_quantity_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_componentpurchasecost_q1_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_length_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_componentprice_q1_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_width_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_componentpurchasecost_q2_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_material_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_componentprice_q2_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_printingoptions_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_additionalinfo_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_folding_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_finishtype_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_finishstyle_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmts_specialtyoptions_2__c}" rendered="{!Game_Quote__c.gq_cmts_selectedforquote_2__c == TRUE}" /> 
+</apex:pageBlockSection>  
+
+<apex:pageBlockSection id="PreMadePieces1" title="Pre-Made Pieces (Set 1)" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="PreMadePieces1" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_quantity_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_shape_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" />   
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_colors_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" />
+                 <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE== TRUE}"></apex:pageBlockSectionItem>
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="PreMadePieces2" title="Pre-Made Pieces (Set 2)" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="PreMadePieces2" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_quantity_2__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentpurchasecost_q1_2__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_shape_2__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q1_2__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_colors_1__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentpurchasecost_q2_2__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_specialtyoptions_2__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q2_2__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" />
+                 <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE== TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_additionalinfo_2__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_2__c == TRUE}" /> 
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="PreMadePieces3" title="Pre-Made Pieces (Set 3)" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="PreMadePieces3" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_quantity_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentpurchasecost_q1_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_shape_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q1_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_colors_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentpurchasecost_q2_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_specialtyoptions_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_componentprice_q2_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" />
+                 <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE== TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_premadepcs_additionalinfo_3__c}" rendered="{!Game_Quote__c.gq_premadepcs_selectedforquote_3__c == TRUE}" /> 
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="Dice1" title="Dice (Set 1)" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_dice_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="Dice1" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_dice_quantity_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_material_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_numberofsides_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_size_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_dice_facetype_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_corners_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_diecolor_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_pipcolor_1__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="Dice2" title="Dice (Set 2)" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_dice_selectedforquote_2__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="Dice2" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_dice_quantity_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentpurchasecost_q1_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_material_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q1_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_numberofsides_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentpurchasecost_q2_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_size_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q2_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_dice_facetype_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_additionalinfo_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_corners_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_diecolor_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_pipcolor_2__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_2__c == TRUE}" /> 
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="Dice3" title="Dice (Set 3)" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" >                     
+    <apex:outputField value="{!Game_Quote__c.gq_dice_selectedforquote_3__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="Dice3" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_dice_quantity_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentpurchasecost_q1_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_material_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q1_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_numberofsides_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentpurchasecost_q2_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_size_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q2_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_dice_facetype_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_additionalinfo_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_corners_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_diecolor_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_pipcolor_3__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_3__c == TRUE}" /> 
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="Dice4" title="Dice (Set 4)" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_dice_selectedforquote_4__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="Dice4" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_dice_quantity_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentpurchasecost_q1_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_material_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q1_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_numberofsides_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentpurchasecost_q2_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_size_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_dice_componentprice_q2_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_dice_facetype_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_additionalinfo_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_corners_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_diecolor_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_dice_pipcolor_4__c}" rendered="{!Game_Quote__c.gq_dice_selectedforquote_4__c == TRUE}" /> 
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="PaperPads" title="Paper Pads" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_pp_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="PaperPads" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_pp_quantity_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_pp_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_pp_trimsize_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_pp_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_pp_pagecount_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_pp_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_pp_textstock_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_pp_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_pp_bindingside_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_pp_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_pp_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_pp_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_pp_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection>  
+
+<apex:pageBlockSection id="CustomMetalResin" title="Custom Metal And Resin Pieces" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" >                     
+    <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="CustomMetalResin" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_quantity_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_material_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_type_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_length_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_width_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_height_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_color_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" /> 
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_cmrpcs_designsubmission_1__c}" rendered="{!Game_Quote__c.gq_cmrpcs_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="ClothPlasticBags" title="Cloth & Plastic Bags" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_bags_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="ClothPlasticBags" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_bags_quantity_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_bags_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_bags_size_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_bags_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_bags_material_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_bags_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_bags_drawstrings_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_bags_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_bags_color_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_bags_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_bags_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_bags_selectedforquote_1__c == TRUE}" />
+</apex:pageBlockSection> 
+
+<apex:pageBlockSection id="RubberPlaymats" title="Rubber Playmats" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_rp_selectedforquote_1__c}">                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="RubberPlaymats" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_rp_quantity_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_rp_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_rp_length_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_rp_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_rp_width_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_rp_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_rp_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_rp_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" />  
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>
+        <apex:outputField value="{!Game_Quote__c.gq_rp_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_rp_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection>  
+
+<apex:PageBlockSection title="2 Piece Box" id="TwoPieceBox" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}">                 
+    <apex:outputField value="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="TwoPieceBox" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_length_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_width_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_height_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_material_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_finishstyle_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+            <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem>
+        <apex:outputField value="{!Game_Quote__c.gq_2pcbox_specialtyoptions_1__c}" rendered="{!Game_Quote__c.gq_2pcbox_selectedforquote_1__c == TRUE}" />
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="OrganizingBoxInsert" title="Organizing Box Insert" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_obi_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="OrganizingBoxInsert" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_obi_length_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_obi_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_obi_width_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_obi_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_obi_height_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />    
+        <apex:outputField value="{!Game_Quote__c.gq_obi_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_obi_material_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_obi_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_obi_color_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_obi_additionalinfo_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" /> 
+        <apex:outputField value="{!Game_Quote__c.gq_obi_printingoptions_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" />
+                <apex:pageBlockSectionItem rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}"></apex:pageBlockSectionItem> 
+        <apex:outputField value="{!Game_Quote__c.gq_obi_layout_1__c}" rendered="{!Game_Quote__c.gq_obi_selectedforquote_1__c == TRUE}" /> 
+</apex:pageBlockSection>
+
+<apex:pageBlockSection id="MiscellaneousItems" title="Miscellaneous Items" rendered="{!Game_Quote__c.gq_misc_selectedforquote_1__c == TRUE}">                     
+    <apex:outputField value="{!Game_Quote__c.gq_misc_selectedforquote_1__c}" >                                                                                                                              
+        <apex:actionSupport event="onchange" rerender="Miscellaneous Items" status="Stage"/>       
+    </apex:outputField>
+    <apex:actionStatus startText="applying value..." id="Stage"/>     
+        <apex:outputField value="{!Game_Quote__c.gq_misc_quantity_1__c}" rendered="{!Game_Quote__c.gq_misc_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_misc_componentpurchasecost_q1_1__c}" rendered="{!Game_Quote__c.gq_misc_selectedforquote_1__c == TRUE}" />  
+        <apex:outputField value="{!Game_Quote__c.gq_misc_description_1__c}" rendered="{!Game_Quote__c.gq_misc_selectedforquote_1__c == TRUE}" />
+        <apex:outputField value="{!Game_Quote__c.gq_misc_componentprice_q1_1__c}" rendered="{!Game_Quote__c.gq_misc_selectedforquote_1__c == TRUE}" />
+        <apex:pageBlockSection > <apex:pageBlockSectionItem > </apex:pageBlockSectionItem> <apex:pageBlockSectionItem /> </apex:pageBlockSection>
+        <apex:outputField value="{!Game_Quote__c.gq_misc_componentpurchasecost_q2_1__c}" rendered="{!Game_Quote__c.gq_misc_selectedforquote_1__c == TRUE}" />
+        <apex:pageBlockSection > <apex:pageBlockSectionItem > </apex:pageBlockSectionItem> <apex:pageBlockSectionItem /> </apex:pageBlockSection>
+        <apex:outputField value="{!Game_Quote__c.gq_misc_componentprice_q2_1__c}" rendered="{!Game_Quote__c.gq_misc_selectedforquote_1__c == TRUE}" />
+</apex:pageBlockSection>        
+</apex:pageBlock>
+</apex:form> 
+
+<apex:relatedList list="OpenActivities" />
+<apex:relatedList list="CombinedAttachments"/>
+<apex:relatedList list="ActivityHistories"/>
+
+</apex:page>

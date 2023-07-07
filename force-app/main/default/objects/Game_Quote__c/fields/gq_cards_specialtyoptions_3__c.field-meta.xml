@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_cards_specialtyoptions_3__c</fullName>
+    <description>Specialty printing options for third deck of playing cards</description>
+    <externalId>false</externalId>
+    <label>Card Specialty Options</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Shrink Wrap</fullName>
+                <default>false</default>
+                <label>Shrink Wrap</label>
+            </value>
+            <value>
+                <fullName>Foil Stamp</fullName>
+                <default>false</default>
+                <label>Foil Stamp</label>
+            </value>
+            <value>
+                <fullName>Spot UV</fullName>
+                <default>false</default>
+                <label>Spot UV</label>
+            </value>
+            <value>
+                <fullName>Emboss</fullName>
+                <default>false</default>
+                <label>Emboss</label>
+            </value>
+            <value>
+                <fullName>Deboss</fullName>
+                <default>false</default>
+                <label>Deboss</label>
+            </value>
+            <value>
+                <fullName>Metallic gold and silver Ink</fullName>
+                <default>false</default>
+                <label>Metallic gold and silver Ink</label>
+            </value>
+            <value>
+                <fullName>Pantone Color Matching</fullName>
+                <default>false</default>
+                <label>Pantone Color Matching</label>
+            </value>
+            <value>
+                <fullName>Linen Texture</fullName>
+                <default>false</default>
+                <label>Linen Texture</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

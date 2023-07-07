@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Size__c</fullName>
+    <externalId>false</externalId>
+    <label>Card Size</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2.5&quot; x 3.5&quot; - Poker</fullName>
+                <default>false</default>
+                <label>2.5&quot; x 3.5&quot; - Poker</label>
+            </value>
+            <value>
+                <fullName>2.75&quot; x 4.75&quot; - Tarot</fullName>
+                <default>false</default>
+                <label>2.75&quot; x 4.75&quot; - Tarot</label>
+            </value>
+            <value>
+                <fullName>2.5&quot; x 2.5&quot; - Square</fullName>
+                <default>false</default>
+                <label>2.5&quot; x 2.5&quot; - Square</label>
+            </value>
+            <value>
+                <fullName>1.65&quot; x 2.5&quot; - Mini</fullName>
+                <default>false</default>
+                <label>1.65&quot; x 2.5&quot; - Mini</label>
+            </value>
+            <value>
+                <fullName>2.25&quot; x 3.5&quot; - Bridge</fullName>
+                <default>false</default>
+                <label>2.25&quot; x 3.5&quot; - Bridge</label>
+            </value>
+            <value>
+                <fullName>2.35&quot; x 3.6&quot; - Euro</fullName>
+                <default>false</default>
+                <label>2.35&quot; x 3.6&quot; - Euro</label>
+            </value>
+            <value>
+                <fullName>3.95&quot; x 1&quot;</fullName>
+                <default>false</default>
+                <label>3.95&quot; x 1&quot;</label>
+            </value>
+            <value>
+                <fullName>2.45&quot; x 3.45&quot;</fullName>
+                <default>false</default>
+                <label>2.45&quot; x 3.45&quot;</label>
+            </value>
+            <value>
+                <fullName>2.25&quot; x 3.45&quot;</fullName>
+                <default>false</default>
+                <label>2.25&quot; x 3.45&quot;</label>
+            </value>
+            <value>
+                <fullName>2.15&quot; x 3.15&quot;</fullName>
+                <default>false</default>
+                <label>2.15&quot; x 3.15&quot;</label>
+            </value>
+            <value>
+                <fullName>2&quot; x 3.25&quot;</fullName>
+                <default>false</default>
+                <label>2&quot; x 3.25&quot;</label>
+            </value>
+            <value>
+                <fullName>2.4&quot; x 4.5&quot;</fullName>
+                <default>false</default>
+                <label>2.4&quot; x 4.5&quot;</label>
+            </value>
+            <value>
+                <fullName>2.45&quot; x 3.9&quot;</fullName>
+                <default>false</default>
+                <label>2.45&quot; x 3.9&quot;</label>
+            </value>
+            <value>
+                <fullName>3.85&quot; x 2.9&quot;</fullName>
+                <default>false</default>
+                <label>3.85&quot; x 2.9&quot;</label>
+            </value>
+            <value>
+                <fullName>2.95&quot; x 4.1&quot;</fullName>
+                <default>false</default>
+                <label>2.95&quot; x 4.1&quot;</label>
+            </value>
+            <value>
+                <fullName>2.8&quot; x 4.4&quot;</fullName>
+                <default>false</default>
+                <label>2.8&quot; x 4.4&quot;</label>
+            </value>
+            <value>
+                <fullName>5.1&quot; x 3.35&quot;</fullName>
+                <default>false</default>
+                <label>5.1&quot; x 3.35&quot;</label>
+            </value>
+            <value>
+                <fullName>5&quot; x 3.5&quot;</fullName>
+                <default>false</default>
+                <label>5&quot; x 3.5&quot;</label>
+            </value>
+            <value>
+                <fullName>4.75&quot; x 3.5&quot;</fullName>
+                <default>false</default>
+                <label>4.75&quot; x 3.5&quot;</label>
+            </value>
+            <value>
+                <fullName>5.5&quot; x 3.75&quot;</fullName>
+                <default>false</default>
+                <label>5.5&quot; x 3.75&quot;</label>
+            </value>
+            <value>
+                <fullName>4&quot; x 6&quot;</fullName>
+                <default>false</default>
+                <label>4&quot; x 6&quot;</label>
+            </value>
+            <value>
+                <fullName>4&quot; x 5&quot;</fullName>
+                <default>false</default>
+                <label>4&quot; x 5&quot;</label>
+            </value>
+            <value>
+                <fullName>4.3&quot; x 6.3&quot;</fullName>
+                <default>false</default>
+                <label>4.3&quot; x 6.3&quot;</label>
+            </value>
+            <value>
+                <fullName>Custom Size &amp; Shape</fullName>
+                <default>false</default>
+                <label>Custom Size &amp; Shape</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

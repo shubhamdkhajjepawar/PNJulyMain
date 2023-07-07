@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Country_United_States</fullName>
+        <categories>Sample Packet</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Country_United_States</shortDescription>
+        <value>USA</value>
+    </labels>
+    <labels>
+        <fullName>ExportReportReceiver</fullName>
+        <categories>Constant</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExportReportReceiver</shortDescription>
+        <value>jeff@printninja.com,sks.clouddeveloper@gmail.com</value>
+    </labels>
+</CustomLabels>

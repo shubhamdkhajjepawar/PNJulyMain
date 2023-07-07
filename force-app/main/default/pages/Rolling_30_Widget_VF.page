@@ -1,0 +1,11 @@
+<apex:page >
+  <div id="kf-embed-container-e5c142ce87e2f664e159d30dd39144a2"></div>
+<script type="text/javascript" src="ae0521ba008c6c6dd67f-667e6d5e490a1bc46688be42ea525d83.ssl.cf1.rackcdn.com/kf_embed_api-20131030.js"></script>
+<script type="text/javascript">
+KF.embed.embedKlip({
+   profile : "e5c142ce87e2f664e159d30dd39144a2",
+   settings : {"width":395,"theme":"light","borderStyle":"round","borderColor":"#cccccc"},
+   title : "Rolling 30"
+});
+</script>
+</apex:page>

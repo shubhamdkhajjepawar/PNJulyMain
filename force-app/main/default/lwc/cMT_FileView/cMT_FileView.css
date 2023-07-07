@@ -1,0 +1,19 @@
+.filePreviewFrame{
+    width:100%;
+    height:80vh;
+    border: solid 1px #CCC;
+    border-radius: 4px;
+}
+
+.slds-grid {
+    display: block !important;
+}
+
+.c-container {
+    margin: 0px 0px 0px 0px;
+}
+
+.body-recon{
+    background-color: white;
+    padding: 3px!important; 
+}

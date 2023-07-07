@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Game_Quote</fullName>
+    <active>true</active>
+    <label>Custom Game Quote</label>
+    <picklistValues>
+        <picklist>Fulfillment_Package__c</picklist>
+        <values>
+            <fullName>Amazon Storefront Fulfillment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Basic Warehousing and Fulfillment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crowdfunding Fulfillment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Proofing__c</picklist>
+        <values>
+            <fullName>Electronic</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Hard Copy</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quoted_Shipping_Company_1__c</picklist>
+        <values>
+            <fullName>Freight Forwarder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS LTL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quoted_Shipping_Company_2__c</picklist>
+        <values>
+            <fullName>Freight Forwarder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS LTL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quoted_Shipping_Company_3__c</picklist>
+        <values>
+            <fullName>Freight Forwarder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS LTL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quoted_Shipping_Company_4__c</picklist>
+        <values>
+            <fullName>Freight Forwarder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UPS LTL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Residential_Address__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sample_Pack_Type__c</picklist>
+        <values>
+            <fullName>Custom Sample Pack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Pack A - Low Page Count Comic Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Pack B - High Page Count Comic Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Pack C - Low Page Count Photo Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Pack D - High Page Count Photo Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Pack E - Children%27s Book</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Pack F - Card Game</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Pack G - Board Game</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Quote__c</picklist>
+        <values>
+            <fullName>Blind Order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Freight Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fully Custom Quote</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Saved Calculator Quote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_to_Calculate_ROW_1__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_to_Calculate_ROW_2__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_to_Calculate_ROW_3__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_to_Calculate_ROW_4__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

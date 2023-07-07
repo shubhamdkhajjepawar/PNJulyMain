@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomHelpMenuSection xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/spreadsheets/d/1z89pTR1waO73PU_82bisSqoJmibzSGe0Ip4NFwCqPeA/</linkUrl>
+        <masterLabel>Production Tolerance</masterLabel>
+        <sortOrder>1</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/spreadsheets/d/1A1DZPqUAYDvgfrVMiMY01FKVxL_pORQwMFiY_5VxKmI</linkUrl>
+        <masterLabel>Kickstarter Spreadsheet</masterLabel>
+        <sortOrder>2</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://printninja.com/printing-resource-center/printninja-file-setup-checklist/book-printing-file-setup-guides/spine-width-calculator</linkUrl>
+        <masterLabel>Spine Width Calculator</masterLabel>
+        <sortOrder>3</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/spreadsheets/d/1pP3GVRRpvvNy1YFwJHjjI9sDY6KrcIWzZ4LerG5tu3k/</linkUrl>
+        <masterLabel>Website Links</masterLabel>
+        <sortOrder>4</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/spreadsheets/d/1oIan4-2b76XZAlLsWvIEKd2QQnxa6ygG9qhq51HIa1U/</linkUrl>
+        <masterLabel>Samples Inventory</masterLabel>
+        <sortOrder>5</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/document/d/1EvAZKs2KY_69CfGicOKbmqMGFOfNMtPA45_id84oCjg</linkUrl>
+        <masterLabel>Weekly Goals</masterLabel>
+        <sortOrder>6</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://trello.com/b/SrbKpvuk/prn-2023-quartlery-goals</linkUrl>
+        <masterLabel>2023 Quarterly Goals</masterLabel>
+        <sortOrder>7</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/document/d/1azZP5LGtXakoLG8tHzEFM3lIYlBqf3lkY6vLRQCulV0</linkUrl>
+        <masterLabel>AM Canned Responses</masterLabel>
+        <sortOrder>8</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/document/d/1UvNUHPaFRxm8MDeKFH3xiajGKIa4JpI1Zkjqj86GPY8</linkUrl>
+        <masterLabel>AM SOP</masterLabel>
+        <sortOrder>9</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/document/d/1wRUQBAdvLPyHx0qHiuN3JIH5ku76ooTIyZWurx8fKcQ/</linkUrl>
+        <masterLabel>CS Canned Responses</masterLabel>
+        <sortOrder>10</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/document/d/1NEJnQ5fORFuaoAtMfoFEskHUk4LisM2kfiXx4HjzYjs/</linkUrl>
+        <masterLabel>CS SOP</masterLabel>
+        <sortOrder>11</sortOrder>
+    </customHelpMenuItems>
+    <customHelpMenuItems>
+        <linkUrl>https://docs.google.com/document/d/1GYqEIT-Q1UrQVlL4ltc4fZQNBrBrE8nAP9d-mmClMeI</linkUrl>
+        <masterLabel>Prepress Canned Responses</masterLabel>
+        <sortOrder>12</sortOrder>
+    </customHelpMenuItems>
+    <masterLabel>PrintNinja Links</masterLabel>
+</CustomHelpMenuSection>

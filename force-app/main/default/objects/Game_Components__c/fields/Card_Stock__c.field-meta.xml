@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Card_Stock__c</fullName>
+    <externalId>false</externalId>
+    <label>Card Stock</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Blue Core - 280 gsm</fullName>
+                <default>false</default>
+                <label>Blue Core - 280 gsm</label>
+            </value>
+            <value>
+                <fullName>Coreless - 300 gsm</fullName>
+                <default>false</default>
+                <label>Coreless - 300 gsm</label>
+            </value>
+            <value>
+                <fullName>Coreless Plus - 350 gsm</fullName>
+                <default>false</default>
+                <label>Coreless Plus - 350 gsm</label>
+            </value>
+            <value>
+                <fullName>Black Core (Linen) - 310 gsm</fullName>
+                <default>false</default>
+                <label>Black Core (Linen) - 310 gsm</label>
+            </value>
+            <value>
+                <fullName>Black Core Plus - 330 gsm</fullName>
+                <default>false</default>
+                <label>Black Core Plus - 330 gsm</label>
+            </value>
+            <value>
+                <fullName>Foil Stock - 300 gsm</fullName>
+                <default>false</default>
+                <label>Foil Stock - 300 gsm</label>
+            </value>
+            <value>
+                <fullName>White PVC</fullName>
+                <default>false</default>
+                <label>White PVC</label>
+            </value>
+            <value>
+                <fullName>Black Core 11pt 240 gsm (Domestic)</fullName>
+                <default>false</default>
+                <label>Black Core 11pt 240 gsm (Domestic)</label>
+            </value>
+            <value>
+                <fullName>Coreless Standard 12 Pt C2S 260 gsm (Domestic)</fullName>
+                <default>false</default>
+                <label>Coreless Standard 12 Pt C2S 260 gsm (Domestic)</label>
+            </value>
+            <value>
+                <fullName>Coreless Linen 100 lb 270 gsm (Domestic)</fullName>
+                <default>false</default>
+                <label>Coreless Linen 100 lb 270 gsm (Domestic)</label>
+            </value>
+            <value>
+                <fullName>White Plastic 12 Mil 430 gsm (Domestic)</fullName>
+                <default>false</default>
+                <label>White Plastic 12 Mil 430 gsm (Domestic)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Game_Quotes_by_Total</fullName>
+    <columns>NAME</columns>
+    <columns>International_Grand_Total_1__c</columns>
+    <columns>International_Grand_Total_2__c</columns>
+    <columns>International_Grand_Total_3__c</columns>
+    <columns>International_Grand_Total_4__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>International_Grand_Total_1__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>6782.8</value>
+    </filters>
+    <label>Game Quotes by Total</label>
+</ListView>

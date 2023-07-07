@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Game_Quote__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Monthly report, broken down by piece, to monitor need for new game pieces</description>
+    <label>Game Quote Sourced Pieces</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>gq_Quote_Created__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>gq_premadepcs_shape_2__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>gq_premadepcs_shape_1__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>gq_premadepcs_shape_3__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>gq_cmts_selectedforquote_2__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>gq_cpo_selectedforquote_1__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>gq_premadepcs_selectedforquote_1__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Account__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Opportunity__c</field>
+            <table>Game_Quote__c</table>
+        </columns>
+        <masterLabel>Game Pieces</masterLabel>
+    </sections>
+</ReportType>

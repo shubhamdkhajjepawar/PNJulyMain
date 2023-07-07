@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cover_Paper_Weight__c</fullName>
+    <externalId>false</externalId>
+    <label>Cover Paper Weight</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>55lb Text</fullName>
+                <default>false</default>
+                <label>55lb Text</label>
+            </value>
+            <value>
+                <fullName>70lb Text</fullName>
+                <default>false</default>
+                <label>70lb Text</label>
+            </value>
+            <value>
+                <fullName>85lb Text</fullName>
+                <default>false</default>
+                <label>85lb Text</label>
+            </value>
+            <value>
+                <fullName>105lb Text</fullName>
+                <default>false</default>
+                <label>105lb Text</label>
+            </value>
+            <value>
+                <fullName>135lb Text</fullName>
+                <default>false</default>
+                <label>135lb Text</label>
+            </value>
+            <value>
+                <fullName>10pt Cover</fullName>
+                <default>false</default>
+                <label>10pt Cover</label>
+            </value>
+            <value>
+                <fullName>12pt Cover</fullName>
+                <default>false</default>
+                <label>12pt Cover</label>
+            </value>
+            <value>
+                <fullName>14pt Cover</fullName>
+                <default>false</default>
+                <label>14pt Cover</label>
+            </value>
+            <value>
+                <fullName>Board Book</fullName>
+                <default>false</default>
+                <label>Board Book</label>
+            </value>
+            <value>
+                <fullName>Faux Leather</fullName>
+                <default>false</default>
+                <label>Faux Leather</label>
+            </value>
+            <value>
+                <fullName>Fabric</fullName>
+                <default>false</default>
+                <label>Fabric</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

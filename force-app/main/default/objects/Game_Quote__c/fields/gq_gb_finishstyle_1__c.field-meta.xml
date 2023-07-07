@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_gb_finishstyle_1__c</fullName>
+    <description>Finish style of game board</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Standard is lamination
+Varnish can be used on boards with NO FOLD only</inlineHelpText>
+    <label>Finish Style</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gloss</fullName>
+                <default>false</default>
+                <label>Gloss</label>
+            </value>
+            <value>
+                <fullName>Matte</fullName>
+                <default>false</default>
+                <label>Matte</label>
+            </value>
+            <value>
+                <fullName>Matte (Anti-Scratch)</fullName>
+                <default>false</default>
+                <label>Matte (Anti-Scratch)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

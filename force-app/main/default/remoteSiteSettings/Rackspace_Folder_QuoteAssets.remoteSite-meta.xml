@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteSiteSetting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <disableProtocolSecurity>false</disableProtocolSecurity>
+    <isActive>true</isActive>
+    <url>http://d85fd144eb6d904e1307-ee0389f939f121fe3a9bfdd4a2fec20f.r35.cf2.rackcdn.com</url>
+</RemoteSiteSetting>

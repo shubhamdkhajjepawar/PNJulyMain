@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>International_Grand_Total_2__c</fullName>
+    <externalId>false</externalId>
+    <formula>Product_Total_Price_2__c + Ocean_Freight_Price_2__c + Ground_Freight_Price_2__c + Expedited_Freight_Price_2__c + Prototyping_Cost_2__c + Assembly_Cost_2__c + Additional_Charges_2__c + Add_On_Price_2__c + Discount_2__c+ (Product_Total_Price_2__c * Tax_2__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total selling cost of the order.</inlineHelpText>
+    <label>International Grand Total</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

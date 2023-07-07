@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Diamond_Order_Information__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The following information from the customer&apos;s Diamond purchase order: 
+-Title of book as listed in Diamond&apos;s order 
+-Purchase order number
+-Diamond item number
+-Diamond stock code 
+-Selling price 
+-EAN, ISBN, or UPC code</inlineHelpText>
+    <label>Diamond Order Information</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

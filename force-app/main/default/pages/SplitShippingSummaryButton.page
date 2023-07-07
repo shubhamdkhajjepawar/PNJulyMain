@@ -1,0 +1,7 @@
+<apex:page standardController="Quote" tabStyle="Split_Shipping__c">
+<apex:form >
+    <apex:repeat value="{!Quote.Split_Shipping_Addresses__r}" var="splitShipping">
+        <apex:detail subject="{!splitShipping.Id}" inlineEdit="true"/>
+    </apex:repeat>
+</apex:form>
+</apex:page>

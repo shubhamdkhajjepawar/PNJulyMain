@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Game_Board_Backing__c</name>
+    <picklistValues>
+        <masterLabel>Black Game Board Backing</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CMYK Printing</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

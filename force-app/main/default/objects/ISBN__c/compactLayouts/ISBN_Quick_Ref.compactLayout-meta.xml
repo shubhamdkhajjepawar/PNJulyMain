@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISBN_Quick_Ref</fullName>
+    <fields>Name</fields>
+    <fields>ISBN_Identifier__c</fields>
+    <fields>Assigned__c</fields>
+    <fields>Set_Retail_Price__c</fields>
+    <fields>Retail_Price__c</fields>
+    <fields>Supplemental_Barcode__c</fields>
+    <fields>Sticker_Price__c</fields>
+    <label>ISBN Quick Ref</label>
+</CompactLayout>

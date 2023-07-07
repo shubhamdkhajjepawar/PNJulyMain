@@ -1,0 +1,106 @@
+<aura:component implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes" controller="QuoteDetails" access="global">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="quoteId" type="String" />
+    <aura:attribute name="isOnLoad" type="boolean" default="false"/>
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    
+    <lightning:card>
+        <aura:if isTrue="{!v.isOnLoad}">
+            <lightning:recordViewForm recordId="{!v.quoteId}" objectApiName="Quote">
+                <h3 class="slds-section-title--divider">Dust Jacket</h3>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Dust_Jacket_Printing__c" />
+                        <lightning:outputField fieldName="Dust_Jacket_Foil_Stamp__c" />
+                        <lightning:outputField fieldName="Dust_Jacket_Foil_Color__c" />
+                        <lightning:outputField fieldName="Dust_Jacket_Spot_UV__c" />
+                        <lightning:outputField fieldName="Dust_Jacket_Emboss_Deboss__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="PRN_dustjacket__c" />
+                        <lightning:outputField fieldName="PRN_dustjacketfinishstyle__c" />
+                        <lightning:outputField fieldName="Dust_Jacket_Flap_Width__c" />
+                        <lightning:outputField fieldName="Dust_Jacket_Spine_Width__c" />
+                        <lightning:outputField fieldName="Dust_Jacket_Quantity__c" />
+                    </div>
+                </div>
+                
+                <h3 class="slds-section-title--divider">Slipcase</h3>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Slipcase_Quantity__c" />
+                        <lightning:outputField fieldName="Slipcase_Thumbcut__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Slipcase_Finish_Style__c" />
+                    </div>
+                </div>
+                
+                <h3 class="slds-section-title--divider">New Printing Specifications</h3>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Spine_Style__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Soy_Ink__c" />
+                    </div>
+                </div>
+                
+                <h3 class="slds-section-title--divider">Split Binding Specifications</h3>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Split_Binding_Perfect_Bound_Quantity__c" />
+                        <lightning:outputField fieldName="Split_Binding_Cover_Material_Perfect__c" />
+                        <lightning:outputField fieldName="Split_Binding_Finish_Style_Perfect__c" />
+                        <lightning:outputField fieldName="Split_Binding_Cover_Weight_Perfect__c" />
+                        <lightning:outputField fieldName="Split_Perfect_Cover_Spot_UV__c" />
+                        <lightning:outputField fieldName="Split_Perfect_Foil_Color__c" />
+                        <lightning:outputField fieldName="Split_Perfect_Cover_Foil_Stamp__c" />
+                        <lightning:outputField fieldName="Split_Perfect_Cover_Emboss_Deboss__c" />
+                        <lightning:outputField fieldName="Split_Perfect_Spine__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Split_Binding_Case_Bound_Quantity__c" />
+                        <lightning:outputField fieldName="Split_Binding_Cover_Material_Case__c" />
+                        <lightning:outputField fieldName="Split_Binding_Finish_Style_Case__c" />
+                        <lightning:outputField fieldName="Split_Binding_Cover_Weight_Case__c" />
+                        <lightning:outputField fieldName="Split_Case_Cover_Spot_UV__c" />
+                        <lightning:outputField fieldName="Split_Case_Foil_Color__c" />
+                        <lightning:outputField fieldName="Split_Case_Cover_Foil_Stamp__c" />
+                        <lightning:outputField fieldName="Split_Case_Cover_Emboss_Deboss__c" />
+                        <lightning:outputField fieldName="Split_Case_Spine__c" />
+                    </div>
+                </div>
+                
+                <h3 class="slds-section-title--divider">Specialty Options</h3>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Spine_Width__c" />
+                        <lightning:outputField fieldName="Spot_UV_Style__c" />
+                        <lightning:outputField fieldName="Order_Toxicity_Testing__c" />
+                        <lightning:outputField fieldName="French_Fold_Flap_Width__c" />
+                        <lightning:outputField fieldName="Add_ISBN__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Edge_Treatment__c" />
+                        <lightning:outputField fieldName="Edge_Treatment_Color__c" />
+                        <lightning:outputField fieldName="Edge_Treatment_Quantity__c" />
+                        <lightning:outputField fieldName="Edge_Treatment_Custom_Option__c" />
+                        <lightning:outputField fieldName="Perforated_Pages__c" />
+                    </div>
+                </div>
+                
+                <h3 class="slds-section-title--divider">Shipping Details</h3>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="County__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning:outputField fieldName="Secondary_phone__c" />
+                    </div>
+                </div>
+            </lightning:recordViewForm>
+        </aura:if>
+    </lightning:card>
+</aura:component>

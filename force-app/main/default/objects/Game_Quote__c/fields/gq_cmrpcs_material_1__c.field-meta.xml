@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_cmrpcs_material_1__c</fullName>
+    <description>Material of custom pieces</description>
+    <externalId>false</externalId>
+    <label>Material</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Opaque Resin</fullName>
+                <default>false</default>
+                <label>Opaque Resin</label>
+            </value>
+            <value>
+                <fullName>Transparent Resin</fullName>
+                <default>false</default>
+                <label>Transparent Resin</label>
+            </value>
+            <value>
+                <fullName>Transparent Resin w/ Glitter</fullName>
+                <default>false</default>
+                <label>Transparent Resin w/ Glitter</label>
+            </value>
+            <value>
+                <fullName>Metal</fullName>
+                <default>false</default>
+                <label>Metal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

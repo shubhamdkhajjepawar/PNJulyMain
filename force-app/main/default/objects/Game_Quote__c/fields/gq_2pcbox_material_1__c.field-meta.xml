@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_2pcbox_material_1__c</fullName>
+    <description>2 piece box material</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Note material in &quot;Additional Info&quot; if &quot;Other&quot; is selected</inlineHelpText>
+    <label>Material</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1.5mm High Density Paperboard (standard)</fullName>
+                <default>false</default>
+                <label>1.5mm High Density Paperboard (standard)</label>
+            </value>
+            <value>
+                <fullName>2mm High Density Paperboard</fullName>
+                <default>false</default>
+                <label>2mm High Density Paperboard</label>
+            </value>
+            <value>
+                <fullName>Tin</fullName>
+                <default>false</default>
+                <label>Tin</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

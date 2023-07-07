@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>gq_pp_textstock_1__c</name>
+    <picklistValues>
+        <masterLabel>70lb offwhite uncoated text</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>70lb white uncoated text</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

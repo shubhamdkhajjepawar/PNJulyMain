@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fulfillment_Center_No_Overrun__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check if shipment is going to a fulfillment center.  If so, we should not send any overrun to it since that would mess with the fulfillment center&apos;s order.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if shipment is going to a fulfillment center.  If so, we should not send any overrun to it since that would mess with the fulfillment center&apos;s order.</inlineHelpText>
+    <label>Fulfillment Center (No Overrun)</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

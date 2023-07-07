@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ground_Freight_Price1__c</fullName>
+    <description>The final price of ground freight</description>
+    <externalId>false</externalId>
+    <formula>Grd_Freight_1__c *(1+ Ground_Freight_Markup_i1__c )</formula>
+    <inlineHelpText>The final price of ground freight</inlineHelpText>
+    <label>Ground Freight Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

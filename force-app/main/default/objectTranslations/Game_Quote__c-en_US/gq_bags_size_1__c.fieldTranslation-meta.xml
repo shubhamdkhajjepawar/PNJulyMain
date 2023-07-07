@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label></label>
+    <name>gq_bags_size_1__c</name>
+    <picklistValues>
+        <masterLabel>Card Size (Approx. 3.5&quot; x 5&quot;)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Custom (Cloth Only - See &quot;Additional Info&quot;)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extra Large (Approx. 6&quot; x 9&quot;)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extra Small (Approx. 3&quot; x 4&quot;)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Large (Approx. 6&quot; x 8&quot;)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medium (Approx. 4&quot; x 6&quot;)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Small (Approx. 4&quot; x 5&quot;)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

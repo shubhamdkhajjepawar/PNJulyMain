@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>New Cases</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>jzwirek@printninja.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Case.Round_Robin_ID__c</field>
+                <operation>equals</operation>
+                <value>1,3</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>jzwirek@printninja.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Case.Round_Robin_ID__c</field>
+                <operation>equals</operation>
+                <value>2,4</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>jzwirek@printninja.com</assignedTo>
+            <assignedToType>User</assignedToType>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

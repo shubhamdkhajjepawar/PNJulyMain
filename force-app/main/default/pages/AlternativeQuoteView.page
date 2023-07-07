@@ -1,0 +1,30 @@
+<apex:page standardController="Quote" sidebar="false">     
+<apex:form >        
+<apex:pageBlock title="Alternative Project Fields" id="AltQuoteView" mode="edit">             
+<apex:pageMessages />             
+<apex:pageBlockButtons >                 
+<apex:commandButton value="Save" action="{!save}"/>                 
+<apex:commandButton value="Cancel" action="{!cancel}"/>             
+</apex:pageBlockButtons>             
+<apex:actionRegion >                 
+<apex:pageBlockSection title="Project Type" columns="1">                     
+<apex:inputField value="{!quote.Alternative_Project_Type__c}"/>                                                      
+<apex:actionSupport event="onchange" rerender=" AltQuoteView " status="Stage"/>                                                       
+<apex:actionStatus startText="applying value..." id="Stage"/>                                                                                  
+</apex:pageBlockSection>             
+</apex:actionRegion>             
+    <!--Commented by PG 05/26/2023 to delete the below fields
+    <apex:pageBlockSection title="Record Packaging Quote Information" columns="2" rendered="{!quote.Alternative_Project_Type__c == 'Record Sleeve'}">                 
+<apex:inputField value="{!quote.Inner_Sleeve_Inside_Finish__c}"/>        
+<apex:inputField value="{!quote.Inner_Sleeve_Outside_Finish__c}"/>   
+<apex:inputField value="{!quote.Inner_Sleeve_Paper_Stock__c}"/>   
+<apex:inputField value="{!quote.Inner_Sleeve_Printing_Color__c}"/>   
+<apex:inputField value="{!quote.Inner_Sleeve_Window__c}"/>   
+<apex:inputField value="{!quote.Cropped_Corners__c}"/>        
+</apex:pageBlockSection>     -->        
+<apex:pageBlockSection title="Custom Game Quote Information" columns="2" rendered="{!quote.Alternative_Project_Type__c == 'Custom Game'}">                 
+<apex:inputField value="{!quote.Additional_Info_Game__c}"/>             
+</apex:pageBlockSection> 
+</apex:pageBlock> 
+</apex:form> 
+</apex:page>

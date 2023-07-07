@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>gq_cmts_folding_2__c</fullName>
+    <description>Folding pattern of cardboard mat, tile or screen</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For screens only</inlineHelpText>
+    <label>Folding</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1/2 fold</fullName>
+                <default>false</default>
+                <label>1/2 fold</label>
+            </value>
+            <value>
+                <fullName>1/3 fold</fullName>
+                <default>false</default>
+                <label>1/3 fold</label>
+            </value>
+            <value>
+                <fullName>1/4 fold</fullName>
+                <default>false</default>
+                <label>1/4 fold</label>
+            </value>
+            <value>
+                <fullName>1/6 fold</fullName>
+                <default>false</default>
+                <label>1/6 fold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
